@@ -23,8 +23,12 @@ function M.common_on_attach(client, bufnr)
   bufnnoremap("<leader>gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
   bufnnoremap("<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
 
-  -- Go to implementations
+  -- Go to implementation
   bufnnoremap("<leader>gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
+
+  -- List symbol uses
+  -- bufnnoremap("<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>")  -- Uses quickfix
+  bufnnoremap("<leader>gr", "<cmd>Telescope lsp_references<CR>")  -- Uses Telescope
 
   -- Inspect function
   bufnnoremap("K", "<Cmd>lua vim.lsp.buf.hover()<CR>")

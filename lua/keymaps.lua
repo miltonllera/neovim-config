@@ -6,8 +6,8 @@ local vnoremap = Utils.vnoremap
 -- local xnoremap = Utils.xnoremap
 local inoremap = Utils.inoremap
 -- local tnoremap = Utils.tnoremap
-local nmap = Utils.nmap
-local xmap = Utils.xmap
+-- local nmap = Utils.nmap
+-- local xmap = Utils.xmap
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -44,11 +44,17 @@ vnoremap("<leader>y", '"+y')
 -- TODO: Paste from system clippboard
 
 -- Show line diagnostics
-nnoremap("<leader>d", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
+nnoremap("<leader>d", '<cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
+
+-- Open local diagnostics to local list
+nnoremap("<leader>fd", "<cmd>lua vim.diagnostic.setloclist()<CR>")
+
+-- Open all diagnostics in project to quickfix list
+nnoremap("<leader>D", "<cmd>lua vim.diagnostic.setqflist()<CR>")
 
 -- Telescope
-nnoremap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
-nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
+nnoremap("<leader>ff", "<cmd>Telescope find_files<CR>")
+nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")
 
 -- NvimTree
 nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")
