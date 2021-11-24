@@ -4,6 +4,12 @@ local actions = require('telescope.actions')
 
 require('telescope').setup({
   defaults = {
+    layout_strategy = 'bottom_pane',
+    -- pickers = {
+    --   find_files = {
+    --     theme = 'dropdown',
+    --   },
+    -- },
     mappings = {
       i = {
         ['<C-j>'] = actions.move_selection_next,
