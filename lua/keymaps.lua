@@ -43,6 +43,9 @@ vnoremap("<leader>y", '"+y')
 
 -- TODO: Paste from system clippboard
 
+-- Show line diagnostics
+nnoremap("<leader>d", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
+
 -- Telescope
 nnoremap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
