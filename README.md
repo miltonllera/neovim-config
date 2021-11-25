@@ -176,3 +176,11 @@ To visualize fancy icons and separaterors, a patched font must be installed. [Ne
 2. Copy the file to `~/.local/share/fonts/`
 3. Change the font in the terminal emulator's settings to the patched font.
 
+## TODO:
+
+Some pluggins to try:
+- Markdown preview: [glow.nvim](https://github.com/ellisonleao/glow.nvim).
+- Using GBrowse with fugitive: [rhubarb.vim](https://github.com/tpope/rhubarb.vim).
+- Prettier quickfix/localist: [trouble.nvim](https://github.com/folke/trouble.nvim).
+- Jupyter on Neovim: [jupytext.vim](https://github.com/mwouts/jupytext), [iron.nvim](https://github.com/hkupty/iron.nvim), [vim-textobj-hydrogen](https://github.com/GCBallesteros/vim-textobj-hydrogen). Check this [blog](https://www.maxwellrules.com/misc/nvim_jupyter.html) for more info.
+

@@ -46,10 +46,10 @@ vnoremap("<leader>y", '"+y')
 -- Show line diagnostics
 nnoremap("<leader>d", '<cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
 
--- Open local diagnostics to local list
+-- Open local diagnostics in local list
 nnoremap("<leader>fd", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 
--- Open all diagnostics in project to quickfix list
+-- Open all project diagnostics in quickfix list
 nnoremap("<leader>D", "<cmd>lua vim.diagnostic.setqflist()<CR>")
 
 -- Telescope

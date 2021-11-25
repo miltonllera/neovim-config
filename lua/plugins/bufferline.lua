@@ -10,12 +10,21 @@ require('bufferline').setup({
     always_show_bufferline = true,
     numbers = tabname_format,
     show_buffer_icons = true,
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+    separator_style = 'slant',
     -- Don't show bufferline over vertical, unmodifiable buffers
     offsets = {{
         filetype = 'NvimTree',
         text = 'File Explorer',
         highlight = 'Directory'
     }},
+  },
+  custom_areas = {
+    right = function()
+      local result = {{text = "Buffers", guifg = "#ffffff"}}
+      return result
+    end,
   },
   -- Don't use italic on current buffer
   highlights = {buffer_selected = { gui = "bold" },},
