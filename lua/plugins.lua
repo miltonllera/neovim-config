@@ -114,7 +114,10 @@ return require('packer').startup(function(use)
   use({
     'mhinz/vim-startify',
     config = function()
-      require('plugins/startify')
+      -- TODO: This should work but doesn't
+      -- local path = fn.stdpath('config')..'/lua/plugins/startify.vim'
+      -- vim.cmd('source '..path)
+      vim.cmd([[source /home/milton/.config/nvim/lua/plugins/startify.vim]])
     end
   })
 
