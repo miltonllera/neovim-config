@@ -2,7 +2,7 @@ require('bufferline')
 
 -- format as "<id>. <file-name>"
 local tabname_format = function (opts)
-  return string.format('%s.', opts.id)
+  return string.format('%s.', opts.ordinal)
 end
 
 require('bufferline').setup({
