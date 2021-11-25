@@ -87,7 +87,12 @@ cmp.setup({
 
   -- Complete options from the LSP servers and the snippet engine
   sources = {
+    {name = 'path'},
+    {name = 'buffer'},
     {name = 'nvim_lsp'},
+    {name = 'nvim_lua'},
     {name = 'luasnip'},
+    {name = 'spell'},
+    {name = 'calc'},
   },
 })
