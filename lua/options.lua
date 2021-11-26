@@ -42,6 +42,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     virtual_text = false
   }
 )
-
--- Define commands
-vim.cmd('command! MakeTags !ctags -R --exclude=@.ctagsignore .')
