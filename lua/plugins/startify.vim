@@ -1,7 +1,11 @@
 " Startify
 
 " Add bashrc and nvim config files
-let g:startify_bookmarks = [{'b': '~/.bashrc'}, {'n': '~/.config/nvim/init.lua'}]
+let g:startify_bookmarks = [
+          \ {'b': '~/.bashrc'},
+          \ {'a': '~/.bash_aliases'},
+          \ {'n': '~/.config/nvim/init.lua'}
+          \ ]
 
 " Change directory when opening file using Startify
 let g:startify_change_to_dir = 1  " This is the default value
