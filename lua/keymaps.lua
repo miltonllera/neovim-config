@@ -21,6 +21,9 @@ inoremap("<C-SPACE>", "<C-x><C-o>")
 -- Save with Ctrl + S
 nnoremap("<C-s>", ":w<CR>")
 
+-- Close buffer
+nnoremap("<C-c>", "<Cmd>q<CR>")
+
 -- Move around windows
 nnoremap("<C-h>", "<C-w>h")
 nnoremap("<C-j>", "<C-w>j")
@@ -43,18 +46,34 @@ vnoremap("<leader>y", '"+y')
 
 -- TODO: Paste from system clippboard
 
+-- Local list
+nnoremap("<leader>ll", "<Cmd>lopen<CR>")
+nnoremap("<leader>lc", "<Cmd>lclose<CR>")
+nnoremap("<leader>ln", "<Cmd>lnext<CR>")
+nnoremap("<leader>lp", "<Cmd>lprev<CR>")
+
+-- Quickfix list
+nnoremap("<leader>ql", "<Cmd>copen<CR>")
+nnoremap("<leader>qc", "<Cmd>cclose<CR>")
+nnoremap("<leader>qn", "<Cmd>cnext<CR>")
+nnoremap("<leader>qp", "<Cmd>cprev<CR>")
+
+-- Fugitive
+nnoremap("<leader>G", "<Cmd>G<CR>")
+
 -- Show line diagnostics
-nnoremap("<leader>d", '<cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
+nnoremap("<leader>d", '<Cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
 
 -- Open local diagnostics in local list
-nnoremap("<leader>fd", "<cmd>lua vim.diagnostic.setloclist()<CR>")
+nnoremap("<leader>D", "<Cmd>lua vim.diagnostic.setloclist()<CR>")
 
 -- Open all project diagnostics in quickfix list
-nnoremap("<leader>D", "<cmd>lua vim.diagnostic.setqflist()<CR>")
+nnoremap("<leader><A-d>", "<Cmd>lua vim.diagnostic.setqflist()<CR>")
 
 -- Telescope
-nnoremap("<leader>ff", "<cmd>Telescope find_files<CR>")
-nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")
+nnoremap("<leader>ff", "<Cmd>Telescope find_files<CR>")
+nnoremap("<leader>fb", "<Cmd>Telescope buffers<CR>")
+nnoremap("<leader>fg", "<Cmd>Telescope live_grep<CR>")
 
 -- NvimTree
 nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")
