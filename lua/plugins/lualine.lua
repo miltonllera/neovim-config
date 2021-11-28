@@ -4,20 +4,14 @@ require('lualine').setup({
   options = {
     theme = "tokyonight",
     -- Separators might look weird for certain fonts (eg Cascadia)
-    -- component_separators = {left = '', right = ''},
-    -- section_separators = {left = '', right = ''},
+    component_separators = {left = '', right = ''},
+    section_separators = {left = '', right = ''},
   },
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff'},
-    lualine_c = {'filename'},
-    lualine_x = {
-      {
-        'diagnostics',
-        sources = {'nvim_lsp'},
-        sections = {'error', 'warn', 'info'},
-        -- symbols = {error = 'x', warn = '!', info = '?'},
-      },
+    lualine_c = {
+      'filetype',
       {
         function()
           local msg = 'No LSP'
@@ -26,6 +20,13 @@ require('lualine').setup({
 
           if next(clients) == nil  then
             return msg
+          end
+
+          -- Check for utility buffers
+          for ft in {'fugitive'} do
+            if buf_ft == ft then
+              return ''
+            end
           end
 
           for _, client in ipairs(clients) do
@@ -42,9 +43,17 @@ require('lualine').setup({
         color = {fg = '#ffffff', gui = 'bold'},
         separator = "",
       },
-      'filetype',
+      {
+        'diagnostics',
+        sources = {'nvim_lsp'},
+        sections = {'error', 'warn', 'info'},
+      },
     },
+    lualine_x = {'encoding'},
     lualine_y = {'progress'},
-    lualine_z = {'location'},
+    lualine_z = {
+      {function () return '' end},
+      {'location'},
+    }
   },
 })
