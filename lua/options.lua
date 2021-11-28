@@ -29,7 +29,7 @@ vim.o.mouse              = 'a'
 -- Vim specific
 vim.o.hidden             = true  -- Do not save when switching buffers
 vim.o.fileencoding       = "utf-8"
-vim.o.spelllang          = 'en'
+vim.o.spelllang          = 'en_us'
 vim.o.completeopt        = "menuone,noselect"
 vim.o.updatetime         = 100
 

@@ -1,5 +1,7 @@
 -- Lualine configuration
 
+local non_language_ft = {'fugitive', 'startify'}
+
 require('lualine').setup({
   options = {
     theme = "tokyonight",
@@ -23,8 +25,8 @@ require('lualine').setup({
           end
 
           -- Check for utility buffers
-          for ft in {'fugitive'} do
-            if buf_ft == ft then
+          for ft in non_language_ft do
+            if ft:match(buf_ft) then
               return ''
             end
           end
