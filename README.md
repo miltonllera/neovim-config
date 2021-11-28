@@ -29,15 +29,15 @@ cd ~/.config/nvim
 ```
 
 This will create a folder with the configuration with the following structure is as follows:
-```bash
+```
 |- lua
-   |- lsp/
-   |- plugins/
-   |- keymaps.lua
-   |- options.lua
-   |- plugins.lua
-   |- theme.lua
-   \- utils.lua
+|  |- lsp/
+|  |- plugins/
+|  |- keymaps.lua
+|  |- options.lua
+|  |- plugins.lua
+|  |- theme.lua
+|  \- utils.lua
 |- plugin/
 \- init.lua
 ```
@@ -177,6 +177,10 @@ To visualize fancy icons and separaterors, a patched font must be installed. [Ne
 3. Change the font in the terminal emulator's settings to the patched font.
 
 ## TODO:
+
+LSPs to add:
+- LaTex: can use [ltext](https://github.com/valentinjn/ltex-ls) or [texlab](https://github.com/latex-lsp/texlab).
+- Markdownd: [ltext](https://github.com/valentinjn/ltex-ls) or [zeta\_note](https://github.com/artempyanykh/zeta-note).
 
 Some pluggins to try:
 - Markdown preview: [glow.nvim](https://github.com/ellisonleao/glow.nvim).
