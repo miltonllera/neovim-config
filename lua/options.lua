@@ -31,10 +31,13 @@ vim.o.hidden             = true  -- Do not save when switching buffers
 vim.o.fileencoding       = "utf-8"
 vim.o.spelllang          = 'en_us'
 vim.o.completeopt        = "menuone,noselect"
-vim.o.updatetime         = 100
+vim.o.updatetime         = 300
 
 -- Disable default plugins
 vim.g.loaded_netrwPlugin = false
+
+-- Providers
+vim.g.python3_host_prog = '/home/milton/software/miniconda/envs/pynvim/bin/python'
 
 -- Disable inline error messages
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
