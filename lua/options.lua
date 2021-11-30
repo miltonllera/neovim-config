@@ -34,7 +34,7 @@ vim.o.completeopt        = "menuone,noselect"
 vim.o.updatetime         = 300
 
 -- Disable default plugins
-vim.g.loaded_netrwPlugin = false
+-- vim.g.loaded_netrwPlugin = false
 
 -- Providers
 vim.g.python3_host_prog = '/home/milton/software/miniconda/envs/pynvim/bin/python'

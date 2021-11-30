@@ -58,6 +58,9 @@ nnoremap("<leader>qc", "<Cmd>cclose<CR>")
 nnoremap("<leader>qn", "<Cmd>cnext<CR>")
 nnoremap("<leader>qp", "<Cmd>cprev<CR>")
 
+-- Open file in default application
+nnoremap("<leader>xo", "<Cmd> !xdg-open %<CR><CR>")
+
 -- Fugitive
 nnoremap("<leader>G", "<Cmd>G<CR>")
 
