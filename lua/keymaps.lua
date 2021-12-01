@@ -34,6 +34,10 @@ nnoremap("<C-l>", "<C-w>l")
 nnoremap("<TAB>", ":BufferLineCycleNext<CR>")
 nnoremap("<S-TAB>", ":BufferLineCyclePrev<CR>")
 
+-- Splits
+nnoremap("<leader>ws", "<Cmd>split<CR>")
+nnoremap("<leader>vs", "<Cmd>vsplit<CR>")
+
 -- Delete buffer
 nnoremap("<A-w>", ":bd<CR>")
 
@@ -44,7 +48,9 @@ nnoremap("Y", "y$")
 nnoremap("<leader>y", '"+y')
 vnoremap("<leader>y", '"+y')
 
--- TODO: Paste from system clippboard
+-- Paste from system clippboard
+nnoremap("<leader>p", '"+p')
+vnoremap("<leader>p", '"+p')
 
 -- Local list
 nnoremap("<leader>ll", "<Cmd>lopen<CR>")
