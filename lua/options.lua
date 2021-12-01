@@ -40,8 +40,8 @@ vim.o.updatetime         = 300
 vim.g.python3_host_prog = '/home/milton/software/miniconda/envs/pynvim/bin/python'
 
 -- Disable inline error messages
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = false
-  }
-)
+vim.diagnostic.config {
+  virtual_text = false,
+  underline = true,     -- Keep error underline
+  signs = true,         -- Keep gutter signs
+}
