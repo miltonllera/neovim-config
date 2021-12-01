@@ -4,7 +4,7 @@ local actions = require('telescope.actions')
 
 require('telescope').setup({
   defaults = {
-    layout_strategy = 'bottom_pane',
+    -- layout_strategy = 'bottom_pane',
     -- pickers = {
     --   find_files = {
     --     theme = 'dropdown',
