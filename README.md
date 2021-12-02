@@ -1,6 +1,6 @@
 # Neovim configuration with Lua
 
-A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins needed for programming. Different language servers available through the LSP protocol provide code completion and analysis.
+A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins I need for programming. Different language servers available through the LSP protocol provide code completion and analysis. Mostly this is so I don't have to remember how to do all this when setting up a new machine.
 
 ## Setting up
 
@@ -154,9 +154,6 @@ Binaries for each language servers must be installed from their relevant repo. M
   yarn global add yaml-language-server
   ```
   
-  
-
-
 If a module complains about the verion of node being too old (pyright will do this), then run the following:
 ```bash
 sudo npm cache clean -f
@@ -184,6 +181,7 @@ LSPs to add:
 
 Some pluggins to try:
 - Markdown preview: [glow.nvim](https://github.com/ellisonleao/glow.nvim).
+- Different file explorer: [ranger.vim](https://github.com/francoiscabrol/ranger.vim) which can be used to integrate the [Ranger](https://github.com/ranger/ranger) terminal file explorer into Vim.
 - Using GBrowse with fugitive: [rhubarb.vim](https://github.com/tpope/rhubarb.vim).
 - Prettier quickfix/localist: [trouble.nvim](https://github.com/folke/trouble.nvim).
 - Jupyter on Neovim: [jupytext.vim](https://github.com/mwouts/jupytext), [iron.nvim](https://github.com/hkupty/iron.nvim), [vim-textobj-hydrogen](https://github.com/GCBallesteros/vim-textobj-hydrogen). Check this [blog](https://www.maxwellrules.com/misc/nvim_jupyter.html) for more info.
