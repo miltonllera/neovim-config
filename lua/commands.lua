@@ -1,5 +1,9 @@
 -- Define commands
 
+-- Remove trailing whitespaces
+-- (if a file requires trailing spaces, exclude it's type using the regex)
+vim.cmd [[autocmd BufWritePre * %s/\s\+$//e ]]
+
 -- Swap folder
 vim.cmd('command! ListSwap split | enew | r !ls -l ~/.local/share/nvim/swap')
 vim.cmd('command! CleanSwap !rm -rf ~/.local/share/nvim/swap/')
