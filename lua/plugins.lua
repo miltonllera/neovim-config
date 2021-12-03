@@ -47,9 +47,7 @@ return require('packer').startup(function(use)
   -- LSP server
   use({
     'neovim/nvim-lspconfig',
-    config = function()
-      require('plugins/lspconfig')
-    end
+    config = function() require('plugins.lspconfig') end
   })
   use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
 
@@ -60,42 +58,34 @@ return require('packer').startup(function(use)
       "L3MON4D3/LuaSnip",
       "hrsh7th/cmp-nvim-lsp"
     },
-    config = function()
-      require('plugins/cmp')
-    end
+    config = function() require('plugins.cmp') end,
   })
 
   -- bufferline
   use({
     'akinsho/nvim-bufferline.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-      require('plugins/bufferline')
-    end,
+    config = function() require('plugins.bufferline') end,
     event = 'BufWinEnter',
   })
 
   -- statusline
   use({
     'hoob3rt/lualine.nvim',
-    config = function()
-      require('plugins/lualine')
-    end,
+    config = function() require('plugins.lualine') end,
   })
 
   -- NvimTree
   use({
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require('plugins/nvimtree') end  -- Must add this manually
+    config = function() require('plugins.nvimtree') end,  -- Must add this manually
   })
 
   -- Treesitter
   use({
     'nvim-treesitter/nvim-treesitter',
-    config = function()
-      require('plugins/treesitter')
-    end,
+    config = function() require('plugins.treesitter') end,
     run = ':TSUpdate'
   })
 
@@ -103,9 +93,7 @@ return require('packer').startup(function(use)
   use({
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/plenary.nvim'}},
-    config = function()
-      require('plugins/telescope')
-    end
+    config = function() require('plugins.telescope') end,
   })
 
   use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
@@ -114,7 +102,8 @@ return require('packer').startup(function(use)
   use({
     'mhinz/vim-startify',
     config = function()
-      vim.cmd('source '..vim.fn.stdpath('config')..'/lua/plugins/startify.vim')
+      local path = vim.fn.stdpath('config')..'/lua/plugins/startify.vim'
+      vim.cmd('source '..path)
     end
   })
 
