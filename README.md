@@ -88,14 +88,14 @@ The second part is installing the language servers themselves (described below) 
 Binaries for each language servers must be installed from their relevant repo. Most servers are installed using `npm install`, but others like `clangd` and `sumneko` for Lua require more involved procedures. Here is a list of servers and installation methods:
 
 - **Bash**: bashls
-  
+
   ```bash
   npm i -g bash-language-server
   ```
-  
+
 - **C/C++**: clangd
   May have to try several versions, but 13 is the latest one. I am using 12 and 9 or 8 should be available.
-  
+
   ```bash
   sudo apt-get install clangd-13
   ```
@@ -103,28 +103,28 @@ Binaries for each language servers must be installed from their relevant repo. M
   ```bash
   sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-13 100
   ```
-  
+
 - **Docker**: dockerls
-  
+
   ```bash
   npm i -g dockerfile-language-server-nodejs
   ```
-  
+
 - **Julia**: julials
-  
+
   ```bash
   julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
   ```
-  
+
 - **Json**: jsonls
-  
+
   ```bash
   npm i -g vscode-langservers-extracted
   ```
-  
+
 - **Lua**: sumneko_lua
   This one is a tricky one as you have to manually clone the repo and then compile it. I did not have any issues, but I did have to install ninja for this, which can be done through `apt install ninja-build`.
-  
+
   1. First clone:
   ```bash
   git clone https://github.com/sumneko/lua-language-server
@@ -139,21 +139,21 @@ Binaries for each language servers must be installed from their relevant repo. M
   ./3rd/luamake/luamake rebuild
   ```
   The configuration file in the `lsp` folder for this server should reference these binaries and the root folder of the code. I've set it to `~/.local/share/nvim/site/lsp\_servers/sumneko` there is `sumneko_lua` there which is the Lua module used to hook into this one, be careful no to overwrite.
-  
-- **Python**: pyright: 
-  
+
+- **Python**: pyright:
+
   ```bash
   npm i -g pyright
   ```
-  
+
 - **YAML**: yamlls
-  
+
   This install requires `yarn` to work
-  
+
   ```bash
   yarn global add yaml-language-server
   ```
-  
+
 If a module complains about the verion of node being too old (pyright will do this), then run the following:
 ```bash
 sudo npm cache clean -f

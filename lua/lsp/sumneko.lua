@@ -1,5 +1,5 @@
 local fn = vim.fn
-local common_on_attach = require('lsp/utils').common_on_attach
+local common_on_attach = require('lsp.utils').common_on_attach
 
 local system_name
 if fn.has('mac') == 1 then
