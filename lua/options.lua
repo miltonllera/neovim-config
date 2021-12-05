@@ -29,7 +29,7 @@ vim.o.mouse              = 'a'
 -- Vim specific
 vim.o.hidden             = true                          -- Do not save when switching buffers
 vim.o.fileencoding       = "utf-8"
-vim.o.spelllang          = 'en_us'
+vim.o.spelllang          = 'en_US'
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"                -- Display autocomplete in Command Mode
 vim.o.updatetime         = 300                           -- Delay until write to Swap and HoldCommand event

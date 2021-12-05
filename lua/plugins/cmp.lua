@@ -70,7 +70,7 @@ cmp.setup({
       end
     end,
 
-    ['S-<Tab>'] = function(fallback)
+    ['<S-Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -89,10 +89,10 @@ cmp.setup({
   sources = {
     {name = 'path'},
     {name = 'buffer'},
+    {name = 'spell'},
+    {name = 'calc'},
     {name = 'nvim_lsp'},
     {name = 'nvim_lua'},
     {name = 'luasnip'},
-    {name = 'spell'},
-    {name = 'calc'},
   },
 })
