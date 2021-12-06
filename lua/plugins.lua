@@ -24,7 +24,7 @@ cmd([[packadd packer.nvim]])
 -- Initialize pluggins
 return require('packer').startup(function(use)
   -- Let Packer manage itself
-  use({'wbtomason/packer.nvim', opt = true})
+  use({'wbthomason/packer.nvim', opt = true})
 
   -- Formatting
   use 'tpope/vim-commentary'
