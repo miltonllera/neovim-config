@@ -2,6 +2,7 @@
 vim.o.conceallevel       = 0                             -- Don't hide quotes in markdown
 vim.o.cmdheight          = 1
 vim.o.pumheight          = 10
+vim.o.showmode           = false
 vim.o.showtabline        = 2                             -- Always show tabline
 vim.o.title              = true
 vim.o.termguicolors      = true                          -- Use true colors, required for some pluggins
@@ -29,7 +30,7 @@ vim.o.mouse              = 'a'
 -- Vim specific
 vim.o.hidden             = true                          -- Do not save when switching buffers
 vim.o.fileencoding       = "utf-8"
-vim.o.spelllang          = 'en_US'
+vim.o.spelllang          = "en_uS"
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"                -- Display autocomplete in Command Mode
 vim.o.updatetime         = 300                           -- Delay until write to Swap and HoldCommand event
