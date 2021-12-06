@@ -90,7 +90,7 @@ cmp.setup({
     {name = 'path'},
     {name = 'buffer'},
     {name = 'spell'},
-    {name = 'calc'},
+    -- {name = 'calc'},
     {name = 'nvim_lsp'},
     {name = 'nvim_lua'},
     {name = 'luasnip'},
