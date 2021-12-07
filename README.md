@@ -182,6 +182,7 @@ LSPs to add:
 - Markdownd: [ltext](https://github.com/valentinjn/ltex-ls) or [zeta\_note](https://github.com/artempyanykh/zeta-note).
 
 Some pluggins to try:
+- Ranger integration: [Rnvimr](https://github.com/kevinhwang91/rnvimr). Use ranger in a floating buffer instead of as a tiled buffer.
 - Markdown preview: [glow.nvim](https://github.com/ellisonleao/glow.nvim).
 - Different file explorer: [ranger.vim](https://github.com/francoiscabrol/ranger.vim) which can be used to integrate the [Ranger](https://github.com/ranger/ranger) terminal file explorer into Vim.
 - Using GBrowse with fugitive: [rhubarb.vim](https://github.com/tpope/rhubarb.vim).
