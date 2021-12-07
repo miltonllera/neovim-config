@@ -1,10 +1,12 @@
 # Neovim configuration with Lua
 
-A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins I need for programming. Different language servers available through the LSP protocol provide code completion and analysis. Mostly this is so I don't have to remember how to do all this when setting up a new machine.
+A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins I need for programming. Different language servers available through the LSP protocol provide code completion and analysis.
+
+This readme exist so I don't have to remember how to do all these when setting up a new machine.
 
 ## Setting up
 
-The first step is to install the correct version of Neovim. Most plugins require version 0.5 or above, but `treesitter` actually requires >= 0.5.1. to work. Versions can be installed using `snap`:
+The first step is to install the correct version of Neovim. Most plugins require version 0.5 or above, but `treesitter` actually requires >= 0.5.1. to work. Version 0.6 has now been relased, which means the previous comment is deprecated. Versions can be installed using `snap`:
 
 ```bash
 # For stable versions
@@ -42,7 +44,7 @@ This will create a folder with the configuration with the following structure is
 \- init.lua
 ```
 
-This structure is important since Lua will not load files that are not in located inside `lua`. The file `init.lua` loads all the modules located inside this folder to set the configuration. Most of the names are self explanatory. The most important file here is `plugins.lua`, which is the module that loads the relevant plugins using `packer`. Some of the most important plugins are:
+This structure is important since Lua will not load files that are not located inside `lua`. The file `init.lua` loads all the modules located inside this folder to set the configuration. Most of the names are self explanatory. The most important file here is `plugins.lua`, which is the module that loads the relevant plugins. Some of the most important plugins are:
 
 1. [**`packer`**](https://github.com/wbthomason/packer.nvim): Manage the plugins.
 2. [**`lspconfig`**](https://github.com/neovim/nvim-lspconfig): provides a client for the different language servers using the Language Server Protocol (LSP).
@@ -54,7 +56,7 @@ This structure is important since Lua will not load files that are not in locate
 8. [**`telescope`**](https://github.com/nvim-telescope/telescope.nvim): Fuzzy finder.
 9. [**`lualine`**](https://github.com/nvim-lualine/lualine.nvim): A status line written in Lua which is similar to `vim-airline`.
 
-There are some more packages that are dependencies of the ones mentioned above and some formatting and themes as well. Adding new plugins is as simple using the `use` function:
+There are some more packages that are dependencies of the ones mentioned above, and some for formatting and theming as well. Adding new plugins is simple using the `use` function:
 
 ```lua
 use({
@@ -63,7 +65,7 @@ use({
 })
 ```
 
-This will load a plugin with it's standard configuration. For more complex configurations, we create the relevant file in `lua/plugins` (eg. `lua/plugins/foo.lua`) and load it using the require function along with any other option we wish to use for the `use` function:
+This will load a plugin with it's standard configuration. For more complex configurations, we create the relevant file in `lua/plugins` (eg. `lua/plugins/foo.lua`) and load it using the require function along with any other option we wish to pass on to the `use` function:
 
 ```lua
 use({
