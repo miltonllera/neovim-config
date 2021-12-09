@@ -51,7 +51,7 @@ cmp.setup({
     ['<C-c>'] = cmp.mapping.close(),
 
     -- select completion
-    ['<CR>' ] = cmp.mapping.confirm({
+    ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     }),
@@ -87,12 +87,12 @@ cmp.setup({
 
   -- Complete options from the LSP servers and the snippet engine
   sources = {
+    {name = 'nvim_lsp'},
+    {name = 'luasnip'},
+    {name = 'nvim_lua'},
     {name = 'path'},
     {name = 'buffer'},
     {name = 'spell'},
     -- {name = 'calc'},
-    {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
-    {name = 'luasnip'},
   },
 })
