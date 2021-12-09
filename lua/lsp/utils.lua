@@ -39,6 +39,12 @@ function M.common_on_attach(client, bufnr)
   -- Rename all references of symbol
   bufnnoremap("<leader>R", "<Cmd>lua vim.lsp.buf.rename()<CR>")
 
+  -- Navigate diagnostics
+  bufnnoremap("<C-n>", "<Cmd>lnext<CR>")
+  bufnnoremap("<C-p>", "<Cmd>lprev<CR>")
+  bufnnoremap("<C-N>", "<Cmd>cnext<CR>")
+  bufnnoremap("<C-P>", "<Cmd>cprev<CR>")
+
   if client.resolved_capabilities.document_formatting then
     cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end

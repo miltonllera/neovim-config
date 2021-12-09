@@ -56,10 +56,6 @@ cmp.setup({
       select = false,
     }),
 
-    -- cycle options
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()

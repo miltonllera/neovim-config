@@ -52,17 +52,21 @@ vnoremap("<leader>y", '"+y')
 nnoremap("<leader>p", '"+p')
 vnoremap("<leader>p", '"+p')
 
+-- Clear highlight search
+nnoremap("<leader>l", "<Cmd>nohlsearch<CR>")
+vnoremap("<leader>l", "<Cmd>nohlsearch<CR>")
+
 -- Local list
 nnoremap("<leader>ll", "<Cmd>lopen<CR>")
 nnoremap("<leader>lc", "<Cmd>lclose<CR>")
-nnoremap("<leader>ln", "<Cmd>lnext<CR>")
-nnoremap("<leader>lp", "<Cmd>lprev<CR>")
+nnoremap("<C-n>", "<Cmd>lnext<CR>")
+nnoremap("<C-p>", "<Cmd>lprev<CR>")
 
 -- Quickfix list
 nnoremap("<leader>ql", "<Cmd>copen<CR>")
 nnoremap("<leader>qc", "<Cmd>cclose<CR>")
-nnoremap("<leader>qn", "<Cmd>cnext<CR>")
-nnoremap("<leader>qp", "<Cmd>cprev<CR>")
+nnoremap("<C-N>", "<Cmd>cnext<CR>")
+nnoremap("<C-P>", "<Cmd>cprev<CR>")
 
 -- Open file in default application
 nnoremap("<leader>xo", "<Cmd> !xdg-open %<CR><CR>")
@@ -84,8 +88,10 @@ nnoremap("<leader>ff", "<Cmd>Telescope find_files<CR>")
 nnoremap("<leader>fb", "<Cmd>Telescope buffers<CR>")
 nnoremap("<leader>fg", "<Cmd>Telescope live_grep<CR>")
 
--- NvimTree
-nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")
+-- File explorer
+nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
+-- nnoremap("<leader>e", "<Cmd>RnvimrToggle<CR>")
+
 
 -- EasyAlign
 -- xmap("ga", "<cmd>EasyAlign")
