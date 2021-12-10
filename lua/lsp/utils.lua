@@ -40,10 +40,8 @@ function M.common_on_attach(client, bufnr)
   bufnnoremap("<leader>R", "<Cmd>lua vim.lsp.buf.rename()<CR>")
 
   -- Navigate diagnostics
-  bufnnoremap("<C-n>", "<Cmd>lnext<CR>")
-  bufnnoremap("<C-p>", "<Cmd>lprev<CR>")
-  bufnnoremap("<C-N>", "<Cmd>cnext<CR>")
-  bufnnoremap("<C-P>", "<Cmd>cprev<CR>")
+  bufnnoremap("<C-n>", "<Cmd>lua vim.diagnostic.goto_next()<CR>")
+  bufnnoremap("<C-p>", "<Cmd>lua vim.diagnostic.goto_prev()<CR>")
 
   if client.resolved_capabilities.document_formatting then
     cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
