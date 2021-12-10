@@ -177,6 +177,10 @@ To visualize fancy icons and separaterors, a patched font must be installed. [Ne
 
 ## TODO:
 
+Improvements:
+- Only open diagnostics if there are any to show.
+- Toggle highlighting on and off.
+
 LSPs to add:
 - LaTex: can use [ltext](https://github.com/valentinjn/ltex-ls) or [texlab](https://github.com/latex-lsp/texlab).
 - Markdownd: [ltext](https://github.com/valentinjn/ltex-ls) or [zeta\_note](https://github.com/artempyanykh/zeta-note).
