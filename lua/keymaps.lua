@@ -22,7 +22,7 @@ inoremap("<C-SPACE>", "<C-x><C-o>")
 nnoremap("<C-s>", ":w<CR>")
 
 -- Close buffer
-nnoremap("<C-c>", "<Cmd>q<CR>")
+nnoremap("<C-c>", ":q<CR>")
 
 -- Move around windows
 nnoremap("<C-h>", "<C-w>h")
@@ -35,8 +35,17 @@ nnoremap("<TAB>", ":BufferLineCycleNext<CR>")
 nnoremap("<S-TAB>", ":BufferLineCyclePrev<CR>")
 
 -- Splits
-nnoremap("<leader>ws", "<Cmd>split<CR>")
-nnoremap("<leader>vs", "<Cmd>vsplit<CR>")
+nnoremap("<leader>ws", ":split<CR>")
+nnoremap("<leader>vs", ":vsplit<CR>")
+
+-- Popualte substitution
+nnoremap("<leader>s", ":s//g<Left><Left>")
+nnoremap("<leader>S", ":%s//g<Left><Left>")
+nnoremap("<leader><C-s>", ":%s//gc<Left><Left><Left>")
+
+vnoremap("<leader>s", ":s//g<Left><Left>")
+vnoremap("<leader><A-s>", ":%s//g<Left><Left>")
+vnoremap("<leader>S", ":%s//gc<Left><Left><Left>")
 
 -- Delete buffer
 nnoremap("<A-w>", ":bd<CR>")
@@ -53,26 +62,26 @@ nnoremap("<leader>p", '"+p')
 vnoremap("<leader>p", '"+p')
 
 -- Clear highlight search
-nnoremap("<leader>l", "<Cmd>nohlsearch<CR>")
-vnoremap("<leader>l", "<Cmd>nohlsearch<CR>")
+nnoremap("<leader>nh", ":nohlsearch<CR>")
+vnoremap("<leader>nh", ":nohlsearch<CR>")
 
 -- Local list
-nnoremap("<leader>ll", "<Cmd>lopen<CR>")
-nnoremap("<leader>lc", "<Cmd>lclose<CR>")
-nnoremap("<C-n>", "<Cmd>lnext<CR>")
-nnoremap("<C-p>", "<Cmd>lprev<CR>")
+nnoremap("<leader>lo", ":lopen<CR>")
+nnoremap("<leader>lc", ":lclose<CR>")
+nnoremap("<C-n>", ":lnext<CR>")
+nnoremap("<C-p>", ":lprev<CR>")
 
 -- Quickfix list
-nnoremap("<leader>ql", "<Cmd>copen<CR>")
-nnoremap("<leader>qc", "<Cmd>cclose<CR>")
-nnoremap("<C-N>", "<Cmd>cnext<CR>")
-nnoremap("<C-P>", "<Cmd>cprev<CR>")
+nnoremap("<leader>co", ":copen<CR>")
+nnoremap("<leader>cc", ":cclose<CR>")
+nnoremap("<C-N>", ":cnext<CR>")
+nnoremap("<C-P>", ":cprev<CR>")
 
 -- Open file in default application
 nnoremap("<leader>xo", "<Cmd> !xdg-open %<CR><CR>")
 
 -- Fugitive
-nnoremap("<leader>G", "<Cmd>G<CR>")
+nnoremap("<leader>G", ":G<CR>")
 
 -- Show line diagnostics
 nnoremap("<leader>d", '<Cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
