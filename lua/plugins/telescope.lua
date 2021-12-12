@@ -4,12 +4,7 @@ local actions = require('telescope.actions')
 
 require('telescope').setup({
   defaults = {
-    -- layout_strategy = 'bottom_pane',
-    -- pickers = {
-    --   find_files = {
-    --     theme = 'dropdown',
-    --   },
-    -- },
+    sorting_strategy = "ascending",
     mappings = {
       i = {
         ['<C-j>'] = actions.move_selection_next,
@@ -20,6 +15,12 @@ require('telescope').setup({
         ['<C-c>'] = actions.close,
       },
     },
+    layout_config = {
+      horizontal ={
+        height = 47,
+        prompt_position = "top",
+      }
+    }
   },
   extensions ={
       fzf = {
