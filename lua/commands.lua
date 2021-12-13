@@ -1,7 +1,7 @@
 -- Define commands
 
 -- Remove trailing whitespaces
--- (if a file requires trailing spaces, exclude it's type using the regex)
+-- (if a file requires trailing spaces, exclude its type using the regex)
 vim.cmd [[autocmd BufWritePre * %s/\s\+$//e ]]
 
 -- Swap folder

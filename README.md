@@ -2,7 +2,7 @@
 
 A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins I need for programming. Different language servers available through the LSP protocol provide code completion and analysis.
 
-This readme exist so I don't have to remember how to do all these when setting up a new machine.
+This readme exist so I don't have to remember how to do all these things when setting up a new machine.
 
 ## Setting up
 
@@ -170,7 +170,7 @@ Inline error messages are disabled in the current configuration. They create a l
 
 ## Web-dev Icons
 
-To visualize fancy icons and separaterors, a patched font must be installed. [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) has many already patched and offers instructions on how to create new ones (I don't recommend). To install a patched font follow these instructions:
+To visualize fancy icons and separators, a patched font must be installed. [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) has many already patched and offers instructions on how to create new ones (I don't recommend). To install a patched font follow these instructions:
 1. Head to the [repo](https://github.com/ryanoasis/nerd-fonts) and download the font. I use Robot Mono.
 2. Copy the file to `~/.local/share/fonts/`
 3. Change the font in the terminal emulator's settings to the patched font.
