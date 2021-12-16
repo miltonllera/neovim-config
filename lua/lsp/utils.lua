@@ -34,7 +34,7 @@ function M.common_on_attach(client, bufnr)
   bufnnoremap("K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
 
   -- Signature help
-  bufnnoremap("<C-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>")
+  bufnnoremap("<A-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>")
 
   -- Rename all references of symbol
   bufnnoremap("<leader>R", "<Cmd>lua vim.lsp.buf.rename()<CR>")
