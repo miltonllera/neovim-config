@@ -72,7 +72,7 @@ use({
   '<author>/<plugin-repo>',
   config = function() require('plugin/<plugin-name>') end,
   -- Optionally require other plugins.
-  requires = 'author/<required-plugin-repo'
+  requires = '<author>/<required-plugin-repo>'
   -- Other functionality
 })
 ```
