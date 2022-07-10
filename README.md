@@ -6,6 +6,8 @@ This readme exist so I don't have to remember how to do all these things when se
 
 ## Setting up
 
+### Linux
+
 The first step is to install the correct version of Neovim. Most plugins require version 0.5 or above, but `treesitter` actually requires >= 0.5.1. to work. Version 0.6 has now been relased, which means the previous comment is deprecated. Versions can be installed using `snap`:
 
 ```bash
@@ -21,6 +23,23 @@ We also need to install the node package manager `npm` since most language serve
 ```bash
 sudo apt install npm
 ```
+
+### MacOS
+
+Assume `brew` is installed, then installing Neovim is straighforward:
+
+```bash
+# For stable version
+brew install neovim
+
+# for nightly version
+brew install --HEAD neovim
+
+# To update
+brew reinstall neovim
+```
+
+Additionally, you may need to configure the `Option` key to behave like `Alt`. In iTerm2, this can be done in `Preferences -> Profiles -> Keys'. Change the left option behaviour to `Esc+`.
 
 ## Installing the configuration
 
@@ -87,7 +106,7 @@ The second part is installing the language servers themselves (described below) 
 
 ### Installing the language servers
 
-Binaries for each language servers must be installed from their relevant repo. Most servers are installed using `npm install`, but others like `clangd` and `sumneko` for Lua require more involved procedures. Here is a list of servers and installation methods:
+Binaries for each language servers must be installed from their relevant repo. Most servers are installed using `npm install`, but others like `clangd` and `sumneko` for Lua require more involved procedures. Here is a list of servers and installation methods. These should work both on `bash` and `zsh`.
 
 - **Bash**: bashls
 
@@ -106,6 +125,8 @@ Binaries for each language servers must be installed from their relevant repo. M
   sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-13 100
   ```
 
+  **NOTE**: On MacOS `clang` is installed through XCode, and you probably don't need to do anything else. You can check this by running `clang --version` from the terminal.
+
 - **Docker**: dockerls
 
   ```bash
@@ -118,7 +139,7 @@ Binaries for each language servers must be installed from their relevant repo. M
   julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
   ```
 
-- **Json**: jsonls
+- **JSOS**: jsonls
 
   ```bash
   npm i -g vscode-langservers-extracted
@@ -156,6 +177,11 @@ Binaries for each language servers must be installed from their relevant repo. M
   yarn global add yaml-language-server
   ```
 
+  For MacOS use `brew`:
+  ```
+  brew install yaml-language-server
+  ```
+
 If a module complains about the verion of node being too old (pyright will do this), then run the following:
 ```bash
 sudo npm cache clean -f
@@ -172,7 +198,9 @@ Inline error messages are disabled in the current configuration. They create a l
 
 To visualize fancy icons and separators, a patched font must be installed. [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) has many already patched and offers instructions on how to create new ones (I don't recommend). To install a patched font follow these instructions:
 1. Head to the [repo](https://github.com/ryanoasis/nerd-fonts) and download the font. I use Robot Mono.
-2. Copy the file to `~/.local/share/fonts/`
+2. Copy the file to the relevant folder:
+  - Linux: `~/.local/share/fonts/`.
+  - MacOS: `/Library/Fonts'`.
 3. Change the font in the terminal emulator's settings to the patched font.
 
 ## TODO:

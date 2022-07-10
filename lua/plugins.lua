@@ -118,7 +118,7 @@ return require('packer').startup(function(use)
   })
 
   -- Python
-  use  'heavenshell/vim-pydocstring'
+  -- use  'heavenshell/vim-pydocstring'   -- Overwrites a keymap, need to fix.
   use 'bfredl/nvim-ipy'
 
   -- Markdown
