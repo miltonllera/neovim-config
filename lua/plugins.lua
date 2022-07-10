@@ -28,6 +28,9 @@ return require('packer').startup(function(use)
 
   -- Formatting
   use 'tpope/vim-commentary'
+  use 'tpope/vim-unimpaired'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
   use 'junegunn/vim-easy-align'
 
   -- Themes
@@ -53,6 +56,7 @@ return require('packer').startup(function(use)
 
   -- Autocomplete
   use "L3MON4D3/LuaSnip"  -- Snippet engine
+  use "ray-x/lsp_signature.nvim"
 
   use({
     "hrsh7th/nvim-cmp",
@@ -109,6 +113,25 @@ return require('packer').startup(function(use)
     'mhinz/vim-startify',
     config = function()
       local path = vim.fn.stdpath('config')..'/lua/plugins/startify.vim'
+      vim.cmd('source '..path)
+    end
+  })
+
+  -- Python
+  use  'heavenshell/vim-pydocstring'
+  use 'bfredl/nvim-ipy'
+
+  -- Markdown
+  use 'godlygeek/tabular'
+  use 'ellisonleao/glow.nvim'
+
+  -- TOML Files
+  use({'cespare/vim-toml'})
+
+  -- Poetry
+  use({'petobens/poet-v',
+    config = function()
+      local path = vim.fn.stdpath('config')..'/lua/plugins/poet-v.vim'
       vim.cmd('source '..path)
     end
   })

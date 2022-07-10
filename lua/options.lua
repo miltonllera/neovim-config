@@ -40,7 +40,8 @@ vim.o.updatetime         = 300                           -- Delay until write to
 -- vim.g.loaded_netrwPlugin = false
 
 -- Providers
--- vim.g.python3_host_prog  = '/home/milton/software/miniconda/envs/pynvim/bin/python'
+
+vim.g.python3_host_prog  = os.getenv("HOME").."/.local/bin/pyenv/versions/pynvim/bin/python"
 
 -- Disable inline error messages
 vim.diagnostic.config {

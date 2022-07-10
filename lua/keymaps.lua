@@ -38,7 +38,7 @@ nnoremap("<S-TAB>", ":BufferLineCyclePrev<CR>")
 nnoremap("<leader>ws", ":split<CR>")
 nnoremap("<leader>vs", ":vsplit<CR>")
 
--- Popualte substitution
+-- Populate substitution
 nnoremap("<leader>s", ":s//g<Left><Left>")
 nnoremap("<leader>S", ":%s//g<Left><Left>")
 nnoremap("<leader><C-s>", ":%s//gc<Left><Left><Left>")
