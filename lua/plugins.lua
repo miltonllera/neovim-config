@@ -136,6 +136,9 @@ return require('packer').startup(function(use)
     end
   })
 
+  -- kitty config highlight
+  use "fladson/vim-kitty"
+
   if packer_bootstrap then
     require('packer').sync()
   end

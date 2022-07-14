@@ -203,6 +203,15 @@ To visualize fancy icons and separators, a patched font must be installed. [Nerd
   - MacOS: `/Library/Fonts'`.
 3. Change the font in the terminal emulator's settings to the patched font.
 
+### Nerd Fonts with Kitty
+
+If using `kitty` as default terminal, then the procedure above won't work. First, `kitty` does not support non-monospaced fonts due to how it renders text. Second, the fonts cannot be patched. In fact, kitty takes care of patching on it's own which is great. To install the fonts follow the instructions in this [blog](https://erwin.co/kitty-and-nerd-fonts/#symbols), which are straighforward.
+
+TL;DR for `MacOS`:
+1. Download and install the fonts and put the file `Symbols-2048-em Nerd Font Complete.tff` (or whatever subset you decide to use) in the `Library/Fonts/` folder for system wide use, or the local variant.
+2. If the glyphs aren't displayed by default, then they can be specified manually by following the instructions.
+3. Refresh the fonts cache.
+
 ## TODO:
 
 Improvements:
