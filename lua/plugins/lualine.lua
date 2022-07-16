@@ -8,6 +8,7 @@ require('lualine').setup({
     -- Separators might look weird for certain fonts (eg Cascadia)
     component_separators = {left = '', right = ''},
     section_separators = {left = '', right = ''},
+    globalstatus = true,
   },
   sections = {
     lualine_a = {'mode'},
