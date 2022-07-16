@@ -126,7 +126,7 @@ return require('packer').startup(function(use)
   use 'ellisonleao/glow.nvim'
 
   -- TOML Files
-  use({'cespare/vim-toml'})
+  use 'cespare/vim-toml'
 
   -- Poetry
   use({'petobens/poet-v',

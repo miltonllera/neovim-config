@@ -58,8 +58,8 @@ nnoremap("<leader>y", '"+y')
 vnoremap("<leader>y", '"+y')
 
 -- Paste from system clippboard
-nnoremap("<leader>p", '"+p')
-vnoremap("<leader>p", '"+p')
+nnoremap("<leader><C-v>", '"+p')
+vnoremap("<leader><C-v>", '"+p')
 
 -- Clear highlight search
 nnoremap("<leader>nh", ":nohlsearch<CR>")
@@ -104,3 +104,7 @@ nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
 -- EasyAlign
 -- xmap("ga", "<cmd>EasyAlign")
 -- nmap("ga", "<cmd>EasyAlign")
+
+-- Markdown preview
+nnoremap("<leader>P", "<Cmd>Glow<CR>")
+

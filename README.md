@@ -139,7 +139,7 @@ Binaries for each language servers must be installed from their relevant repo. M
   julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
   ```
 
-- **JSOS**: jsonls
+- **JSON**: jsonls
 
   ```bash
   npm i -g vscode-langservers-extracted
@@ -224,7 +224,6 @@ LSPs to add:
 
 Some pluggins to try:
 - Ranger integration: [Rnvimr](https://github.com/kevinhwang91/rnvimr). Use ranger in a floating buffer instead of as a tiled buffer.
-- Markdown preview: [glow.nvim](https://github.com/ellisonleao/glow.nvim).
 - Different file explorer: [ranger.vim](https://github.com/francoiscabrol/ranger.vim) which can be used to integrate the [Ranger](https://github.com/ranger/ranger) terminal file explorer into Vim.
 - Using GBrowse with fugitive: [rhubarb.vim](https://github.com/tpope/rhubarb.vim).
 - Prettier quickfix/localist: [trouble.nvim](https://github.com/folke/trouble.nvim).
