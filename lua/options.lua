@@ -35,12 +35,12 @@ vim.o.spelllang          = "en_us"
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"                -- Display auto-complete in Command Mode
 vim.o.updatetime         = 300                           -- Delay until write to Swap and HoldCommand event
+vim.g.do_file_type_lua   = 1
 
 -- Disable default plugins
 -- vim.g.loaded_netrwPlugin = false
 
 -- Providers
-
 vim.g.python3_host_prog  = os.getenv("HOME").."/.local/bin/pyenv/versions/pynvim/bin/python"
 
 -- Disable inline error messages
