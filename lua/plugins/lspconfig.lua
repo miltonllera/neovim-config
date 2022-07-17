@@ -16,3 +16,7 @@ for _, lsp in ipairs(servers) do
 end
 
 require('lsp.sumneko')
+
+-- signature help hover
+require "lsp_signature".setup({ })
+

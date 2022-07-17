@@ -136,8 +136,10 @@ return require('packer').startup(function(use)
     end
   })
 
-  -- kitty config highlight
+  -- kitty config syntax-highlight
   use "fladson/vim-kitty"
+
+  -- note taking with zettelkasten
 
   if packer_bootstrap then
     require('packer').sync()
