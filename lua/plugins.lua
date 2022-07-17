@@ -33,6 +33,10 @@ return require('packer').startup(function(use)
   use 'tpope/vim-repeat'
   use 'junegunn/vim-easy-align'
 
+  -- Python formatting
+  use "EgZvor/vim-black"
+  use 'jeetsukumaran/vim-python-indent-black'
+
   -- Themes
   use 'folke/tokyonight.nvim'
   use 'marko-cerovac/material.nvim'

@@ -42,6 +42,7 @@ vim.g.do_file_type_lua   = 1
 
 -- Providers
 vim.g.python3_host_prog  = os.getenv("HOME").."/.local/bin/pyenv/versions/pynvim/bin/python"
+vim.g.black_virtualenv = os.getenv("HOME").."/.local/bin/pyenv/versions/pynvim/"
 
 -- Disable inline error messages
 vim.diagnostic.config {
