@@ -40,9 +40,14 @@ vim.g.do_file_type_lua   = 1
 -- Disable default plugins
 -- vim.g.loaded_netrwPlugin = false
 
--- Providers
-vim.g.python3_host_prog  = os.getenv("HOME").."/.local/bin/pyenv/versions/pynvim/bin/python"
-vim.g.black_virtualenv = os.getenv("HOME").."/.local/bin/pyenv/versions/pynvim/"
+-- Python providers
+local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"
+vim.g.python3_host_prog = os.getenv("HOME")..pynvim_env.."/bin/python"
+vim.g.black_virtualenv  = os.getenv("HOME")..pynvim_env
+
+-- Disable unused providers
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 -- Disable inline error messages
 vim.diagnostic.config {
