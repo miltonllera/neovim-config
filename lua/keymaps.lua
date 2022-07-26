@@ -1,3 +1,6 @@
+-- General keymaps that are not pluggin dependant
+-- the file "lua/lsp/utils.lua" contains lsp-specific commands.
+
 local Utils = require('utils')
 
 -- local exprnnoremap = Utils.exprnnoremap
@@ -104,7 +107,3 @@ nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
 -- EasyAlign
 -- xmap("ga", "<cmd>EasyAlign")
 -- nmap("ga", "<cmd>EasyAlign")
-
--- Markdown preview
-nnoremap("<leader>P", "<Cmd>Glow<CR>")
-

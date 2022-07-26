@@ -133,12 +133,12 @@ return require('packer').startup(function(use)
   use 'cespare/vim-toml'
 
   -- Poetry
-  use({'petobens/poet-v',
-    config = function()
-      local path = vim.fn.stdpath('config')..'/lua/plugins/poet-v.vim'
-      vim.cmd('source '..path)
-    end
-  })
+  -- use({'petobens/poet-v',
+  --   config = function()
+  --     local path = vim.fn.stdpath('config')..'/lua/plugins/poet-v.vim'
+  --     vim.cmd('source '..path)
+  --   end
+  -- })
 
   -- kitty config syntax-highlight
   use "fladson/vim-kitty"
