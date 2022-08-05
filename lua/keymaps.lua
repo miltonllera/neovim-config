@@ -30,7 +30,6 @@ vnoremap("h", ";")
 
 -- kj to normal mode
 inoremap("lk", "<Esc>")
-inoremap("kl", "<Esc>")
 
 -- Run omnifunc, mostly used for autocomplete
 inoremap("<C-SPACE>", "<C-x><C-o>")
