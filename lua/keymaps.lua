@@ -15,8 +15,22 @@ local inoremap = Utils.inoremap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- shift movement keys to the right
+nnoremap("j", "<Left>")
+nnoremap("k", "<Down>")
+nnoremap("l", "<Up>")
+nnoremap(";", "<Right>")
+nnoremap("h", ";")
+
+vnoremap("j", "<Left>")
+vnoremap("k", "<Down>")
+vnoremap("l", "<Up>")
+vnoremap(";", "<Right>")
+vnoremap("h", ";")
+
 -- kj to normal mode
-inoremap("kj", "<Esc>")
+inoremap("lk", "<Esc>")
+inoremap("kl", "<Esc>")
 
 -- Run omnifunc, mostly used for autocomplete
 inoremap("<C-SPACE>", "<C-x><C-o>")
@@ -27,11 +41,11 @@ nnoremap("<C-s>", ":w<CR>")
 -- Close buffer
 nnoremap("<C-c>", ":q<CR>")
 
--- Move around windows
-nnoremap("<C-h>", "<C-w>h")
-nnoremap("<C-j>", "<C-w>j")
-nnoremap("<C-k>", "<C-w>k")
-nnoremap("<C-l>", "<C-w>l")
+-- Move around windows (shifted to the right)
+nnoremap("<C-j>", "<C-w>h")
+nnoremap("<C-k>", "<C-w>j")
+nnoremap("<C-l>", "<C-w>k")
+nnoremap("<C-;>", "<C-w>l")
 
 -- Switch buffers (needs nvim-bufferline)
 nnoremap("<TAB>", ":BufferLineCycleNext<CR>")
@@ -97,6 +111,7 @@ nnoremap("<leader><A-d>", "<Cmd>lua vim.diagnostic.setqflist()<CR>")
 
 -- Telescope
 nnoremap("<leader>ff", "<Cmd>Telescope find_files<CR>")
+nnoremap("<leader>fhf","<Cmd>Telescope find_files hidden=true<CR>")
 nnoremap("<leader>fb", "<Cmd>Telescope buffers<CR>")
 nnoremap("<leader>fg", "<Cmd>Telescope live_grep<CR>")
 

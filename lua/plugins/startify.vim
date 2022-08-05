@@ -8,8 +8,9 @@ let g:startify_change_to_dir  = 1  " This is the default value
 
 " Add bashrc and nvim config files
 let g:startify_bookmarks = [
-          \ {'c': '~/.zshrc'},
-          \ {'a': '~/.zsh_aliases'},
+          \ {'c': '~/.config/zsh/.zshrc'},
+          \ {'a': '~/.config/zsh/.zsh_aliases'},
+          \ {'d': '~/.config/dotfiles/README.md'},
           \ {'n': '~/.config/nvim/init.lua'}
           \ ]
 
