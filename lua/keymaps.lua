@@ -17,7 +17,7 @@ vim.g.maplocalleader = " "
 
 
 -- kj to normal mode
-inoremap("lk", "<Esc>")
+inoremap("kj", "<Esc>")
 
 -- Run omnifunc, mostly used for autocomplete
 inoremap("<C-SPACE>", "<C-x><C-o>")
