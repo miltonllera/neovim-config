@@ -15,18 +15,6 @@ local inoremap = Utils.inoremap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- shift movement keys to the right
-nnoremap("j", "<Left>")
-nnoremap("k", "<Down>")
-nnoremap("l", "<Up>")
-nnoremap(";", "<Right>")
-nnoremap("h", ";")
-
-vnoremap("j", "<Left>")
-vnoremap("k", "<Down>")
-vnoremap("l", "<Up>")
-vnoremap(";", "<Right>")
-vnoremap("h", ";")
 
 -- kj to normal mode
 inoremap("lk", "<Esc>")
@@ -41,10 +29,10 @@ nnoremap("<C-s>", ":w<CR>")
 nnoremap("<C-c>", ":q<CR>")
 
 -- Move around windows (shifted to the right)
-nnoremap("<C-j>", "<C-w>h")
-nnoremap("<C-k>", "<C-w>j")
-nnoremap("<C-l>", "<C-w>k")
-nnoremap("<C-;>", "<C-w>l")
+nnoremap("<C-h>", "<C-w>h")
+nnoremap("<C-j>", "<C-w>j")
+nnoremap("<C-k>", "<C-w>k")
+nnoremap("<C-l>", "<C-w>l")
 
 -- Switch buffers (needs nvim-bufferline)
 nnoremap("<TAB>", ":BufferLineCycleNext<CR>")
