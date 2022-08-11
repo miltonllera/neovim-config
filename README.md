@@ -216,11 +216,9 @@ TL;DR for `MacOS`:
 
 Improvements:
 - Only open diagnostics if there are any to show.
-- Toggle highlighting on and off.
 
 LSPs to add:
-- LaTex: can use [ltext](https://github.com/valentinjn/ltex-ls) or [texlab](https://github.com/latex-lsp/texlab).
-- Markdownd: [ltext](https://github.com/valentinjn/ltex-ls) or [zeta\_note](https://github.com/artempyanykh/zeta-note).
+- LaTex: can use [texlab](https://github.com/latex-lsp/texlab).
 
 Some pluggins to try:
 - Ranger integration: [Rnvimr](https://github.com/kevinhwang91/rnvimr). Use ranger in a floating buffer instead of as a tiled buffer.
