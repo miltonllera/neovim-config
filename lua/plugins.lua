@@ -26,31 +26,6 @@ return require('packer').startup(function(use)
   -- Let Packer manage itself
   use({'wbthomason/packer.nvim', opt = true})
 
-  -- Formatting
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-unimpaired'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-repeat'
-  use 'junegunn/vim-easy-align'
-
-  -- Python formatting
-  use "EgZvor/vim-black"
-  use 'jeetsukumaran/vim-python-indent-black'
-
-  -- Themes
-  use 'folke/tokyonight.nvim'
-  use 'marko-cerovac/material.nvim'
-
-  -- git commands
-  use 'tpope/vim-fugitive'
-  -- use 'airblade/vim-gitgutter'  -- The standard one I use
-  -- Trying out gitsigns
-  use ({
-    'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
-    config = function() require('plugins.gitsigns') end
-  })
-
   -- LSP server
   use({
     'neovim/nvim-lspconfig',
@@ -59,9 +34,6 @@ return require('packer').startup(function(use)
   use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
 
   -- Autocomplete
-  use "L3MON4D3/LuaSnip"  -- Snippet engine
-  use "ray-x/lsp_signature.nvim"
-
   use({
     "hrsh7th/nvim-cmp",
     -- Sources for nvim-cmp
@@ -70,10 +42,34 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
     },
     config = function() require('plugins.cmp') end,
   })
+
+  -- Treesitter
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    config = function() require('plugins.treesitter') end,
+    run = ':TSUpdate'
+  })
+
+  -- Snippets
+  use {"L3MON4D3/LuaSnip", config = function() require('plugins.snippets') end}
+  use "rafamadriz/friendly-snippets"
+
+  -- Signature help
+  use "ray-x/lsp_signature.nvim"
+
+  -- Telescope
+  use({
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/plenary.nvim'}},
+    config = function() require('plugins.telescope') end,
+  })
+
+  use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
 
   -- bufferline
   use({
@@ -96,22 +92,6 @@ return require('packer').startup(function(use)
     config = function() require('plugins.nvimtree') end,  -- Must add this manually
   })
 
-  -- Treesitter
-  use({
-    'nvim-treesitter/nvim-treesitter',
-    config = function() require('plugins.treesitter') end,
-    run = ':TSUpdate'
-  })
-
-  -- Telescope
-  use({
-    'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/plenary.nvim'}},
-    config = function() require('plugins.telescope') end,
-  })
-
-  use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
-
   -- Startify
   use({
     'mhinz/vim-startify',
@@ -121,9 +101,30 @@ return require('packer').startup(function(use)
     end
   })
 
+  -- git commands
+  use 'tpope/vim-fugitive'
+
+  -- Gitsigns
+  use ({
+    'lewis6991/gitsigns.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
+    config = function() require('plugins.gitsigns') end
+  })
+
+  -- Formatting
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-unimpaired'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
+  use 'junegunn/vim-easy-align'
+
+  -- Python formatting
+  use "EgZvor/vim-black"
+  use 'jeetsukumaran/vim-python-indent-black'
+
   -- Python
   -- use  'heavenshell/vim-pydocstring'   -- Overwrites a keymap, need to fix.
-  use 'bfredl/nvim-ipy'
+  -- use 'bfredl/nvim-ipy'
 
   -- Markdown
   use 'godlygeek/tabular'
@@ -144,6 +145,10 @@ return require('packer').startup(function(use)
   use "fladson/vim-kitty"
 
   -- note taking with zettelkasten
+
+  -- Themes
+  use 'folke/tokyonight.nvim'
+  use 'marko-cerovac/material.nvim'
 
   if packer_bootstrap then
     require('packer').sync()
