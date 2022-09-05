@@ -20,12 +20,6 @@ require('bufferline').setup({
         highlight = 'Directory'
     }},
   },
-  custom_areas = {
-    right = function()
-      local result = {{text = "Buffers", fg = "#ffffff"}}
-      return result
-    end,
-  },
   -- Don't use italic on current buffer
   highlights = {buffer_selected = { bold = true },},
 })
