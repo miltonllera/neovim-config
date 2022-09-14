@@ -40,13 +40,13 @@ function M.common_on_attach(client, bufnr)
   bufnnoremap("<leader>R", "<Cmd>lua vim.lsp.buf.rename()<CR>")
 
   -- Navigate diagnostics
-  bufnnoremap("<C-n>", "<Cmd>lua vim.diagnostic.goto_next()<CR>")
+  bufnnoremap("<C-m>", "<Cmd>lua vim.diagnostic.goto_next()<CR>")
   bufnnoremap("<C-p>", "<Cmd>lua vim.diagnostic.goto_prev()<CR>")
 
   -- Markdown preview TODO: make this conditional, but I also don't use it all that much
   -- bufnnnoremap("<leader>P", "<Cmd>Glow<CR>")
 
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.documentFormattingProvider then
     cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
 end

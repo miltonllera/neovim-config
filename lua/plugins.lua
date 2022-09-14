@@ -44,6 +44,8 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
+      --'hrsh7th/nvim-compe',
+      "f3fora/cmp-spell",
     },
     config = function() require('plugins.cmp') end,
   })
@@ -147,8 +149,48 @@ return require('packer').startup(function(use)
   -- note taking with zettelkasten
 
   -- Themes
+  -- use 'ghifarit53/tokyonight-vim'
   use 'folke/tokyonight.nvim'
   use 'marko-cerovac/material.nvim'
+
+  -- Auto load doc
+  use 'djoshea/vim-autoread'
+  
+  -- Auto comment text
+  use 'scrooloose/nerdcommenter' 
+
+  -- Multicursors
+  use({
+    'mg979/vim-visual-multi',
+    config = function()
+      local path = vim.fn.stdpath('config')..'/lua/plugins/vim-visual-multi.vim'
+      vim.cmd('source '..path)
+    end
+  })
+
+
+  use { 'norcalli/nvim-colorizer.lua', config = function() require('plugins.colorizer') end, event = "BufRead" }
+  use { 'p00f/nvim-ts-rainbow', after = "nvim-treesitter" }
+  use { 'windwp/nvim-autopairs', config = function() require('plugins.autopairs') end, after = "nvim-cmp" }
+
+ 
+  -- for formatters and linters 
+  use ({
+    'dense-analysis/ale',
+    config = function()
+      local path = vim.fn.stdpath('config')..'/lua/plugins/ale.vim'
+      vim.cmd('source '..path)
+    end
+  })
+
+  use {
+    'lewis6991/spellsitter.nvim',
+    config = function() require('plugins.spellsitter') end
+  }
+  --use { 
+    --"jose-elias-alvarez/null-ls.nvim",
+   --config = function() require('plugins.null-ls') end
+  --} 
 
   if packer_bootstrap then
     require('packer').sync()

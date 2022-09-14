@@ -26,24 +26,28 @@ vim.o.splitright         = true
 vim.o.scrolloff          = 12                           -- Minimum offset in lines to screen borders
 vim.o.sidescrolloff      = 8
 vim.o.mouse              = 'a'
+vim.o.swapfile           = false
+
 
 -- Vim specific
 vim.o.hidden             = true                         -- Do not save when switching buffers
 vim.o.fileencoding       = "utf-8"
-vim.o.spell              = false
+vim.o.spell              = true
 vim.o.spelllang          = "en_us"
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"               -- Display auto-complete in Command Mode
 vim.o.updatetime         = 300                          -- Delay until write to Swap and HoldCommand event
 vim.g.do_file_type_lua   = 1
+vim.wo.colorcolumn       = '140'
 
 -- Disable default plugins
 -- vim.g.loaded_netrwPlugin = false                     -- This had an issue but I can't remember now.
 
 -- Python providers
 local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"
-vim.g.python3_host_prog = os.getenv("HOME")..pynvim_env.."/bin/python"
-vim.g.black_virtualenv  = os.getenv("HOME")..pynvim_env
+--vim.g.python3_host_prog = "C:\Python310\python.exe"
+--vim.g.python3_host_prog = os.getenv("HOME")..pynvim_env.."/bin/python"
+--vim.g.black_virtualenv  = os.getenv("HOME")..pynvim_env
 
 -- Disable unused providers
 vim.g.loaded_perl_provider = 0

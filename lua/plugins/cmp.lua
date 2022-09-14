@@ -1,5 +1,6 @@
 local fn = vim.fn
 
+
 -- local Utils = require('utils')
 local luasnip = require('luasnip')
 local cmp = require('cmp')
@@ -40,7 +41,7 @@ cmp.setup({
   -- Mappings
   mapping = {
     -- open/close autocomplete
-    ['<C-Space>'] = function(fallback)
+    ['<C-k>'] = function(fallback)
       if cmp.visible() then
         cmp.close()
       else
@@ -48,7 +49,7 @@ cmp.setup({
       end
     end,
 
-    ['<C-c>'] = cmp.mapping.close(),
+    ['<C-l>'] = cmp.mapping.close(),
 
     -- select completion
     ['<CR>'] = cmp.mapping.confirm({
@@ -92,3 +93,4 @@ cmp.setup({
     -- {name = 'calc'},
   },
 })
+

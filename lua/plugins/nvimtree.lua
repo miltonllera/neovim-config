@@ -1,8 +1,72 @@
 -- NVIM tree
 
+
+
 require('nvim-tree').setup({
   -- Allow using gx
   disable_netrw = false,
   hijack_netrw = false,
-  update_cwd = true,
+  update_cwd = true,  
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+    icons = {
+      webdev_colors = true,
+      git_placement = "before",
+      padding = " ",
+      symlink_arrow = " ➛ ",
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
+      glyphs = {
+        default = "",
+        symlink = "",
+        bookmark = "",
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+         
+        --  default = "",
+        --  open = "",  
+          default = "", 
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+      }
+    }
+  },
+  filters = {
+    dotfiles = true,
+  },
 })
+
+
+
+require('nvim-web-devicons').setup {
+  -- your personnal icons can go here (to override)
+  -- you can specify color or cterm_color instead of specifying both of them
+  -- DevIcon will be appended to `name`
+  override = {
+   folder = {
+     icon = "",
+     color = "#428850",
+   }
+  };
+  -- globally enable default icons (default to false)
+  -- will get overriden by `get_icons` option
+  default = true;
+ }

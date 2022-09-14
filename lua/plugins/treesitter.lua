@@ -13,5 +13,12 @@ require('nvim-treesitter.configs').setup({
 		"lua",
     "python",
     "yaml",
+    "typescript", 
+    "javascript", 
+    "html", 
+    "css", 
+    "scss", 
+    "c_sharp", 
+    "tsx" 
 	},
 })
