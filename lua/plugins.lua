@@ -21,6 +21,8 @@ cmd([[
   augroup end
 ]])
 
+
+
 -- Initialize pluggins
 return require('packer').startup(function(use)
   -- Let Packer manage itself
@@ -31,6 +33,7 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     config = function() require('plugins.lspconfig') end
   })
+
   use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
 
   -- Autocomplete
@@ -49,6 +52,7 @@ return require('packer').startup(function(use)
     },
     config = function() require('plugins.cmp') end,
   })
+
 
   -- Treesitter
   use({
@@ -69,6 +73,7 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/plenary.nvim'}},
     config = function() require('plugins.telescope') end,
+    event = "BufRead",
   })
 
   use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
@@ -149,8 +154,9 @@ return require('packer').startup(function(use)
   -- note taking with zettelkasten
 
   -- Themes
-  -- use 'ghifarit53/tokyonight-vim'
+  --use 'ghifarit53/tokyonight-vim'
   use 'folke/tokyonight.nvim'
+
   use 'marko-cerovac/material.nvim'
 
   -- Auto load doc
@@ -175,13 +181,13 @@ return require('packer').startup(function(use)
 
  
   -- for formatters and linters 
-  use ({
+ use ({
     'dense-analysis/ale',
     config = function()
-      local path = vim.fn.stdpath('config')..'/lua/plugins/ale.vim'
+     local path = vim.fn.stdpath('config')..'/lua/plugins/ale.vim'
       vim.cmd('source '..path)
-    end
-  })
+     end
+   })
 
   use {
     'lewis6991/spellsitter.nvim',

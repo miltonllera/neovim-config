@@ -31,3 +31,7 @@ let g:startify_lists = [
           \ ]
 
 
+" Python
+let g:python3_host_prog = 'C:\Python310\python.exe'
+set pyxversion=3
+set pyx=3

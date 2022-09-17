@@ -1,10 +1,10 @@
 " Ale config
 
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'],
-\   'css': ['prettier', 'eslint'],
-\   'typescript': ['prettier', 'eslint'],
-\   'typescriptreact': ['prettier', 'eslint'],
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_linters_explicit = 1

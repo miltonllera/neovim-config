@@ -53,9 +53,4 @@ local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
--- Disable inline error messages
-vim.diagnostic.config {
-  virtual_text = false,
-  underline = false,
-  signs = true,          -- Keep gutter signs
-}
+

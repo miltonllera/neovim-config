@@ -22,6 +22,12 @@ require('telescope').setup({
       }
     }
   },
+  -- fix delay issues
+  pickers = {
+    find_files = {
+      path_display = { "smart" }
+    }
+  },
   extensions ={
       fzf = {
         fuzzy = true,                    -- false will only do exact matching
