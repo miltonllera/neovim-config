@@ -1,4 +1,7 @@
-local null_ls = require("null-ls")
+local status, null_ls = pcall(require, "null-ls")
+if (not status) then return end
+
+--local null_ls = require("null-ls")
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
@@ -10,6 +13,12 @@ null_ls.setup {
   debug = false,
 
   sources = {
+    sources = {
+      null_ls.builtins.diagnostics.eslint_d.with({
+        diagnostics_format = '[eslint] #{m}\n(#{c})'
+      }),
+      null_ls.builtins.diagnostics.fish
+    },
     formatting.prettier.with {
       extra_filetypes = { "toml" },
       extra_args = { "--semi", "--single-quote", "--jsx-single-quote" },

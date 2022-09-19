@@ -1,4 +1,7 @@
-local nvim_lsp = require('lspconfig')
+local status, nvim_lsp = pcall(require, "lspconfig")
+if (not status) then return end
+
+--local nvim_lsp = require('lspconfig')
 local utils = require('lsp.utils')
 local common_on_attach = utils.common_on_attach
 

@@ -47,7 +47,7 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
-      --'hrsh7th/nvim-compe',
+      'hrsh7th/nvim-compe',
       "f3fora/cmp-spell",
     },
     config = function() require('plugins.cmp') end,
@@ -71,9 +71,11 @@ return require('packer').startup(function(use)
   -- Telescope
   use({
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/plenary.nvim'}},
+    requires = {{
+      'nvim-lua/plenary.nvim'
+    }},
     config = function() require('plugins.telescope') end,
-    --event = "BufRead",
+    event = "BufRead",
     after = "nvim-treesitter"
   })
 
@@ -181,13 +183,14 @@ return require('packer').startup(function(use)
   use { 'windwp/nvim-autopairs', config = function() require('plugins.autopairs') end, after = "nvim-cmp" }
 
  
-  -- for formatters and linters 
- use ({
+ -- for formatters and linters 
+  use ({
     'dense-analysis/ale',
     config = function()
      local path = vim.fn.stdpath('config')..'/lua/plugins/ale.vim'
       vim.cmd('source '..path)
-     end
+     end,
+     after = "telescope.nvim"
    })
 
   use {

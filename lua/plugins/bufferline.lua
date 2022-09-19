@@ -1,11 +1,13 @@
-require('bufferline')
+local status, bufferline = pcall(require, "bufferline")
+if (not status) then return end
+
 
 -- format as "<id>. <file-name>"
 local tabname_format = function (opts)
   return string.format('%s.', opts.ordinal)
 end
 
-require('bufferline').setup({
+bufferline.setup({
   options = {
     always_show_bufferline = true,
     numbers = tabname_format,

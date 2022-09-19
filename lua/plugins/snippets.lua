@@ -1,4 +1,6 @@
 -- LuaSnip
+local status, luasnipLoaders = pcall(require, "luasnip.loaders.from_vscode")
+if (not status) then return end
 
-require('luasnip.loaders.from_vscode').lazy_load()
+luasnipLoaders.lazy_load()
 require('luasnip').filetype_extend("python", {'pytorch'})

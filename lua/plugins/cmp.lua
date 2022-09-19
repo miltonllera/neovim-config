@@ -1,3 +1,6 @@
+local status, cmp = pcall(require, "cmp")
+if (not status) then return end
+
 local fn = vim.fn
 
 

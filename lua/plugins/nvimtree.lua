@@ -1,8 +1,9 @@
 -- NVIM tree
+local status, nvim_tree = pcall(require, "nvim-tree")
+if (not status) then return end
 
 
-
-require('nvim-tree').setup({
+nvim_tree.setup({
   -- Allow using gx
   disable_netrw = false,
   hijack_netrw = false,
@@ -54,9 +55,10 @@ require('nvim-tree').setup({
   },
 })
 
+local status, nvim_tree_devicons = pcall(require, "nvim-web-devicons")
+if (not status) then return end
 
-
-require('nvim-web-devicons').setup {
+nvim_tree_devicons.setup {
   -- your personnal icons can go here (to override)
   -- you can specify color or cterm_color instead of specifying both of them
   -- DevIcon will be appended to `name`

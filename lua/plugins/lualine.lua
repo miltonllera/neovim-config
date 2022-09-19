@@ -1,8 +1,10 @@
 -- Lualine configuration
+local status, lualine = pcall(require, "lualine")
+if (not status) then return end
 
 local non_language_ft = {'fugitive', 'startify'}
 
-require('lualine').setup({
+lualine.setup({
   options = {
     theme = "tokyonight",
     -- Separators might look weird for certain fonts (eg Cascadia)

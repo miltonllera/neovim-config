@@ -1,3 +1,6 @@
+local status, telescope = pcall(require, "telescope")
+if (not status) then return end
+
 local actions = require('telescope.actions')
 -- local utils = require('telescope.utils')
 -- local trouble = require('telescope.providers.telescope')
@@ -12,7 +15,7 @@ require('telescope').setup({
         ['<C-c>'] = actions.close,
       },
       n = {
-        ['<C-c>'] = actions.close,
+        ['<q>'] = actions.close,
       },
     },
     layout_config = {

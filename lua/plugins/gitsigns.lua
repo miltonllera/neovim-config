@@ -1,4 +1,7 @@
-require('gitsigns').setup{
+local status, git = pcall(require, "git")
+if (not status) then return end
+
+git.setup{
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
 
