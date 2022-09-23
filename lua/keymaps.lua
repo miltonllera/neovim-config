@@ -86,6 +86,7 @@ nnoremap("<leader>xo", "<Cmd> !xdg-open %<CR><CR>")
 
 -- Fugitive
 nnoremap("<leader>G", ":G<CR>")
+nnoremap("<leader>gh", ":Gclog<CR>")
 
 -- Show line diagnostics
 nnoremap("<leader>d", '<Cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
