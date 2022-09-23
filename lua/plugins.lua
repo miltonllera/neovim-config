@@ -29,9 +29,11 @@ return require('packer').startup(function(use)
   use({'wbthomason/packer.nvim', opt = true})
 
   -- LSP server
+ 
   use({
     'neovim/nvim-lspconfig',
-    config = function() require('plugins.lspconfig') end
+    config = function() require('plugins.lspconfig') end,
+    event = 'BufRead',
   })
 
   use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
@@ -68,6 +70,12 @@ return require('packer').startup(function(use)
   -- Signature help
   use "ray-x/lsp_signature.nvim"
 
+  -- make by yourself
+  use({
+    'nvim-telescope/telescope-fzf-native.nvim',
+     run ='make',
+    })
+
   -- Telescope
   use({
     'nvim-telescope/telescope.nvim',
@@ -75,11 +83,10 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     }},
     config = function() require('plugins.telescope') end,
-    event = "BufRead",
-    after = "nvim-treesitter"
+    event = 'CursorHold',
   })
 
-  use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
+  
 
   -- bufferline
   use({
@@ -190,13 +197,18 @@ return require('packer').startup(function(use)
      local path = vim.fn.stdpath('config')..'/lua/plugins/ale.vim'
       vim.cmd('source '..path)
      end,
-     after = "telescope.nvim"
+     after = "nvim-treesitter"
    })
 
   use {
     'lewis6991/spellsitter.nvim',
     config = function() require('plugins.spellsitter') end
   }
+  
+
+  --use{'MunifTanjim/prettier.nvim',
+  --config = function() require('plugins.prettier') end
+--}
   --use { 
     --"jose-elias-alvarez/null-ls.nvim",
    --config = function() require('plugins.null-ls') end

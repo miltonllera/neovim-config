@@ -5,7 +5,7 @@ local actions = require('telescope.actions')
 -- local utils = require('telescope.utils')
 -- local trouble = require('telescope.providers.telescope')
 
-require('telescope').setup({
+telescope.setup({
   defaults = {
     sorting_strategy = "ascending",
     mappings = {
@@ -42,4 +42,5 @@ require('telescope').setup({
     },
 })
 
---require('telescope').load_extension('fzf')
+-- choco install make and make the file: make -f <makefile>
+telescope.load_extension('fzf')
