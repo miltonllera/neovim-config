@@ -29,15 +29,15 @@ return require('packer').startup(function(use)
   use({'wbthomason/packer.nvim', opt = true})
 
   -- LSP server
- 
   use({
     'neovim/nvim-lspconfig',
     config = function() require('plugins.lspconfig') end,
     event = 'BufRead',
   })
 
-  use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
-
+  -- Helper for installing most language servers
+  use 'williamboman/nvim-lsp-installer'  
+  
   -- Autocomplete
   use({
     "hrsh7th/nvim-cmp",
@@ -71,6 +71,7 @@ return require('packer').startup(function(use)
   use "ray-x/lsp_signature.nvim"
 
   -- make by yourself
+  -- choco install make and make the file: make -f <makefile> for windows
   use({
     'nvim-telescope/telescope-fzf-native.nvim',
      run ='make',
@@ -136,12 +137,10 @@ return require('packer').startup(function(use)
   use 'junegunn/vim-easy-align'
 
   -- Python formatting
-  use "EgZvor/vim-black"
-  use 'jeetsukumaran/vim-python-indent-black'
+  --use "EgZvor/vim-black"
+  --use 'jeetsukumaran/vim-python-indent-black'
 
-  -- Python
-  -- use  'heavenshell/vim-pydocstring'   -- Overwrites a keymap, need to fix.
-  -- use 'bfredl/nvim-ipy'
+
 
   -- Markdown
   use 'godlygeek/tabular'
@@ -149,14 +148,6 @@ return require('packer').startup(function(use)
 
   -- TOML Files
   use 'cespare/vim-toml'
-
-  -- Poetry
-  -- use({'petobens/poet-v',
-  --   config = function()
-  --     local path = vim.fn.stdpath('config')..'/lua/plugins/poet-v.vim'
-  --     vim.cmd('source '..path)
-  --   end
-  -- })
 
   -- kitty config syntax-highlight
   use "fladson/vim-kitty"
@@ -204,15 +195,6 @@ return require('packer').startup(function(use)
     'lewis6991/spellsitter.nvim',
     config = function() require('plugins.spellsitter') end
   }
-  
-
-  --use{'MunifTanjim/prettier.nvim',
-  --config = function() require('plugins.prettier') end
---}
-  --use { 
-    --"jose-elias-alvarez/null-ls.nvim",
-   --config = function() require('plugins.null-ls') end
-  --} 
 
   if packer_bootstrap then
     require('packer').sync()

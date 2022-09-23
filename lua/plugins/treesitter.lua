@@ -2,29 +2,6 @@
 local status, ts = pcall(require, "nvim-treesitter.configs")
 if (not status) then return end
 
---require('nvim-treesitter.configs').setup({
-	--highlight = { enable = true, additional_vim_regex_highlighting = false},
-  -- We must manually specify which parsers to install
-	--ensure_installed = {
-    --"bash",
-    --"c",
-    --"cpp",
-    --"cuda",
-		--"json",
-    --"julia",
-		--"lua",
-    --"python",
-    --"yaml",
-    --"typescript", 
-    --"javascript", 
-    --"html", 
-    --"css", 
-    --"scss", 
-    --"c_sharp", 
-    --"tsx" 
-	--},
---})
-
 ts.setup {
   highlight = {
     enable = true,

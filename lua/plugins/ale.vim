@@ -21,6 +21,7 @@ let g:ale_lint_on_filetype_changed = 0
 let g:ale_linters_explicit = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
+let g:ale_disable_lsp = 1
 
 set ffs=dos
 

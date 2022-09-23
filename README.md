@@ -41,11 +41,45 @@ brew reinstall neovim
 
 Additionally, you may need to configure the `Option` key to behave like `Alt`. In **iTerm2**, this can be done in `Preferences -> Profiles -> Keys`. Change the left option behaviour to `Esc+`. For **kitty**, you need to set `macos_option_as_alt left` (defualt is no) in the terminal's config file. Restarting the terminal (`Command + Q`, then restart) is required for this to take effect.
 
+### Windows
+
+- Install chocolatey
+https://chocolatey.org/
+
+- Install neovim
+https://community.chocolatey.org/packages/neovim#install
+
+- Install NVM to handle node servers
+https://community.chocolatey.org/packages/nvm
+
+- Global packages for npm
+```bash
+$ npm install -g @fsouza/prettierd
+$ npm install -g bash-language-server
+$ npm install -g corepack
+$ npm install -g eslint_d
+$ npm install -g neovim
+$ npm install -g prettier
+$ npm install -g pyright
+$ npm install -g spell
+$ npm install -g typescript-language-server
+$ npm install -g typescript
+$ npm install -g vscode-langservers-extracted
+```
+
+-Folder
+```bash
+git clone https://github.com/i-xarlos/neovim-config.git ~/AppData\Local\nvim
+
+- Neovim file
+C:\Users\<user-name>\AppData\Local\nvim
+```
+
 ## Installing the configuration
 
 Clone the repo into Neovim's installation folder (usually `/home/<usr>/.config/nvim`):
 ```bash
-git clone https://github.com/miltonllera/neovim-lua-config ~/.config/nvim
+git clone https://github.com/i-xarlos/neovim-config.git ~/.config/nvim
 cd ~/.config/nvim
 ```
 
