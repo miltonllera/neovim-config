@@ -1,4 +1,4 @@
-# Neovim configuration with Lua for Typescript / React
+# Neovim configuration with Lua for Typescript / React / LSP / Prettier / Treesitter
 
 A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins I need for programming. Different language servers available through the LSP protocol provide code completion and analysis.
 
