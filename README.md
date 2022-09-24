@@ -56,11 +56,9 @@ https://community.chocolatey.org/packages/nvm
 ```bash
 $ npm install -g @fsouza/prettierd
 $ npm install -g bash-language-server
-$ npm install -g corepack
 $ npm install -g eslint_d
 $ npm install -g neovim
 $ npm install -g prettier
-$ npm install -g pyright
 $ npm install -g spell
 $ npm install -g typescript-language-server
 $ npm install -g typescript
