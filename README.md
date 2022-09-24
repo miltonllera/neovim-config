@@ -66,12 +66,17 @@ $ npm install -g typescript-language-server
 $ npm install -g typescript
 $ npm install -g vscode-langservers-extracted
 ```
+- NerdFonts https://www.nerdfonts.com/font-downloads
+  - Haslug [https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hasklig.zip]
+  - Firacode [https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip]
+  - Caskaydia Cove NF [https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip]
 
--Folder
+- Folder
 ```bash
 git clone https://github.com/i-xarlos/neovim-config.git ~/AppData\Local\nvim
-
+```
 - Neovim file
+```bash
 C:\Users\<user-name>\AppData\Local\nvim
 ```
 

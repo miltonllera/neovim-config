@@ -28,6 +28,13 @@ return require('packer').startup(function(use)
   -- Let Packer manage itself
   use({'wbthomason/packer.nvim', opt = true})
 
+  -- Is using a standard Neovim install, i.e. built from source or using a
+-- provided appimage.
+  use({
+    'lewis6991/impatient.nvim',
+    config = function() require('plugins.impatient') end,
+  })
+
   -- LSP server
   use({
     'neovim/nvim-lspconfig',
