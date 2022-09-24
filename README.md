@@ -73,7 +73,7 @@ $ npm install -g vscode-langservers-extracted
 
 - Folder
 ```bash
-git clone https://github.com/i-xarlos/neovim-config.git ~/AppData\Local\nvim
+git clone https://github.com/i-xarlos/neovim-config.git ~/AppData/Local/nvim
 ```
 - Neovim file
 ```bash
