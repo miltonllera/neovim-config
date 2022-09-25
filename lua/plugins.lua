@@ -6,6 +6,7 @@ local cmd = vim.cmd
 -- Boostrap Packer
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 local packer_bootstrap
+
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone','https://github.com/wbthomason/packer.nvim', install_path})
 end
@@ -21,29 +22,33 @@ cmd([[
   augroup end
 ]])
 
-
+require('packer').init({
+    max_jobs = 20,
+})
 
 -- Initialize pluggins
 return require('packer').startup(function(use)
+  -- provided appimage.
+  use 'lewis6991/impatient.nvim'
+  
   -- Let Packer manage itself
   use({'wbthomason/packer.nvim', opt = true})
+  
 
-  -- Is using a standard Neovim install, i.e. built from source or using a
--- provided appimage.
-  use({
-    'lewis6991/impatient.nvim',
-    config = function() require('plugins.impatient') end,
-  })
 
-  -- LSP server
-  use({
-    'neovim/nvim-lspconfig',
-    config = function() require('plugins.lspconfig') end,
+  -- Helper for installing most language servers and LSP server
+  use ({
+    'williamboman/nvim-lsp-installer',
+    requires = {
+      'neovim/nvim-lspconfig'
+    },
+    config = function()
+      -- lsp lang specific config
+      require('plugins.lspconfig') 
+    end,
     event = 'BufRead',
   })
 
-  -- Helper for installing most language servers
-  use 'williamboman/nvim-lsp-installer'  
   
   -- Autocomplete
   use({

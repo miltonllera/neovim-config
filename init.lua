@@ -1,3 +1,6 @@
+-- compile the lua code to bitecode so neovim start up faster
+pcall(require, 'impatient')
+
 -- Load all config files
 
 require('options')
