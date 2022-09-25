@@ -1,7 +1,7 @@
 local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
---local nvim_lsp = require('lspconfig')
+
 local utils = require('lsp.utils')
 local common_on_attach = utils.common_on_attach
 
@@ -26,6 +26,14 @@ require('lsp.sumneko')
 -- signature help hover
 require "lsp_signature".setup({ })
 
+-- css configuration autocomplete
+require'lspconfig'.cssmodules_ls.setup {
+    on_attach = function (client)
+        -- avoid accepting `go-to-definition` responses from this LSP
+        client.resolved_capabilities.goto_definition = false
+        custom_on_attach(client)
+  end,
+}
 
 -- suppress error messages from lang servers
 vim.notify = function(msg, log_level, _opts)
