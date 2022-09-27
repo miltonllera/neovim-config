@@ -10,12 +10,15 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable language servers with common settings
-local servers = {"bashls", "clangd", "pyright", "jsonls", "tsserver", "yamlls", "cssls", "html", "dockerls"}
+local servers = {"bashls", "clangd", "pyright", "jsonls", "tsserver", "yamlls", "cssls", "cssmodules_ls","html", "dockerls"}
 --local servers = {"bashls", "clangd", "pyright", "jsonls",  "yamlls", "cssls", "html", "dockerls"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({
     on_attach = common_on_attach,
     capabilities = capabilities,
+    init_options = {
+      camelCase = true,
+    },
   })
 end
 
@@ -26,14 +29,16 @@ require('lsp.sumneko')
 -- signature help hover
 require "lsp_signature".setup({ })
 
--- css configuration autocomplete
-require'lspconfig'.cssmodules_ls.setup {
-    on_attach = function (client)
-        -- avoid accepting `go-to-definition` responses from this LSP
-        client.resolved_capabilities.goto_definition = false
-        custom_on_attach(client)
-  end,
-}
+require("typescript").setup({
+  disable_commands = false, -- prevent the plugin from creating Vim commands
+  debug = false, -- enable debug logging for commands
+  go_to_source_definition = {
+      fallback = true, -- fall back to standard LSP definition on failure
+  },
+  server = { -- pass options to lspconfig's setup method
+      on_attach = common_on_attach,
+  },
+})
 
 -- suppress error messages from lang servers
 vim.notify = function(msg, log_level, _opts)

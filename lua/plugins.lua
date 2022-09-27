@@ -40,7 +40,8 @@ return require('packer').startup(function(use)
   use ({
     'williamboman/nvim-lsp-installer',
     requires = {
-      'neovim/nvim-lspconfig'
+      'neovim/nvim-lspconfig',
+      'jose-elias-alvarez/typescript.nvim',
     },
     config = function()
       -- lsp lang specific config
@@ -167,7 +168,6 @@ return require('packer').startup(function(use)
   -- note taking with zettelkasten
 
   -- Themes
-  --use 'ghifarit53/tokyonight-vim'
   use 'folke/tokyonight.nvim'
 
   use 'marko-cerovac/material.nvim'
@@ -189,7 +189,6 @@ return require('packer').startup(function(use)
 
 
   use { 'norcalli/nvim-colorizer.lua', config = function() require('plugins.colorizer') end, event = "BufRead" }
-  use { 'p00f/nvim-ts-rainbow', after = "nvim-treesitter" }
   use { 'windwp/nvim-autopairs', config = function() require('plugins.autopairs') end, after = "nvim-cmp" }
 
  
