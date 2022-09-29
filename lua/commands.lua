@@ -4,6 +4,7 @@
 -- (if a file requires trailing spaces, exclude its type using the regex)
 vim.cmd [[autocmd BufWritePre * %s/\s\+$//e ]]
 
+
 -- CSS autocomplete
 vim.cmd [[autocmd FileType css set omnifunc=csscomplete#CompleteCSS]]
 

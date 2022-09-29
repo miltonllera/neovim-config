@@ -62,7 +62,6 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
-      'hrsh7th/nvim-compe',
       "f3fora/cmp-spell",
     },
     config = function() require('plugins.cmp') end,
@@ -105,6 +104,7 @@ return require('packer').startup(function(use)
   -- bufferline
   use({
     'akinsho/bufferline.nvim',
+    tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons',
     config = function() require('plugins.bufferline') end,
     event = 'BufWinEnter',
@@ -114,6 +114,7 @@ return require('packer').startup(function(use)
   use({
     'hoob3rt/lualine.nvim',
     config = function() require('plugins.lualine') end,
+    after = "nvim-treesitter"
   })
 
   -- NvimTree
@@ -121,6 +122,7 @@ return require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function() require('plugins.nvimtree') end,  -- Must add this manually
+    after = "nvim-treesitter"
   })
 
   -- Startify
@@ -139,7 +141,8 @@ return require('packer').startup(function(use)
   use ({
     'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
-    config = function() require('plugins.gitsigns') end
+    config = function() require('plugins.gitsigns') end,
+    after = "nvim-treesitter"
   })
 
   -- Formatting
@@ -187,9 +190,13 @@ return require('packer').startup(function(use)
     end
   })
 
+  -- transparent
+  --use { 'xiyaowong/nvim-transparent', config = function() require('plugins.nvim-transparent') end }
 
-  use { 'norcalli/nvim-colorizer.lua', config = function() require('plugins.colorizer') end, event = "BufRead" }
-  use { 'windwp/nvim-autopairs', config = function() require('plugins.autopairs') end, after = "nvim-cmp" }
+
+
+  use { 'norcalli/nvim-colorizer.lua', config = function() require('plugins.colorizer') end, after = "nvim-treesitter" }
+  use { 'windwp/nvim-autopairs', config = function() require('plugins.autopairs') end, after = "nvim-treesitter" }
 
  
  -- for formatters and linters 

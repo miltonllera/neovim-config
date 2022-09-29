@@ -1,7 +1,8 @@
 -- NVIM tree
+
+
 local status, nvim_tree = pcall(require, "nvim-tree")
 if (not status) then return end
-
 
 nvim_tree.setup({
   -- Allow using gx
@@ -10,7 +11,8 @@ nvim_tree.setup({
   update_cwd = true,  
   sort_by = "case_sensitive",
   view = {
-    adaptive_size = true,
+    adaptive_size = false,
+    width = 40,
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
@@ -51,7 +53,7 @@ nvim_tree.setup({
     }
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
 })
 

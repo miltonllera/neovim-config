@@ -22,7 +22,6 @@ for _, lsp in ipairs(servers) do
   })
 end
 
-vim.lsp.buf.format({timeout_ms = 4000})
 
 require('lsp.sumneko')
 
@@ -52,6 +51,6 @@ vim.notify = function(msg, log_level, _opts)
   end
 end
 
-vim.lsp.buf.format({ timeout_ms = 5000 }) -- 3 seconds
+--vim.lsp.buf.format({ timeout_ms = 5000 }) -- 3 seconds
 
 
