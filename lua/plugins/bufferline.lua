@@ -29,5 +29,7 @@ bufferline.setup({
     --end,
   --},
   -- Don't use italic on current buffer
-  highlights = {buffer_selected = { bold = true },},
+  highlights = {
+    buffer_selected = { bold = true },
+},
 })

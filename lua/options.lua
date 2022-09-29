@@ -53,4 +53,8 @@ local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+-- Nvimtree defaults
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 
