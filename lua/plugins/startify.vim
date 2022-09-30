@@ -35,9 +35,19 @@ let g:startify_lists = [
 let g:python3_host_prog = 'C:\Python310\python.exe'
 set pyxversion=3
 set pyx=3
+set switchbuf+=uselast
 
-"filetype plugin on
-"set omnifunc=syntaxcomplete#Complete
+
+" native autocomplete and sintax check disable
+if exists("syntax_on")
+    syntax reset
+endif
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+
+
 
 
 

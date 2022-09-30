@@ -19,8 +19,12 @@ nvim_tree.setup({
       },
     },
   },
+  git = {
+    enable = false,
+  },
   renderer = {
     group_empty = true,
+   
     icons = {
       webdev_colors = true,
       git_placement = "before",

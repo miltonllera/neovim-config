@@ -6,15 +6,20 @@ local non_language_ft = {'fugitive', 'startify'}
 
 lualine.setup({
   options = {
-    theme = "tokyonight",
+    --theme = "tokyonight",
     -- Separators might look weird for certain fonts (eg Cascadia)
     component_separators = {left = '', right = ''},
     section_separators = {left = '', right = ''},
     globalstatus = true,
+    refresh = {
+      statusline = 5000,
+      tabline = 5000,
+      winbar = 5000,
+    }
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff'},
+    lualine_b = {'branch','diff'}, -- 'diff', 'diagnostics' -- generate a freezz issue
     lualine_c = {
       'filetype',
       {
