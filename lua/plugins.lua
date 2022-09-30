@@ -62,7 +62,7 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
-      "f3fora/cmp-spell",
+     -- "f3fora/cmp-spell",
     },
     config = function() require('plugins.cmp') end,
   })
@@ -117,12 +117,18 @@ return require('packer').startup(function(use)
     after = "nvim-treesitter"
   })
 
+  --use({
+    --'vim-airline/vim-airline',
+     --requires = 'vim-airline/vim-airline-themes',
+  --})
+
   -- NvimTree
   use({
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
+    requires = {'kyazdani42/nvim-web-devicons',  opt = true},
     config = function() require('plugins.nvimtree') end,  -- Must add this manually
-    after = "nvim-treesitter"
+    event = 'BufWinEnter',
+   -- after = "nvim-treesitter"
   })
 
   -- Startify
@@ -135,15 +141,15 @@ return require('packer').startup(function(use)
   })
 
   -- git commands
-  use 'tpope/vim-fugitive'
+  --use 'tpope/vim-fugitive'
 
   -- Gitsigns
-  use ({
-    'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
-    config = function() require('plugins.gitsigns') end,
-    after = "nvim-treesitter"
-  })
+  --use ({
+    --'lewis6991/gitsigns.nvim',
+    --requires = {'nvim-lua/plenary.nvim'},
+    --config = function() require('plugins.gitsigns') end,
+    --after = "nvim-treesitter"
+  --})
 
   -- Formatting
   use 'tpope/vim-commentary'
@@ -163,10 +169,10 @@ return require('packer').startup(function(use)
   use 'ellisonleao/glow.nvim'
 
   -- TOML Files
-  use 'cespare/vim-toml'
+  --use 'cespare/vim-toml'
 
   -- kitty config syntax-highlight
-  use "fladson/vim-kitty"
+  --use "fladson/vim-kitty"
 
   -- note taking with zettelkasten
 
@@ -209,7 +215,7 @@ return require('packer').startup(function(use)
      after = "nvim-treesitter"
    })
 
-  use {
+ use {
     'lewis6991/spellsitter.nvim',
     config = function() require('plugins.spellsitter') end
   }
