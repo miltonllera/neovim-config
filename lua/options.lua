@@ -59,4 +59,8 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- in millisecond, used for both CursorHold and CursorHoldI,
+-- use updatetime instead if not defined
+vim.g.cursorhold_updatetime = 100
+
 
