@@ -61,6 +61,10 @@ vim.g.loaded_netrwPlugin = 1
 
 -- in millisecond, used for both CursorHold and CursorHoldI,
 -- use updatetime instead if not defined
-vim.g.cursorhold_updatetime = 100
+-- vim.g.cursorhold_updatetime = 100
+
+-- Powershell background colors 
+-- blue = #212436
+-- green = #03292E
 
 

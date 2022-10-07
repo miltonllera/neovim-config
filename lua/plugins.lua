@@ -40,7 +40,7 @@ return require("packer").startup(
         use({"wbthomason/packer.nvim", opt = true})
 
         -- cursor hold fixer
-        use "antoinemadec/FixCursorHold.nvim"
+        -- use "antoinemadec/FixCursorHold.nvim"
 
         -- Helper for installing most language servers and LSP server
         use(

@@ -15,6 +15,7 @@ end
 
 local sumneko_root_path = fn.stdpath('data')..'/lsp_servers/lua-language-server'
 local sumneko_binary = sumneko_root_path..'/bin/'..system_name..'/lua-language-server'
+--local sumneko_binary = "C:\Program Files (x86)\Lua\5.1"
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
