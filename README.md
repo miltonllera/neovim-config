@@ -1,10 +1,92 @@
-# Neovim configuration with Lua for Typescript / React / LSP / Prettier / Treesitter
+# Neovim configuration with Lua for Typescript / Javascript / React / LSP / Ale Prettier / Treesitter
 
-A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins I need for programming. Different language servers available through the LSP protocol provide code completion and analysis.
+This configuration is based on [miltonllera/config](https://github.com/miltonllera/neovim-config) however some shortcuts have been changed and some plugins have been organized to work on projects with typescript, javascript and react. 
+
+I have been using nvim coc for the last three years and decided to migrate to LUA and I am really happy with the improvement and control of each of your utilities.
+I added and configured the plugins in the way that I have used them before, that is why this fork will remain independent.
+
+The template that [Milton](https://github.com/miltonllera/neovim-config) left, which has given the main focus to Linux and Mac. I have expanded the guide for WINDOWS since it is my development environment.
+
+I have added some plugins recommended by the guys from [lunarVim](https://www.lunarvim.org/) and added some validations and configurations that they use, achieving a very stable and agile version in the configuration.
+
+A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins I need for programming. 
+Different language servers available through the LSP protocol provide code completion and analysis.
 
 This readme exist so I don't have to remember how to do all these things when setting up a new machine.
 
+
 ## Setting up
+
+### Windows
+
+Install [Chocolatey](https://chocolatey.org/install)
+
+  ```bash
+  Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+  ``` 
+  
+Install [Neovim](https://community.chocolatey.org/packages/neovim#install)
+
+  ```bash
+  choco install neovim
+  ```
+
+Install Node [https://nodejs.org/en/download/]
+
+Global packages for npm
+
+```bash
+ npm install -g @fsouza/prettierd
+ npm install -g bash-language-server
+ npm install -g eslint_d
+ npm install -g neovim
+ npm install -g prettier
+ npm install -g spell
+ npm install -g typescript-language-server
+ npm install -g typescript
+ npm install -g vscode-langservers-extracted
+ npm install -g cssmodules-language-server
+```
+
+
+- Clone the repository inside off this folder or download the last [release](https://github.com/i-xarlos/neovim-config/releases/)
+
+```bash
+git clone https://github.com/i-xarlos/neovim-config.git ~/AppData/Local/nvim
+```
+
+- Neovim configuration file
+
+```bash
+~/AppData/Local/nvim
+```
+
+Install [Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=us)
+  You can download and install it from the microsoft store and choose your favorite font
+
+Create a backup folder
+
+```bash
+mkdir ~/.backup
+```
+
+Optionally:
+
+  - Handle packages from [Chocolatey Gui](https://community.chocolatey.org/packages/ChocolateyGUI)
+
+  ```bash
+   choco install chocolateygui
+  ```
+ - Install NVM to handle node servers [https://community.chocolatey.org/packages/nvm]
+
+   
+
+ - NerdFonts https://www.nerdfonts.com/font-downloads
+
+    - [Caskaydia Cove NF] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip) - my favorite
+    - [Haslug] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hasklig.zip)
+    - [Firacode] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip)
+
 
 ### Linux
 
@@ -41,49 +123,6 @@ brew reinstall neovim
 
 Additionally, you may need to configure the `Option` key to behave like `Alt`. In **iTerm2**, this can be done in `Preferences -> Profiles -> Keys`. Change the left option behaviour to `Esc+`. For **kitty**, you need to set `macos_option_as_alt left` (defualt is no) in the terminal's config file. Restarting the terminal (`Command + Q`, then restart) is required for this to take effect.
 
-### Windows
-
-- Install chocolatey
-  https://chocolatey.org/
-
-- Install neovim
-  https://community.chocolatey.org/packages/neovim#install
-
-- Install NVM to handle node servers
-  https://community.chocolatey.org/packages/nvm
-
-- Global packages for npm
-
-```bash
-$ npm install -g @fsouza/prettierd
-$ npm install -g bash-language-server
-$ npm install -g eslint_d
-$ npm install -g neovim
-$ npm install -g prettier
-$ npm install -g spell
-$ npm install -g typescript-language-server
-$ npm install -g typescript
-$ npm install -g vscode-langservers-extracted
-$ npm install -g cssmodules-language-server
-```
-
-- NerdFonts https://www.nerdfonts.com/font-downloads
-
-  - Haslug [https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hasklig.zip]
-  - Firacode [https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip]
-  - Caskaydia Cove NF [https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip] - my favorite
-
-- Folder
-
-```bash
-git clone https://github.com/i-xarlos/neovim-config.git ~/AppData/Local/nvim
-```
-
-- Neovim file
-
-```bash
-~/AppData/Local/nvim
-```
 
 ## Installing the configuration
 
