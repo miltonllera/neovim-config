@@ -27,8 +27,7 @@ vim.o.scrolloff          = 12                           -- Minimum offset in lin
 vim.o.sidescrolloff      = 8
 vim.o.mouse              = 'a'
 vim.o.swapfile           = false
-
-
+vim.o.nobackup           = false
 
 
 -- Vim specific
@@ -57,11 +56,11 @@ vim.g.loaded_ruby_provider = 0
 
 -- Nvimtree defaults
 vim.g.loaded = 1
-vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrwPlugin = 0
 
 -- in millisecond, used for both CursorHold and CursorHoldI,
 -- use updatetime instead if not defined
--- vim.g.cursorhold_updatetime = 100
+vim.g.cursorhold_updatetime = 100
 
 -- Powershell background colors 
 -- blue = #212436
