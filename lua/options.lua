@@ -45,7 +45,7 @@ vim.wo.colorcolumn       = '140'
 -- vim.g.loaded_netrwPlugin = false                     -- This had an issue but I can't remember now.
 
 -- Python providers
-local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"
+--local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"
 --vim.g.python3_host_prog = "C:\Python310\python.exe"
 --vim.g.python3_host_prog = os.getenv("HOME")..pynvim_env.."/bin/python"
 --vim.g.black_virtualenv  = os.getenv("HOME")..pynvim_env

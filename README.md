@@ -32,6 +32,12 @@ Install [Neovim](https://community.chocolatey.org/packages/neovim#install)
   choco install neovim
   ```
 
+Install [Git](https://community.chocolatey.org/packages/git)
+
+```bash
+choco install git
+```
+
 Install [Node](https://nodejs.org/en)
 
 Global packages for npm
@@ -71,6 +77,16 @@ Create a backup folder
 mkdir ~/.backup
 ```
 
+Please review [nvim.tressitier](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support) windows support 
+
+```bash
+# Mingw toolchain 
+choco install mingw
+
+# LLVM (Clang)
+choco install llvm
+```
+
 Optionally:
 
   - Handle packages from [Chocolatey Gui](https://community.chocolatey.org/packages/ChocolateyGUI)
@@ -85,14 +101,20 @@ Optionally:
 
   # Nvm install node versions
   nvm install 16.17.1
-  ```
-   
+  ```  
 
  - NerdFonts https://www.nerdfonts.com/font-downloads
 
     - [Caskaydia Cove NF] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip) - my favorite
     - [Haslug] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hasklig.zip)
     - [Firacode] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip)
+
+- Install [Ninja](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages) using chocolate `choco install ninja`
+
+    - Follow this [guide](https://github.com/sumneko/lua-language-server/wiki/Getting-Started) for install lua-language-server 
+    ```bash
+     ~AppData\Local\nvim-data\lua-language-server
+    ```
 
 
 ### Linux
