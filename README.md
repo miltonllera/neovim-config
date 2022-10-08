@@ -14,10 +14,11 @@ Different language servers available through the LSP protocol provide code compl
 
 This readme exist so I don't have to remember how to do all these things when setting up a new machine.
 
-
 ## Setting up
 
 ### Windows
+
+![nvim windows](./img/example1.png)
 
 Install [Chocolatey](https://chocolatey.org/install)
 
@@ -31,7 +32,7 @@ Install [Neovim](https://community.chocolatey.org/packages/neovim#install)
   choco install neovim
   ```
 
-Install Node [https://nodejs.org/en/download/]
+Install [Node](https://nodejs.org/en)
 
 Global packages for npm
 
@@ -78,7 +79,13 @@ Optionally:
    choco install chocolateygui
   ```
  - Install NVM to handle node servers [https://community.chocolatey.org/packages/nvm]
+  ```bash
+  # Install nvm
+  choco install nvm
 
+  # Nvm install node versions
+  nvm install 16.17.1
+  ```
    
 
  - NerdFonts https://www.nerdfonts.com/font-downloads

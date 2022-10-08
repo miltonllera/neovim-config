@@ -32,13 +32,12 @@ bufferline.setup({
  
   -- Don't use italic on current buffer
   highlights = {
-    buffer_selected = { bold = true },
     fill = {
       ctermbg = 7,
       ctermfg = 0,
     }, 
     buffer_selected = {
-      fg = normal_fg,
+      --fg = normal_fg,
       --bg = '#061124',
       bold = true,
       italic = false,
