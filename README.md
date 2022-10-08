@@ -14,11 +14,11 @@ Different language servers available through the LSP protocol provide code compl
 
 This readme exist so I don't have to remember how to do all these things when setting up a new machine.
 
-![alt text](./img/example1.png)
-
 ## Setting up
 
 ### Windows
+
+![nvim windows](./img/example1.png)
 
 Install [Chocolatey](https://chocolatey.org/install)
 
