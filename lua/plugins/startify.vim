@@ -45,8 +45,12 @@ endif
 
 set backupdir=~/.backup
 
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
+"filetype plugin on
+"set omnifunc=syntaxcomplete#Complete
+
+"" nvim_treesitter
+"set foldmethod=expr
+"set foldexpr=nvim_treesitter#foldexpr()
 
 
 
