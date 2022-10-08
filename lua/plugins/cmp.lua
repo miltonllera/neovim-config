@@ -95,6 +95,7 @@ cmp.setup({
     {name = 'path'},
     {name = 'buffer'},
     {name = 'spell'},
+    { name = 'vsnip' }, -- For vsnip users.
     -- {name = 'calc'},
   },
 })

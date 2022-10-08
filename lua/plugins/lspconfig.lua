@@ -10,7 +10,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable language servers with common settings
-local servers = {"bashls", "clangd", "pyright", "jsonls", "tsserver", "yamlls", "cssls", "cssmodules_ls","html", "dockerls"}
+local servers = {"bashls", "clangd", "pyright", "jsonls", "tsserver", "yamlls", "cssls" ,"cssmodules_ls","html", "dockerls"}
 --local servers = {"bashls", "clangd", "pyright", "jsonls",  "yamlls", "cssls", "html", "dockerls"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({

@@ -99,12 +99,12 @@ nnoremap("<leader><A-d>", "<Cmd>lua vim.diagnostic.setqflist()<CR>")
 
 -- Telescope
 nnoremap("<leader>ff", "<Cmd>Telescope find_files<CR>")
-nnoremap("<leader>fhf","<Cmd>Telescope find_files hidden=true<CR>")
+nnoremap("<leader>fhf", "<Cmd>Telescope find_files hidden=true<CR>")
 nnoremap("<leader>fb", "<Cmd>Telescope buffers<CR>")
 nnoremap("<leader>fg", "<Cmd>Telescope live_grep<CR>")
 
 -- File explorer
-nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
+nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>") -- NvimTree
 -- nnoremap("<leader>e", "<Cmd>RnvimrToggle<CR>")
 
 

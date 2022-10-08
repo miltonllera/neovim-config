@@ -19,7 +19,7 @@ lualine.setup({
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch','diff'}, -- 'diff', 'diagnostics' -- generate a freezz issue
+    lualine_b = {'branch'}, -- 'diff', 'diagnostics' -- generate a freezz issue in windows 10
     lualine_c = {
       'filetype',
       {

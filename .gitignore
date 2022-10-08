@@ -1,3 +1,4 @@
 /.ctagsignore
 /tags
 plugin/
+/.luarc.json
