@@ -71,12 +71,6 @@ git clone https://github.com/i-xarlos/neovim-config.git ~/AppData/Local/nvim
 Install [Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=us)
   You can download and install it from the microsoft store and choose your favorite font
 
-Create a backup folder
-
-```bash
-mkdir ~/.backup
-```
-
 Please review [nvim.tressitier](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support) windows support 
 
 ```bash

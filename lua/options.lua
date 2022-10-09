@@ -10,6 +10,7 @@ vim.wo.number            = true
 vim.wo.relativenumber    = true
 vim.wo.signcolumn        = 'yes'
 vim.wo.cursorline        = true
+vim.wo.colorcolumn       = '140'
 
 -- Behaviour
 vim.o.hlsearch           = false
@@ -27,21 +28,37 @@ vim.o.scrolloff          = 12                           -- Minimum offset in lin
 vim.o.sidescrolloff      = 8
 vim.o.mouse              = 'a'
 vim.o.swapfile           = false
-vim.o.nobackup           = false
 
 
 -- Vim specific
 vim.o.hidden             = true                         -- Do not save when switching buffers
+vim.o.backup             = false
+vim.o.swapfile           = false	                      -- Don't create Swap Files
 vim.o.fileencoding       = "utf-8"
 vim.o.spell              = true
 vim.o.spelllang          = "en_us"
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"               -- Display auto-complete in Command Mode
-vim.o.updatetime         = 1000                         -- Delay until write to Swap and HoldCommand event
+vim.o.undofile           = true 	    -- Save undo history
+vim.o.updatetime         = 250	        -- Decrease update time
+vim.o.timeoutlen         = 250	        -- Time for mapped sequence to complete (in ms)
+vim.o.inccommand         = 'nosplit'   -- Incremental live completion
 vim.g.do_file_type_lua   = 1
-vim.wo.colorcolumn       = '140'
+vim.o.spelllang          = "en"
+vim.o.completeopt     = "menuone,noselect"  -- Autocompletion
+vim.opt.shortmess:append { W = true, a = true }
+vim.o.undodir         = vim.fn.stdpath("cache") .. "/undo"
 
--- Disable default plugins
+-- -- Disable some default plugins
+vim.g.loaded_gzip = false
+vim.g.loaded_matchit = false
+vim.g.loaded_netrwPlugin = false
+vim.g.loaded_tarPlugin = false
+vim.g.loaded_zipPlugin = false
+vim.g.loaded_man = false
+vim.g.loaded_2html_plugin = false
+vim.g.loaded_remote_plugins = false
+vim.g.did_load_filetypes = false
 -- vim.g.loaded_netrwPlugin = false                     -- This had an issue but I can't remember now.
 
 -- Python providers

@@ -18,3 +18,14 @@ vim.cmd("command! HelpTags Telescope help_tags")
 
 -- Create ctags
 vim.cmd('command! MakeCTags !ctags -R --exclude=@.ctagsignore .')
+
+-- Highlight on yank
+vim.api.nvim_exec(
+	[[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+]],
+	false
+)
