@@ -14,7 +14,7 @@ Different language servers available through the LSP protocol provide code compl
 
 This readme exist so I don't have to remember how to do all these things when setting up a new machine.
 
-## 🛠Setting up
+## 🛠 Setting up
 
 ### Windows
 
