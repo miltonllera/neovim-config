@@ -206,6 +206,13 @@ use({
 
 Notice that the file type is omitted from this call.
 
+Install and update plugins using packer
+
+```bash
+#nvim command
+:PackerSync
+```
+
 ## 📋 Auto-completion
 
 The auto-complete functionality is achieved by using `nvim-cmp` to attach the relevant language servers to the buffers containing code. Most servers only require that the on attach function is specified so that different motions are available. Currently, the common function to attach a server to a buffer is located in `lua/lsp/utils.lua` . It will enable common key mappings for all language servers to display code completion.
