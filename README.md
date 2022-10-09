@@ -1,4 +1,4 @@
-# Neovim configuration with Lua for Typescript / Javascript / React / LSP / Ale Prettier / Treesitter
+# 🚀 Neovim configuration with Lua for Typescript / Javascript / React / LSP / Ale Prettier / Treesitter
 
 This configuration is based on [miltonllera/config](https://github.com/miltonllera/neovim-config) however some shortcuts have been changed and some plugins have been organized to work on projects with typescript, javascript and react. 
 
@@ -14,7 +14,7 @@ Different language servers available through the LSP protocol provide code compl
 
 This readme exist so I don't have to remember how to do all these things when setting up a new machine.
 
-## Setting up
+## 🛠Setting up
 
 ### Windows
 
@@ -147,7 +147,7 @@ brew reinstall neovim
 Additionally, you may need to configure the `Option` key to behave like `Alt`. In **iTerm2**, this can be done in `Preferences -> Profiles -> Keys`. Change the left option behaviour to `Esc+`. For **kitty**, you need to set `macos_option_as_alt left` (defualt is no) in the terminal's config file. Restarting the terminal (`Command + Q`, then restart) is required for this to take effect.
 
 
-## Installing the configuration
+## ⭐ Installing the configuration
 
 Clone the repo into Neovim's installation folder (usually `/home/<usr>/.config/nvim`):
 
