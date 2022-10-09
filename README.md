@@ -1,4 +1,4 @@
-# Neovim configuration with Lua for Typescript / Javascript / React / LSP / Ale Prettier / Treesitter
+# 🚀 Neovim configuration with Lua for Typescript / Javascript / React / LSP / Ale Prettier / Treesitter
 
 This configuration is based on [miltonllera/config](https://github.com/miltonllera/neovim-config) however some shortcuts have been changed and some plugins have been organized to work on projects with typescript, javascript and react. 
 
@@ -14,7 +14,7 @@ Different language servers available through the LSP protocol provide code compl
 
 This readme exist so I don't have to remember how to do all these things when setting up a new machine.
 
-## Setting up
+## 🛠 Setting up
 
 ### Windows
 
@@ -70,12 +70,6 @@ git clone https://github.com/i-xarlos/neovim-config.git ~/AppData/Local/nvim
 
 Install [Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=us)
   You can download and install it from the microsoft store and choose your favorite font
-
-Create a backup folder
-
-```bash
-mkdir ~/.backup
-```
 
 Please review [nvim.tressitier](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support) windows support 
 
@@ -153,7 +147,7 @@ brew reinstall neovim
 Additionally, you may need to configure the `Option` key to behave like `Alt`. In **iTerm2**, this can be done in `Preferences -> Profiles -> Keys`. Change the left option behaviour to `Esc+`. For **kitty**, you need to set `macos_option_as_alt left` (defualt is no) in the terminal's config file. Restarting the terminal (`Command + Q`, then restart) is required for this to take effect.
 
 
-## Installing the configuration
+## ⭐ Installing the configuration
 
 Clone the repo into Neovim's installation folder (usually `/home/<usr>/.config/nvim`):
 
@@ -212,7 +206,14 @@ use({
 
 Notice that the file type is omitted from this call.
 
-## Auto-completion
+Install and update plugins using packer
+
+```bash
+#nvim command
+:PackerSync
+```
+
+## 📋 Auto-completion
 
 The auto-complete functionality is achieved by using `nvim-cmp` to attach the relevant language servers to the buffers containing code. Most servers only require that the on attach function is specified so that different motions are available. Currently, the common function to attach a server to a buffer is located in `lua/lsp/utils.lua` . It will enable common key mappings for all language servers to display code completion.
 
