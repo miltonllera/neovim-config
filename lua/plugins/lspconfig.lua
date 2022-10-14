@@ -19,6 +19,9 @@ for _, lsp in ipairs(servers) do
     init_options = {
       camelCase = true,
     },
+    flags = {
+       debounce_text_changes = 150,
+    },
   })
 end
 
