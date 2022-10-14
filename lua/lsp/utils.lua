@@ -12,6 +12,13 @@ function M.common_on_attach(client, bufnr)
   -- Set omnifunc
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
+  -- Use LSP as the handler for formatexpr.
+  -- See `:help formatexpr` for more information.
+  vim.api.nvim_buf_set_option(0, "formatexpr", "v:lua.vim.lsp.formatexpr()")
+
+  -- Setup LSP handlers
+  require("lsp.handlers").setup()
+
   -- Helper function
   local opts = {noremap = true, silent = true}
   local function bufnnoremap(lhs, rhs)
@@ -31,7 +38,7 @@ function M.common_on_attach(client, bufnr)
   bufnnoremap("<leader>gr", "<cmd>Telescope lsp_references<CR>")  -- Uses Telescope
 
   -- Inspect function
-  bufnnoremap("K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
+  bufnnoremap("<C-k>", "<Cmd>lua vim.lsp.buf.hover()<CR>")
 
   -- Signature help
   bufnnoremap("<A-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>")
