@@ -95,11 +95,16 @@ return require("packer").startup(
         run = ":TSUpdate"
       }
     )
-
+    
     -- Snippets
-    use { "L3MON4D3/LuaSnip", config = function()
+    use { 
+      "L3MON4D3/LuaSnip",
+      tag = "v1.1.0*",
+      config = function()
       require("plugins.snippets")
-    end }
+      end 
+    }
+
     use "rafamadriz/friendly-snippets"
 
     -- Signature help
@@ -252,7 +257,6 @@ return require("packer").startup(
       end
     }
 
-    --use({"L3MON4D3/LuaSnip", tag = "v1.0.0*"})
 
     -- git commands
     -- use 'tpope/vim-fugitive'
