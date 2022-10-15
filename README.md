@@ -364,6 +364,7 @@ Vim is very complete and extensive in its utilities, here I put the ones that I 
 [Leader-f-g] | Telescope find text (live grep)
 [Leader-g-i] | Lua go to implemetation (live grep)
 [Leader-g-r] | Telescope go to reference (live grep)
+[Leader-f] | Quick lsp format
 [TAB] | Select autocomplete element / Change Buffer (Right)
 [S-TAB] | Select autocomplete element / Change Buffer (Left)
 [C-n] | Highlighting word
