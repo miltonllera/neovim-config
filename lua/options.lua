@@ -45,9 +45,8 @@ vim.o.timeoutlen         = 250	        -- Time for mapped sequence to complete (
 vim.o.inccommand         = 'nosplit'   -- Incremental live completion
 vim.g.do_file_type_lua   = 1
 vim.o.spelllang          = "en"
-vim.o.completeopt     = "menuone,noselect"  -- Autocompletion
 vim.opt.shortmess:append { W = true, a = true }
-vim.o.undodir         = vim.fn.stdpath("cache") .. "/undo"
+vim.o.undodir            = vim.fn.stdpath("cache") .. "/undo"
 
 -- -- Disable some default plugins
 vim.g.loaded_gzip = false
@@ -59,7 +58,6 @@ vim.g.loaded_man = false
 vim.g.loaded_2html_plugin = false
 vim.g.loaded_remote_plugins = false
 vim.g.did_load_filetypes = false
--- vim.g.loaded_netrwPlugin = false                     -- This had an issue but I can't remember now.
 
 -- Python providers
 --local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"

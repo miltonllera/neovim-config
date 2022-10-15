@@ -7,7 +7,7 @@ local common_on_attach = utils.common_on_attach
 
 -- add capabilities from nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable language servers with common settings
 local servers = {"bashls", "clangd", "pyright", "jsonls", "tsserver", "yamlls", "cssls" ,"cssmodules_ls","html", "dockerls"}

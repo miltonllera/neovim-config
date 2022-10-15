@@ -340,6 +340,38 @@ TL;DR for `MacOS`:
 2. If the glyphs aren't displayed by default, then they can be specified manually by following the instructions.
 3. Refresh the fonts cache.
 
+
+## Shortcuts:
+
+ Keys | Description 
+  --- | --- 
+[Leader] | Space 
+[Leader-e] | Open NvimTree (Toggle)
+[Leader-f-f] | Telescope find in files
+[Leader-f-b] | Telescope find in buffers
+[Leader-f-g] | Telescope find text (live grep)
+[TAB] | Select autocomplete element / Change Buffer (Right)
+[S-TAB] | Select autocomplete element / Change Buffer (Left)
+[C-n] | Highlighting word
+[C-k] | Show documentation / Close autocomplete
+[k-j] | Escape 
+[C-c] | Close Buffer 
+[C-s] | Save document
+[g-g] | Move cursor to document top
+[G-G] | Move cursor to document bottom 
+[A-h] | Jump to left (Buffer) 
+[A-j] | Jump to bottom (Buffer) 
+[A-k] | Jump to top (Buffer) 
+[A-l] | Jump to right (Buffer) 
+
+
+## Commands:
+
+ Command | Description 
+  --- | --- 
+:vs | vertical split 
+:split | horizontal split 
+
 ## TODO:
 
 Improvements:
