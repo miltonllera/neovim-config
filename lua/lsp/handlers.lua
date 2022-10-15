@@ -5,8 +5,9 @@ function M.setup()
   local lsp = {
     float = {
       focusable = true,
+      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
       style = "minimal",
-      border = "rounded",
+      border = "single", -- single | rounded 
     },
     diagnostic = {
       -- virtual_text = true,
@@ -17,7 +18,7 @@ function M.setup()
       float = {
         focusable = true,
         style = "minimal",
-        border = "rounded",
+        border = "single", -- single | rounded
       },
     },
   }

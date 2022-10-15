@@ -341,7 +341,19 @@ TL;DR for `MacOS`:
 3. Refresh the fonts cache.
 
 
-## Shortcuts:
+## 📗 Shortcuts:
+
+If you need more information you can find more shortcuts in `utils.lua` and `keymaps.lua`:
+
+```
+|- lua
+|  |- lsp/
+|  |  | - utils.lua
+|  |- keymaps.lua
+```
+### Some of the most used shortcuts:
+
+Vim is very complete and extensive in its utilities, here I put the ones that I use most commonly and have been customized in this configuration.
 
  Keys | Description 
   --- | --- 
@@ -350,6 +362,8 @@ TL;DR for `MacOS`:
 [Leader-f-f] | Telescope find in files
 [Leader-f-b] | Telescope find in buffers
 [Leader-f-g] | Telescope find text (live grep)
+[Leader-g-i] | Lua go to implemetation (live grep)
+[Leader-g-r] | Telescope go to reference (live grep)
 [TAB] | Select autocomplete element / Change Buffer (Right)
 [S-TAB] | Select autocomplete element / Change Buffer (Left)
 [C-n] | Highlighting word
