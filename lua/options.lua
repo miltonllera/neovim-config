@@ -37,6 +37,7 @@ vim.o.swapfile           = false	                      -- Don't create Swap File
 vim.o.fileencoding       = "utf-8"
 vim.o.spell              = true
 vim.o.spelllang          = "en_us"
+vim.opt.spelloptions     = "camel"
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"               -- Display auto-complete in Command Mode
 vim.o.undofile           = true 	    -- Save undo history
@@ -76,6 +77,8 @@ vim.g.loaded_netrwPlugin = 0
 -- in millisecond, used for both CursorHold and CursorHoldI,
 -- use updatetime instead if not defined
 vim.g.cursorhold_updatetime = 100
+
+
 
 -- Powershell background colors 
 -- blue = #212436

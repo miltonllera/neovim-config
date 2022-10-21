@@ -43,7 +43,6 @@ if exists("syntax_on")
     syntax reset
 endif
 
-"set backupdir=~/.backup
 
 
 "filetype plugin on

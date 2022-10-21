@@ -73,7 +73,7 @@ return require("packer").startup(
           -- For vsnip users.
           "hrsh7th/cmp-vsnip",
           "hrsh7th/vim-vsnip",
-          -- "f3fora/cmp-spell",
+          "f3fora/cmp-spell",
         },
         config = function()
           require("plugins.cmp")
@@ -250,12 +250,12 @@ return require("packer").startup(
       }
     )
 
-    use {
-      "lewis6991/spellsitter.nvim",
-      config = function()
-        require("plugins.spellsitter")
-      end
-    }
+    --use {
+      --"lewis6991/spellsitter.nvim",
+      --config = function()
+        --require("plugins.spellsitter")
+      --end
+    --}
 
 
     -- git commands
