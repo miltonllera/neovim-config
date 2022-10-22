@@ -52,7 +52,7 @@ cmp.setup({
       end
     end,
 
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-Space>'] = cmp.mapping.complete({}),
 
     ['<C-l>'] = cmp.mapping.close(),
 

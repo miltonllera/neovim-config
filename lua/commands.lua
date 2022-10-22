@@ -1,6 +1,6 @@
 -- Define commands
 
--- Remove trailing whitespaces
+-- Remove trailing white spaces
 -- (if a file requires trailing spaces, exclude its type using the regex)
 --vim.cmd [[autocmd BufWritePre * %s/\s\+$//e ]]
 

@@ -30,10 +30,10 @@ require("packer").init(
   }
 )
 
--- Initialize pluggins
+-- Initialize plugins
 return require("packer").startup(
   function(use)
-    -- provided appimage.
+    -- compress packages
     use "lewis6991/impatient.nvim"
 
     -- Let Packer manage itself
@@ -51,7 +51,7 @@ return require("packer").startup(
           "jose-elias-alvarez/typescript.nvim"
         },
         config = function()
-          -- lsp lang specific config
+          -- lsp language specific config
           require("plugins.lspconfig")
         end,
         event = "BufRead"
@@ -95,14 +95,13 @@ return require("packer").startup(
         run = ":TSUpdate"
       }
     )
-    
     -- Snippets
     use { 
       "L3MON4D3/LuaSnip",
       tag = "v1.1.0*",
       config = function()
       require("plugins.snippets")
-      end 
+      end
     }
 
     use "rafamadriz/friendly-snippets"
@@ -217,7 +216,7 @@ return require("packer").startup(
     -- Auto comment text
     use "scrooloose/nerdcommenter"
 
-    -- Multicursors
+    -- Multi cursors
     use(
       {
         "mg979/vim-visual-multi",
@@ -229,7 +228,7 @@ return require("packer").startup(
     )
 
     -- transparent
-    --use { 'xiyaowong/nvim-transparent', config = function() require('plugins.nvim-transparent') end }
+    use { 'xiyaowong/nvim-transparent', config = function() require('plugins.nvim-transparent') end }
 
     use { "norcalli/nvim-colorizer.lua", config = function()
       require("plugins.colorizer")

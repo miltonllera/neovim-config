@@ -12,10 +12,6 @@ local inoremap = Utils.inoremap
 -- local nmap = Utils.nmap
 -- local xmap = Utils.xmap
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-
 -- kj to normal mode
 inoremap("kj", "<Esc>")
 
@@ -75,7 +71,7 @@ nnoremap("<leader>lc", ":lclose<CR>")
 nnoremap("<C-n>", ":lnext<CR>")
 nnoremap("<C-p>", ":lprev<CR>")
 
--- Quickfix list
+-- Quick fix list
 nnoremap("<leader>co", ":copen<CR>")
 nnoremap("<leader>cc", ":cclose<CR>")
 nnoremap("<C-N>", ":cnext<CR>")

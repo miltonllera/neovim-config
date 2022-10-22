@@ -14,7 +14,7 @@ bufferline.setup({
     show_buffer_icons = true,
     show_buffer_close_icons = false,
     show_close_icon = false,
-    separator_style = "padded_slant", --  "slant" | "thick" | "thin" | "padded_slant" | { 'any', 'any' }, { '充', '充' } {'⏽','⏽'}
+    separator_style = {'█','█'}, --  "slant" | "thick" | "thin" | "padded_slant" | { 'any', 'any' }, { '充', '充' } {'⏽','⏽'}
     -- Don't show bufferline over vertical, unmodifiable buffers
     offsets = { {
       filetype = 'NvimTree',
