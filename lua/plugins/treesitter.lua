@@ -12,7 +12,7 @@ ts.setup {
     disable = {},
   },
   rainbow = {
-    enable = true,
+    enable = false,
     disable = { "jsx", "tsx", "cpp" }, --list of languages you want to disable the plugin for
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
@@ -29,10 +29,10 @@ ts.setup {
     "css",
     "html",
     "lua",
-    "typescript", 
-    "javascript", 
-    "scss", 
-    "c_sharp", 
+    "typescript",
+    "javascript",
+    "scss",
+    "c_sharp",
   },
   autotag = {
     enable = true,

@@ -47,6 +47,7 @@ vim.o.inccommand         = 'nosplit'   -- Incremental live completion
 vim.g.do_file_type_lua   = 1
 vim.o.spelllang          = "en"
 vim.opt.shortmess:append { W = true, a = true }
+--vim.opt.cursorcolumn     = true
 vim.o.undodir            = vim.fn.stdpath("cache") .. "/undo"
 
 -- Disable some default plugins
