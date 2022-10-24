@@ -8,7 +8,7 @@ nvim_tree.setup({
   -- Allow using gx
   disable_netrw = false,
   hijack_netrw = false,
-  update_cwd = true,  
+  update_cwd = true,
   sort_by = "case_sensitive",
   view = {
     adaptive_size = false,
@@ -24,7 +24,6 @@ nvim_tree.setup({
   },
   renderer = {
     group_empty = true,
-   
     icons = {
       webdev_colors = true,
       git_placement = "before",
@@ -43,10 +42,9 @@ nvim_tree.setup({
         folder = {
           arrow_closed = "",
           arrow_open = "",
-         
-        --  default = "",
-        --  open = "",  
-          default = "", 
+          --  default = "",
+          --  open = "",
+          default = "",
           open = "",
           empty = "",
           empty_open = "",
@@ -69,12 +67,12 @@ nvim_tree_devicons.setup {
   -- you can specify color or cterm_color instead of specifying both of them
   -- DevIcon will be appended to `name`
   override = {
-   folder = {
-     icon = "",
-     color = "#428850",
-   }
+    folder = {
+      icon = "",
+      color = "#428850",
+    }
   };
   -- globally enable default icons (default to false)
   -- will get overriden by `get_icons` option
   default = true;
- }
+}

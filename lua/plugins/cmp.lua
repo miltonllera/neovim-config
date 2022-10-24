@@ -14,13 +14,13 @@ local function get_snippets_rtp()
   return vim.tbl_map(function(itm)
     return fn.fnamemodify(itm, ":h")
   end, vim.api.nvim_get_runtime_file(
-      "package.json", true
+    "package.json", true
   ))
 end
 
 local opts = {
   paths = {
-    fn.stdpath('config')..'/snips/',
+    fn.stdpath('config') .. '/snips/',
     get_snippets_rtp()[1],
   },
 }
@@ -51,8 +51,8 @@ cmp.setup({
         cmp.complete()
       end
     end,
-    
-    ['<C-Space>'] = cmp.mapping.complete(),
+
+    ['<C-Space>'] = cmp.mapping.complete({}),
 
     ['<C-l>'] = cmp.mapping.close(),
 
@@ -89,17 +89,20 @@ cmp.setup({
 
   -- Complete options from the LSP servers and the snippet engine
   sources = {
-    {name = 'nvim_lsp'},
-    {name = 'luasnip'},
-    {name = 'nvim_lua'},
-    {name = 'path'},
-    {name = 'buffer'},
-    {name = 'spell'},
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'nvim_lua' },
+    { name = 'path' },
+    { name = 'buffer' },
+    { name = 'spell',
+      option = {
+        keep_all_entries = false,
+        enable_in_context = function()
+          return true
+        end,
+      },
+    },
     { name = 'vsnip' }, -- For vsnip users.
     -- {name = 'calc'},
   },
 })
-
-
-
-

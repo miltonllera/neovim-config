@@ -11,6 +11,7 @@ local common_on_attach = require('lsp.utils').common_on_attach
 --else
 --print('Unsuported system for sumneko')
 --end
+--
 
 -- Install first ninja using chocolate `choco install ninja`
 -- https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages

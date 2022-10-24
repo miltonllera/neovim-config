@@ -3,7 +3,7 @@ vim.o.conceallevel       = 0                            -- Don't hide quotes in 
 vim.o.cmdheight          = 1
 vim.o.pumheight          = 10
 vim.o.showmode           = false
-vim.o.showtabline        = 2                            -- Always show tabline
+vim.o.showtabline        = 2                            -- Always show tab line
 vim.o.title              = true
 vim.o.termguicolors      = true                         -- Use true colors, required for some plugins
 vim.wo.number            = true
@@ -37,6 +37,7 @@ vim.o.swapfile           = false	                      -- Don't create Swap File
 vim.o.fileencoding       = "utf-8"
 vim.o.spell              = true
 vim.o.spelllang          = "en_us"
+vim.opt.spelloptions     = "camel"
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"               -- Display auto-complete in Command Mode
 vim.o.undofile           = true 	    -- Save undo history
@@ -48,16 +49,20 @@ vim.o.spelllang          = "en"
 vim.opt.shortmess:append { W = true, a = true }
 vim.o.undodir            = vim.fn.stdpath("cache") .. "/undo"
 
--- -- Disable some default plugins
-vim.g.loaded_gzip = false
-vim.g.loaded_matchit = false
-vim.g.loaded_netrwPlugin = false
-vim.g.loaded_tarPlugin = false
-vim.g.loaded_zipPlugin = false
-vim.g.loaded_man = false
-vim.g.loaded_2html_plugin = false
+-- Disable some default plugins
+vim.g.loaded_gzip           = false
+vim.g.loaded_matchit        = false
+vim.g.loaded_netrwPlugin    = false
+vim.g.loaded_tarPlugin      = false
+vim.g.loaded_zipPlugin      = false
+vim.g.loaded_man            = false
+vim.g.loaded_2html_plugin   = false
 vim.g.loaded_remote_plugins = false
-vim.g.did_load_filetypes = false
+vim.g.did_load_filetypes    = false
+
+-- Leader key
+vim.g.mapleader             = " "
+vim.g.maplocalleader        = " "
 
 -- Python providers
 --local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"
@@ -74,8 +79,10 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 0
 
 -- in millisecond, used for both CursorHold and CursorHoldI,
--- use updatetime instead if not defined
+-- use update time instead if not defined
 vim.g.cursorhold_updatetime = 100
+
+
 
 -- Powershell background colors 
 -- blue = #212436

@@ -1,6 +1,6 @@
 -- Define commands
 
--- Remove trailing whitespaces
+-- Remove trailing white spaces
 -- (if a file requires trailing spaces, exclude its type using the regex)
 --vim.cmd [[autocmd BufWritePre * %s/\s\+$//e ]]
 
@@ -21,11 +21,13 @@ vim.cmd('command! MakeCTags !ctags -R --exclude=@.ctagsignore .')
 
 -- Highlight on yank
 vim.api.nvim_exec(
-	[[
+  [[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]],
-	false
+]] ,
+  false
 )
+
+

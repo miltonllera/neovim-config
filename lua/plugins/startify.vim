@@ -1,12 +1,5 @@
 " Startify
 
-
-"enable copy and paste
-vmap <C-c> "+yi
-vmap <C-x> "+c
-vmap <C-v> c<ESC>"+p
-imap <C-v> <C-r><C-o>+
-
 " Don't show [e] and [q] options
 let g:startify_enable_special = 0
 
@@ -38,13 +31,10 @@ set pyx=3
 set switchbuf+=uselast
 
 
-" native autocomplete and sintax check disable
+" native autocomplete and syntax check disable
 if exists("syntax_on")
     syntax reset
 endif
-
-"set backupdir=~/.backup
-
 
 "filetype plugin on
 "set omnifunc=syntaxcomplete#Complete
