@@ -46,7 +46,7 @@ function M.common_on_attach(client, bufnr)
   -- Markdown preview TODO: make this conditional, but I also don't use it all that much
   -- bufnnnoremap("<leader>P", "<Cmd>Glow<CR>")
 
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
     cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
 end

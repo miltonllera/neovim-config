@@ -123,7 +123,7 @@ return require('packer').startup(function(use)
   use 'jeetsukumaran/vim-python-indent-black'
 
   -- Python
-  -- use  'heavenshell/vim-pydocstring'   -- Overwrites a keymap, need to fix.
+  -- use 'heavenshell/vim-pydocstring'   -- Overwrites a keymap, need to fix.
   -- use 'bfredl/nvim-ipy'
 
   -- Markdown

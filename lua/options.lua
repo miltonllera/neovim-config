@@ -6,12 +6,14 @@ vim.o.showmode           = false
 vim.o.showtabline        = 2                            -- Always show tabline
 vim.o.title              = true
 vim.o.termguicolors      = true                         -- Use true colors, required for some plugins
+-- vim.o.ls                 = 0                         -- Doesn't seem to work
+-- vim.o.ch                 = 0                         -- Creates a bug with output messages not appearing correctly
 vim.wo.number            = true
 vim.wo.relativenumber    = true
 vim.wo.signcolumn        = 'yes'
 vim.wo.cursorline        = true
 
--- Behaviour
+-- Behavior
 vim.o.hlsearch           = false
 vim.o.ignorecase         = true                         -- Ignore case when using lowercase in search
 vim.o.smartcase          = true                         -- But don't ignore it when using upper case
@@ -30,7 +32,7 @@ vim.o.mouse              = 'a'
 -- Vim specific
 vim.o.hidden             = true                         -- Do not save when switching buffers
 vim.o.fileencoding       = "utf-8"
-vim.o.spell              = false
+vim.o.spell              = true                         -- As of v0.8.0 it only checks comments
 vim.o.spelllang          = "en_us"
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"               -- Display auto-complete in Command Mode
@@ -38,7 +40,7 @@ vim.o.updatetime         = 300                          -- Delay until write to 
 vim.g.do_file_type_lua   = 1
 
 -- Disable default plugins
--- vim.g.loaded_netrwPlugin = false                     -- This had an issue but I can't remember now.
+-- vim.g.loaded_netrwPlugin = false                     -- I can't remember what the issue was with this option
 
 -- Python providers
 local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"
