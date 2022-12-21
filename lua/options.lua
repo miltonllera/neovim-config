@@ -49,6 +49,7 @@ vim.o.spelllang          = "en"
 vim.opt.shortmess:append { W = true, a = true }
 vim.o.undodir            = vim.fn.stdpath("cache") .. "/undo"
 
+
 -- Disable some default plugins
 vim.g.loaded_gzip           = false
 vim.g.loaded_matchit        = false

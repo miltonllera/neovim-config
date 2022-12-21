@@ -96,9 +96,9 @@ return require("packer").startup(
       }
     )
     -- Snippets
-    use { 
+    use {
       "L3MON4D3/LuaSnip",
-      tag = "v1.1.0*",
+      tag = "v1.*",
       config = function()
       require("plugins.snippets")
       end
@@ -134,17 +134,17 @@ return require("packer").startup(
       }
     )
 
-    -- bufferline
-    use(
+    --bufferline
+     use(
       {
         "akinsho/bufferline.nvim",
-        tag = "v2.*",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
+         tag = "v3.*",
+         requires = "kyazdani42/nvim-web-devicons",
+         config = function()
           require("plugins.bufferline")
-        end,
-        event = "BufWinEnter"
-      }
+         end,
+         event = "BufWinEnter"
+       }
     )
 
     -- statusline
