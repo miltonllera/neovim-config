@@ -98,7 +98,7 @@ require('material').setup({
 })
 
 -- tokyonight
---vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[colorscheme tokyonight]]
 
 
 -- Material
@@ -108,10 +108,10 @@ require('material').setup({
                     --\ | hi SpellCap cterm=underline ctermfg=203 guifg=#ff5f5f
   --augroup END
 
-vim.cmd [[colorscheme material]]
-vim.g.material_style = "palenight" -- deep ocean | palenight | darker
-vim.cmd [[autocmd BufRead * set fillchars+=vert:\ |]] -- delete line after splits
-vim.cmd [[autocmd BufRead * hi SpellBad cterm=underline ctermfg=203 guifg=#ff5f5f gui=underline ]]
+--vim.cmd [[colorscheme material]]
+--vim.g.material_style = "palenight" -- deep ocean | palenight | darker
+--vim.cmd [[autocmd BufRead * set fillchars+=vert:\ |]] -- delete line after splits
+--vim.cmd [[autocmd BufRead * hi SpellBad cterm=underline ctermfg=203 guifg=#ff5f5f gui=underline ]]
 
 
 
