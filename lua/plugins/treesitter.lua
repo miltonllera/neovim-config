@@ -13,5 +13,6 @@ require('nvim-treesitter.configs').setup({
 		"lua",
     "python",
     "yaml",
+    "vim",
 	},
 })

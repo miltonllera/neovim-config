@@ -32,7 +32,7 @@ vim.o.mouse              = 'a'
 -- Vim specific
 vim.o.hidden             = true                         -- Do not save when switching buffers
 vim.o.fileencoding       = "utf-8"
-vim.o.spell              = true                         -- As of v0.8.0 it only checks comments
+vim.o.spell              = false                         -- As of v0.8.0 it only checks comments
 vim.o.spelllang          = "en_us"
 vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"               -- Display auto-complete in Command Mode
@@ -43,7 +43,7 @@ vim.g.do_file_type_lua   = 1
 -- vim.g.loaded_netrwPlugin = false                     -- I can't remember what the issue was with this option
 
 -- Python providers
-local pynvim_env        = "/.local/bin/pyenv/versions/pynvim/"
+local pynvim_env        = os.getenv("HOME").."/.local/bin/pyenv/versions/pynvim/"
 vim.g.python3_host_prog = os.getenv("HOME")..pynvim_env.."/bin/python"
 vim.g.black_virtualenv  = os.getenv("HOME")..pynvim_env
 
