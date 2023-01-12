@@ -12,7 +12,7 @@ require('bufferline').setup({
     show_buffer_icons = true,
     show_buffer_close_icons = false,
     show_close_icon = false,
-    separator_style = 'slant',
+    separator_style = 'thin',
     -- Don't show bufferline over vertical, unmodifiable buffers
     offsets = {{
         filetype = 'NvimTree',
