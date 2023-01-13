@@ -150,6 +150,10 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'marko-cerovac/material.nvim'
 
+
+  -- useless plugin
+  use 'eandrju/cellular-automaton.nvim'
+
   if packer_bootstrap then
     require('packer').sync()
   end

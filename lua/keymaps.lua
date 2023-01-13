@@ -110,3 +110,6 @@ nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
 -- EasyAlign
 -- xmap("ga", "<cmd>EasyAlign")
 -- nmap("ga", "<cmd>EasyAlign")
+
+-- For when everything else fails
+nnoremap("<leader>fml", '<Cmd>CellularAutomaton make_it_rain<CR>')
