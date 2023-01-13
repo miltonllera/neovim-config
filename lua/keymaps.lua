@@ -6,7 +6,7 @@ local Utils = require('utils')
 -- local exprnnoremap = Utils.exprnnoremap
 local nnoremap = Utils.nnoremap
 local vnoremap = Utils.vnoremap
--- local xnoremap = Utils.xnoremap
+local xnoremap = Utils.xnoremap
 local inoremap = Utils.inoremap
 -- local tnoremap = Utils.tnoremap
 -- local nmap = Utils.nmap
@@ -57,13 +57,20 @@ nnoremap("<A-w>", ":bd<CR>")
 -- Yank to end of line
 nnoremap("Y", "y$")
 
+-- Paste into selection without overwriting p register
+xnoremap("<leader>p", '\"_dP')
+
+-- Delete without overwriting register
+nnoremap("<leader>d", '\"_d')
+vnoremap("<leader>d", '\"_d')
+
 -- Copy to system clippboard
 nnoremap("<leader>y", '"+y')
 vnoremap("<leader>y", '"+y')
 
 -- Paste from system clippboard
-nnoremap("<leader><C-v>", '"+p')
-vnoremap("<leader><C-v>", '"+p')
+nnoremap("<leader>P", '"+p')
+vnoremap("<leader>P", '"+p')
 
 -- Clear highlight search
 nnoremap("<leader>nh", ":nohlsearch<CR>")
@@ -86,22 +93,22 @@ nnoremap("<leader>xo", "<Cmd> !xdg-open %<CR><CR>")
 
 -- Fugitive
 nnoremap("<leader>G", ":G<CR>")
-nnoremap("<leader>gh", ":Gclog<CR>")
+nnoremap("<leader>gl", ":Gclog<CR>")
 
 -- Show line diagnostics
-nnoremap("<leader>d", '<Cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
+nnoremap("<leader>i", '<Cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
 
 -- Open local diagnostics in local list
-nnoremap("<leader>D", "<Cmd>lua vim.diagnostic.setloclist()<CR>")
+nnoremap("<leader>I", "<Cmd>lua vim.diagnostic.setloclist()<CR>")
 
 -- Open all project diagnostics in quickfix list
-nnoremap("<leader><A-d>", "<Cmd>lua vim.diagnostic.setqflist()<CR>")
+nnoremap("<leader><A-I>", "<Cmd>lua vim.diagnostic.setqflist()<CR>")
 
 -- Telescope
-nnoremap("<leader>ff", "<Cmd>Telescope find_files<CR>")
-nnoremap("<leader>fhf","<Cmd>Telescope find_files hidden=true<CR>")
-nnoremap("<leader>fb", "<Cmd>Telescope buffers<CR>")
-nnoremap("<leader>fg", "<Cmd>Telescope live_grep<CR>")
+nnoremap("<leader>o", "<Cmd>Telescope find_files<CR>")
+nnoremap("<leader>H", "<Cmd>Telescope find_files hidden=true<CR>")
+nnoremap("<leader>b", "<Cmd>Telescope buffers<CR>")
+nnoremap("<leader>lg", "<Cmd>Telescope live_grep<CR>")
 
 -- File explorer
 nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
