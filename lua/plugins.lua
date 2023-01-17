@@ -26,14 +26,20 @@ return require('packer').startup(function(use)
   -- Let Packer manage itself
   use({'wbthomason/packer.nvim', opt = true})
 
+  -- LSP management (must come first as per mason-lspconfig.nvim's instructions)
+  use "williamboman/mason.nvim"
+  use ({
+    "williamboman/mason-lspconfig.nvim",
+    config = function() require('plugins.mason-lspconfig') end,
+  })
+
   -- LSP server
   use({
     'neovim/nvim-lspconfig',
     config = function() require('plugins.lspconfig') end
   })
-  use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
 
-  -- Autocomplete
+    -- Autocomplete
   use({
     "hrsh7th/nvim-cmp",
     -- Sources for nvim-cmp
