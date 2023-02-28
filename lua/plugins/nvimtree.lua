@@ -7,9 +7,11 @@ if (not status) then return end
 nvim_tree.setup({
   -- Allow using gx
   disable_netrw = false,
-  hijack_netrw = false,
+  hijack_netrw = true,
   update_cwd = true,
   sort_by = "case_sensitive",
+  sync_root_with_cwd = true,
+
   view = {
     adaptive_size = false,
     width = 40,
@@ -20,7 +22,7 @@ nvim_tree.setup({
     },
   },
   git = {
-    enable = false,
+    enable = true,
   },
   renderer = {
     group_empty = true,

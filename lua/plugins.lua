@@ -163,6 +163,7 @@ return require("packer").startup(
       {
         "kyazdani42/nvim-tree.lua",
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        tag = 'nightly',
         config = function()
           require("plugins.nvimtree")
         end, -- Must add this manually
@@ -209,9 +210,6 @@ return require("packer").startup(
     use "folke/tokyonight.nvim"
 
     use "marko-cerovac/material.nvim"
-
-    -- Auto load doc
-    use "djoshea/vim-autoread"
 
     -- Auto comment text
     use "scrooloose/nerdcommenter"
