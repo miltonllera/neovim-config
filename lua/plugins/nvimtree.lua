@@ -22,7 +22,7 @@ nvim_tree.setup({
     },
   },
   git = {
-    enable = true,
+    enable = false,
   },
   renderer = {
     group_empty = true,
