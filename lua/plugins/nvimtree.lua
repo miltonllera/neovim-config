@@ -7,7 +7,7 @@ if (not status) then return end
 nvim_tree.setup({
   -- Allow using gx
   disable_netrw = false,
-  hijack_netrw = true,
+  hijack_netrw = false,
   update_cwd = true,
   sort_by = "case_sensitive",
   sync_root_with_cwd = true,
