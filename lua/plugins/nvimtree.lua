@@ -10,6 +10,8 @@ nvim_tree.setup({
   hijack_netrw = false,
   update_cwd = true,
   sort_by = "case_sensitive",
+  sync_root_with_cwd = true,
+
   view = {
     adaptive_size = false,
     width = 40,
