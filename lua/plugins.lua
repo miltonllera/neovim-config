@@ -225,6 +225,14 @@ return require("packer").startup(
       }
     )
 
+    -- multiline debug
+    --use({
+  --"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  --config = function()
+    --require("plugins.lsp_lines").setup()
+  --end,
+--})
+
     -- transparent
     use { 'xiyaowong/nvim-transparent', config = function() require('plugins.nvim-transparent') end }
 
