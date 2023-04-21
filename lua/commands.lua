@@ -1,5 +1,8 @@
 -- Define commands
 
+-- Toggle highlight
+-- vim.cmd([[command! HiLiToggle (g:hlsearch ? ':nohls' : ':set hls')]])
+
 -- Remove trailing whitespaces
 -- (if a file requires trailing spaces, exclude its type using the regex)
 vim.cmd [[autocmd BufWritePre * %s/\s\+$//e ]]
