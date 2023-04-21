@@ -19,6 +19,10 @@ vim.g.maplocalleader = " "
 -- kj to normal mode
 inoremap("kj", "<Esc>")
 
+-- page up/down with recentering
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<C-d>", "<C-d>zz")
+
 -- Run omnifunc, mostly used for autocomplete
 inoremap("<C-SPACE>", "<C-x><C-o>")
 
