@@ -136,6 +136,9 @@ return require('packer').startup(function(use)
   use 'godlygeek/tabular'
   use 'ellisonleao/glow.nvim'
 
+  -- LaTex
+  use 'lervag/vimtex'
+
   -- TOML Files
   use 'cespare/vim-toml'
 
@@ -155,7 +158,6 @@ return require('packer').startup(function(use)
   -- Themes
   use 'folke/tokyonight.nvim'
   use 'marko-cerovac/material.nvim'
-
 
   -- useless plugin
   use 'eandrju/cellular-automaton.nvim'
