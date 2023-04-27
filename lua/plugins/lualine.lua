@@ -14,7 +14,17 @@ require('lualine').setup({
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff'},
     lualine_c = {
-      'filetype',
+      "filename",
+    },
+    lualine_x = {
+      {
+        'diagnostics',
+        sources = {'nvim_diagnostic'},
+        sections = {'error', 'warn', 'info'},
+      },
+    },
+    lualine_y = {
+      "filetype",
       {
         function()
           local msg = 'No LSP'
@@ -46,17 +56,12 @@ require('lualine').setup({
         color = {fg = '#ffffff', gui = 'bold'},
         separator = "",
       },
-      {
-        'diagnostics',
-        sources = {'nvim_diagnostic'},
-        sections = {'error', 'warn', 'info'},
-      },
+      "encoding",
     },
-    lualine_x = {'encoding'},
-    lualine_y = {'progress'},
     lualine_z = {
       {function () return '' end},
-      {'location'},
+      'progress',
+      'location',
     }
   },
 })
