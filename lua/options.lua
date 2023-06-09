@@ -44,8 +44,8 @@ vim.g.do_file_type_lua   = 1
 
 -- Python providers
 local pynvim_env        = os.getenv("HOME").."/.local/bin/pyenv/versions/pynvim/"
-vim.g.python3_host_prog = os.getenv("HOME")..pynvim_env.."/bin/python"
-vim.g.black_virtualenv  = os.getenv("HOME")..pynvim_env
+vim.g.python3_host_prog = pynvim_env.."/bin/python"
+vim.g.black_virtualenv  = pynvim_env
 
 -- Disable unused providers
 vim.g.loaded_perl_provider = 0
