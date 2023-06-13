@@ -14,6 +14,7 @@ local servers = {
   "jsonls",
   "pyright",
   "texlab",
+  "marksman",
 }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({
