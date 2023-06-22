@@ -6,9 +6,9 @@ This readme exist so I don't have to remember how to do all these things when se
 
 ## Setting up
 
-### Linux
+Notice that Neovim doesn't have a full release version number yet. This is because it is undergoing rapid development and older versions could be incompatible with some plugins. The latest version can always be installe using the instructions below depending on your operating system.
 
-The first step is to install the correct version of Neovim. Most plugins require version 0.5 or above, but `treesitter` actually requires >= 0.5.1. to work. Version 0.6 has now been relased, which means the previous comment is deprecated. Versions can be installed using `snap`:
+### Linux
 
 ```bash
 # For stable versions
@@ -145,23 +145,13 @@ Binaries for each language servers must be installed from their relevant repo. M
   npm i -g vscode-langservers-extracted
   ```
 
-- **Lua**: sumneko_lua
-  This one is a tricky one as you have to manually clone the repo and then compile it. I did not have any issues, but I did have to install ninja for this, which can be done through `apt install ninja-build`.
+- **Lua**: lua_ls
 
-  1. First clone:
+  Notice that the old `sumneko_lua` server is now deprecated. The version available now is `lua_ls` which is much easier to install (and also doesn't seem to funnel telemetry data to a remote server by default).
+
   ```bash
-  git clone https://github.com/sumneko/lua-language-server
-  cd lua-language-server
-  git submodule update --init --recursive
+  brew install lua-language-server
   ```
-  2. Next we manually build the server binaries:
-  ```bash
-  cd 3rd/luamake
-  ./compile/install.sh
-  cd ../..
-  ./3rd/luamake/luamake rebuild
-  ```
-  The configuration file in the `lsp` folder for this server should reference these binaries and the root folder of the code. I've set it to `~/.local/share/nvim/site/lsp\_servers/sumneko` there is `sumneko_lua` there which is the Lua module used to hook into this one, be careful no to overwrite.
 
 - **Python**: pyright:
 
