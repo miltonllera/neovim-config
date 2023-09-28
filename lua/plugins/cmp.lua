@@ -61,7 +61,6 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     }),
-
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -71,8 +70,6 @@ cmp.setup({
         fallback()
       end
     end,
-
-
     ['<S-Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -90,11 +87,11 @@ cmp.setup({
 
   -- Complete options from the LSP servers and the snippet engine
   sources = {
-    { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'buffer' },
+    { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'path' },
-    { name = 'buffer' },
     { name = 'spell',
       option = {
         keep_all_entries = false,

@@ -48,6 +48,7 @@ vim.g.do_file_type_lua   = 1
 vim.o.spelllang          = "en"
 vim.opt.shortmess:append { W = true, a = true }
 vim.o.undodir            = vim.fn.stdpath("cache") .. "/undo"
+vim.o.tags = "./tags;/,~/.vimtags"
 
 
 -- Disable some default plugins
@@ -92,4 +93,5 @@ vim.opt.spelllang  = { 'en_us' }
 -- blue = #212436
 -- green = #03292E
 
+--vim.g.node_host_prog = "C:\\ProgramData\\nvm\\v20.6.1\\node.exe"
 

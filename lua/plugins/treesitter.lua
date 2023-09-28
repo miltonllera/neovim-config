@@ -29,10 +29,12 @@ ts.setup {
     "css",
     "html",
     --"lua",
-    "typescript", 
-    "javascript", 
-    "scss", 
-    "c_sharp", 
+    "typescript",
+    "javascript",
+    "scss",
+    "c_sharp",
+    "query",
+    "vimdoc"
   },
   autotag = {
     enable = true,

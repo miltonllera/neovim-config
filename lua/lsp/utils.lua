@@ -27,33 +27,32 @@ function M.common_on_attach(client, bufnr)
 
   -- Keymaps: we need to define keymaps for each of the LSP functionalities manually
   -- Go to definition and declaration (use leader to presever standard use of 'gd')
-  bufnnoremap("<leader>gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
-  bufnnoremap("<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
+  --bufnnoremap("<leader>gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
+  --bufnnoremap("<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
 
   -- Go to implementation
-  bufnnoremap("<leader>gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
+  --bufnnoremap("<leader>gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
 
   -- List symbol uses
   -- bufnnoremap("<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>")  -- Uses quickfix
-  bufnnoremap("<leader>gr", "<cmd>Telescope lsp_references<CR>")  -- Uses Telescope
+  --bufnnoremap("<leader>gr", "<cmd>Telescope lsp_references<CR>")  -- Uses Telescope
 
   -- Inspect function
-  bufnnoremap("<C-k>", "<Cmd>lua vim.lsp.buf.hover()<CR>")
+  --bufnnoremap("<C-k>", "<Cmd>lua vim.lsp.buf.hover()<CR>")
 
   -- Signature help
-  bufnnoremap("<A-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>")
+  --bufnnoremap("<A-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>")
 
-  -- Rename all references of symbol
-  bufnnoremap("<leader>R", "<Cmd>lua vim.lsp.buf.rename()<CR>")
+  ---- Rename all references of symbol
+  --bufnnoremap("<leader>R", "<Cmd>lua vim.lsp.buf.rename()<CR>")
 
-  -- Navigate diagnostics
-  bufnnoremap("<C-m>", "<Cmd>lua vim.diagnostic.goto_next()<CR>")
-  bufnnoremap("<C-p>", "<Cmd>lua vim.diagnostic.goto_prev()<CR>")
+  ---- Navigate diagnostics
+  --bufnnoremap("<C-m>", "<Cmd>lua vim.diagnostic.goto_next()<CR>")
+  --bufnnoremap("<C-p>", "<Cmd>lua vim.diagnostic.goto_prev()<CR>")
 
   -- Markdown preview TODO: make this conditional, but I also don't use it all that much
   -- bufnnnoremap("<leader>P", "<Cmd>Glow<CR>")
-  
-  bufnnoremap("<leader>f", "<Cmd>lua vim.lsp.buf.format { async = true }<CR>")
+  --bufnnoremap("<leader>f", "<Cmd>lua vim.lsp.buf.format { async = true }<CR>")
   -- we are using ale for formatting
   --if client.server_capabilities.documentFormattingProvider then
     --cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()")
