@@ -96,9 +96,9 @@ return require("packer").startup(
       }
     )
     -- Snippets
-    use { 
+    use {
       "L3MON4D3/LuaSnip",
-      tag = "v1.1.0*",
+      tag = "v1.*",
       config = function()
       require("plugins.snippets")
       end
@@ -134,17 +134,17 @@ return require("packer").startup(
       }
     )
 
-    -- bufferline
-    use(
+    --bufferline
+     use(
       {
         "akinsho/bufferline.nvim",
-        tag = "v2.*",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
+         tag = "v3.*",
+         requires = "kyazdani42/nvim-web-devicons",
+         config = function()
           require("plugins.bufferline")
-        end,
-        event = "BufWinEnter"
-      }
+         end,
+         event = "BufWinEnter"
+       }
     )
 
     -- statusline
@@ -163,6 +163,7 @@ return require("packer").startup(
       {
         "kyazdani42/nvim-tree.lua",
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        tag = 'nightly',
         config = function()
           require("plugins.nvimtree")
         end, -- Must add this manually
@@ -209,9 +210,6 @@ return require("packer").startup(
     use "folke/tokyonight.nvim"
 
     use "marko-cerovac/material.nvim"
-
-    -- Auto load doc
-    use "djoshea/vim-autoread"
 
     -- Auto comment text
     use "scrooloose/nerdcommenter"

@@ -25,7 +25,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require 'lspconfig'.sumneko_lua.setup {
+require 'lspconfig'.lua_ls.setup {
   -- Does not have a default cmd, so we need to manually provide it
   cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" };
   settings = {

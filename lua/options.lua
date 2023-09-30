@@ -50,10 +50,12 @@ vim.opt.shortmess:append { W = true, a = true }
 --vim.opt.cursorcolumn     = true
 vim.o.undodir            = vim.fn.stdpath("cache") .. "/undo"
 
+
 -- Disable some default plugins
 vim.g.loaded_gzip           = false
 vim.g.loaded_matchit        = false
-vim.g.loaded_netrwPlugin    = false
+vim.g.loaded_netrw          = 1
+vim.g.loaded_netrwPlugin    = 1
 vim.g.loaded_tarPlugin      = false
 vim.g.loaded_zipPlugin      = false
 vim.g.loaded_man            = false
