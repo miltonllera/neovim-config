@@ -49,6 +49,7 @@ vim.o.spelllang          = "en"
 vim.opt.shortmess:append { W = true, a = true }
 --vim.opt.cursorcolumn     = true
 vim.o.undodir            = vim.fn.stdpath("cache") .. "/undo"
+vim.o.tags = "./tags;/,~/.vimtags"
 
 
 -- Disable some default plugins
@@ -74,21 +75,24 @@ vim.g.maplocalleader        = " "
 --vim.g.black_virtualenv  = os.getenv("HOME")..pynvim_env
 
 -- Disable unused providers
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider  = 0
+vim.g.loaded_ruby_provider  = 0
 
 -- Nvimtree defaults
-vim.g.loaded = 1
-vim.g.loaded_netrwPlugin = 0
+vim.g.loaded              = 1
+vim.g.loaded_netrwPlugin  = 0
 
 -- in millisecond, used for both CursorHold and CursorHoldI,
 -- use update time instead if not defined
-vim.g.cursorhold_updatetime = 100
+vim.g.cursorhold_updatetime  = 100
 
-
+-- enable spell
+vim.opt.spell      = true
+vim.opt.spelllang  = { 'en_us' }
 
 -- Powershell background colors 
 -- blue = #212436
 -- green = #03292E
 
+--vim.g.node_host_prog = "C:\\ProgramData\\nvm\\v20.6.1\\node.exe"
 

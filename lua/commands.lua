@@ -15,7 +15,6 @@ vim.cmd [[autocmd FileType css set omnifunc=csscomplete#CompleteCSS]]
 -- Open help tags
 vim.cmd("command! HelpTags Telescope help_tags")
 
-
 -- Create ctags
 vim.cmd('command! MakeCTags !ctags -R --exclude=@.ctagsignore .')
 
@@ -29,5 +28,10 @@ vim.api.nvim_exec(
 ]] ,
   false
 )
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+vim.o.updatetime = 250
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
 
 

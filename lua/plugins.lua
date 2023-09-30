@@ -39,24 +39,39 @@ return require("packer").startup(
     -- Let Packer manage itself
     use({ "wbthomason/packer.nvim", opt = true })
 
+     -- LSP management (must come first as per mason-lspconfig.nvim's instructions)
+    use {
+      'VonHeikemen/lsp-zero.nvim',
+      requires = {
+        {'neovim/nvim-lspconfig'},
+		    {'williamboman/mason.nvim'},
+		    {'williamboman/mason-lspconfig.nvim'}
+      },
+      config = function()
+          -- lsp language specific config
+          require("plugins.lspconfig")
+       end,
+    }-- :MasonUpdate updates registry contents
+
     -- cursor hold fixer
     use "antoinemadec/FixCursorHold.nvim"
 
-    -- Helper for installing most language servers and LSP server
-    use(
-      {
-        "williamboman/nvim-lsp-installer",
-        requires = {
-          "neovim/nvim-lspconfig",
-          "jose-elias-alvarez/typescript.nvim"
-        },
-        config = function()
-          -- lsp language specific config
-          require("plugins.lspconfig")
-        end,
-        event = "BufRead"
-      }
-    )
+    ---- Helper for installing most language servers and LSP server
+    --use(
+      --{
+        --"williamboman/mason-lspconfig.nvim",
+        ----"williamboman/nvim-lsp-installer",
+        --requires = {
+          --"neovim/nvim-lspconfig",
+          --"jose-elias-alvarez/typescript.nvim"
+        --},
+        --config = function()
+          ---- lsp language specific config
+          --require("plugins.lspconfig")
+        --end,
+        --event = "BufRead"
+      --}
+    --)
 
     -- Autocomplete
     use(
@@ -99,12 +114,14 @@ return require("packer").startup(
     use {
       "L3MON4D3/LuaSnip",
       tag = "v1.*",
+      requires = {
+        "rafamadriz/friendly-snippets"
+      },
       config = function()
       require("plugins.snippets")
       end
     }
 
-    use "rafamadriz/friendly-snippets"
 
     -- Signature help
     use "ray-x/lsp_signature.nvim"
@@ -224,6 +241,14 @@ return require("packer").startup(
         end
       }
     )
+
+    -- multiline debug
+    --use({
+  --"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  --config = function()
+    --require("plugins.lsp_lines").setup()
+  --end,
+--})
 
     -- transparent
     use { 'xiyaowong/nvim-transparent', config = function() require('plugins.nvim-transparent') end }

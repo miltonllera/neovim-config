@@ -1,5 +1,5 @@
 local fn = vim.fn
-local common_on_attach = require('lsp.utils').common_on_attach
+--local common_on_attach = require('lsp.utils').common_on_attach
 
 --local system_name
 --if fn.has('mac') == 1 then
@@ -17,6 +17,7 @@ local common_on_attach = require('lsp.utils').common_on_attach
 -- https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages
 -- use this guide for install lua language server lua-language-server https://github.com/sumneko/lua-language-server/wiki/Getting-Started
 -- ~AppData\Local\nvim-data\lua-language-server
+
 
 local sumneko_root_path = fn.stdpath('data') .. '/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
@@ -46,5 +47,5 @@ require 'lspconfig'.lua_ls.setup {
       },
     },
   },
-  on_attach = common_on_attach,
+  --on_attach = common_on_attach,
 }
