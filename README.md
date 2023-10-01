@@ -396,16 +396,6 @@ Vim is very complete and extensive in its utilities, here I put the ones that I 
 | :vs     | vertical split   |
 | :split  | horizontal split |
 
-## TODO:
-
-Improvements:
-
-- Only open diagnostics if there are any to show.
-
-LSPs to add:
-
-- LaTex: can use [texlab](https://github.com/latex-lsp/texlab).
-
 Some pluggins to try:
 
 - Ranger integration: [Rnvimr](https://github.com/kevinhwang91/rnvimr). Use ranger in a floating buffer instead of as a tiled buffer.
