@@ -18,6 +18,7 @@ This readme exist so I don't have to remember how to do all these things when se
 
 ### Windows
 
+![nvim Home](./img/home.png)
 ![nvim windows](./img/example1.png)
 
 Install [Chocolatey](https://chocolatey.org/install)
