@@ -1,6 +1,16 @@
-# 🚀 Neovim configuration with Lua for Typescript / Javascript / React / LSP / Ale Prettier / Treesitter
+# 🚀 Neovim Basic
 
-This configuration is based on [miltonllera/config](https://github.com/miltonllera/neovim-config) however some shortcuts have been changed and some plugins have been organized to work on projects with typescript, javascript and react. 
+This configuration is based on [miltonllera/config](https://github.com/miltonllera/neovim-config), [josean-dev](https://github.com/josean-dev/dev-environment-files) and [ThePrimeagen](https://github.com/ThePrimeagen/init.lua/tree/249f3b14cc517202c80c6babd0f9ec548351ec71/after/plugin) however some shortcuts have been changed and some plugins have been organized to work on projects with typescript, javascript and react.
+
+- Typescript / Javascript / React and more
+- Package manager [Lazy.nvim](https://github.com/folke/lazy.nvim)
+- LSP
+- Prettier
+- Snippets
+- Luanine
+- Git
+- Linter
+- ...
 
 I have been using [coc.nvim](https://github.com/neoclide/coc.nvim) for the last three years and decided to migrate to `Lua` and I am really happy with the improvement and control of each of your utilities.
 I added and configured the plugins in the way that I have used them before, that is why this fork will remain independent.
@@ -9,7 +19,7 @@ The template that [Milton](https://github.com/miltonllera/neovim-config) left, w
 
 I have added some plugins recommended by the guys from [lunarVim](https://www.lunarvim.org/) and added some validations and plugins they use, achieving a very stable and agile version.
 
-A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins I need for programming. 
+A [Neovim](https://github.com/neovim/neovim) configuration using Lua, with the minimal number of pluggins I need for programming.
 Different language servers available through the LSP protocol provide code completion and analysis.
 
 This readme exist so I don't have to remember how to do all these things when setting up a new machine.
@@ -18,19 +28,19 @@ This readme exist so I don't have to remember how to do all these things when se
 
 ### Windows
 
-![nvim windows](./img/example1.png)
+![nvim Home](./img/home.png)
 
 Install [Chocolatey](https://chocolatey.org/install)
 
-  ```bash
-  Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-  ``` 
-  
+```bash
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
 Install [Neovim](https://community.chocolatey.org/packages/neovim#install)
 
-  ```bash
-  choco install neovim
-  ```
+```bash
+choco install neovim
+```
 
 Install [Git](https://community.chocolatey.org/packages/git)
 
@@ -55,7 +65,6 @@ Global packages for npm
  npm install -g cssmodules-language-server
 ```
 
-
 - Clone the repository inside off this folder or download the last [release](https://github.com/i-xarlos/neovim-config/releases/)
 
 ```bash
@@ -69,12 +78,12 @@ git clone https://github.com/i-xarlos/neovim-config.git ~/AppData/Local/nvim
 ```
 
 Install [Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=us)
-  You can download and install it from the microsoft store and choose your favorite font
+You can download and install it from the microsoft store and choose your favorite font
 
-Please review [nvim.tressitier](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support) windows support 
+Please review [nvim.tressitier](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support) windows support
 
 ```bash
-# Mingw toolchain 
+# Mingw toolchain
 choco install mingw
 
 # LLVM (Clang)
@@ -83,33 +92,35 @@ choco install llvm
 
 Optionally:
 
-  - Handle packages from [Chocolatey Gui](https://community.chocolatey.org/packages/ChocolateyGUI)
+- Handle packages from [Chocolatey Gui](https://community.chocolatey.org/packages/ChocolateyGUI)
 
-  ```bash
-   choco install chocolateygui
-  ```
- - Install NVM to handle node servers [https://community.chocolatey.org/packages/nvm]
-  ```bash
-  # Install nvm
-  choco install nvm
+```bash
+ choco install chocolateygui
+```
 
-  # Nvm install node versions
-  nvm install 16.17.1
-  ```  
+- Install NVM to handle node servers [https://community.chocolatey.org/packages/nvm]
 
- - NerdFonts https://www.nerdfonts.com/font-downloads
+```bash
+# Install nvm
+choco install nvm
 
-    - [Caskaydia Cove NF] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip) - my favorite
-    - [Haslug] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hasklig.zip)
-    - [Firacode] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip)
+# Nvm install node versions
+nvm install 16.17.1
+```
+
+- NerdFonts https://www.nerdfonts.com/font-downloads
+
+  - [Caskaydia Cove NF] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip) - my favorite
+  - [Haslug] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hasklig.zip)
+  - [Firacode] (https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip)
 
 - Install [Ninja](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages) using chocolate `choco install ninja`
 
-    - Follow this [guide](https://github.com/sumneko/lua-language-server/wiki/Getting-Started) for install lua-language-server 
-    ```bash
-     ~AppData\Local\nvim-data\lua-language-server
-    ```
+  - Follow this [guide](https://github.com/sumneko/lua-language-server/wiki/Getting-Started) for install lua-language-server
 
+  ```bash
+   ~AppData\Local\nvim-data\lua-language-server
+  ```
 
 ### Linux
 
@@ -146,7 +157,6 @@ brew reinstall neovim
 
 Additionally, you may need to configure the `Option` key to behave like `Alt`. In **iTerm2**, this can be done in `Preferences -> Profiles -> Keys`. Change the left option behaviour to `Esc+`. For **kitty**, you need to set `macos_option_as_alt left` (defualt is no) in the terminal's config file. Restarting the terminal (`Command + Q`, then restart) is required for this to take effect.
 
-
 ## ⭐ Installing the configuration
 
 Clone the repo into Neovim's installation folder (usually `/home/<usr>/.config/nvim`):
@@ -160,28 +170,25 @@ This will create a folder with the configuration with the following structure is
 
 ```
 |- lua
-|  |- lsp/
-|  |- plugins/
-|  |- keymaps.lua
-|  |- options.lua
-|  |- plugins.lua
-|  |- theme.lua
-|  \- utils.lua
-|- plugin/
+|  |- config/
+|       |- core/
+|       |- defaults/
+|       |- lazy/
+|            |- init.lua
+|       |- plugins/
 \- init.lua
 ```
 
 This structure is important since Lua will not load files that are not located inside `lua`. The file `init.lua` loads all the modules located inside this folder to set the configuration. Most of the names are self explanatory. The most important file here is `plugins.lua`, which is the module that loads the relevant plugins. Some of the most important plugins are:
 
-1. [**`packer`**](https://github.com/wbthomason/packer.nvim): Manage the plugins.
+1. [**`lazy`**](https://github.com/folke/lazy.nvim): Manage the plugins.
 2. [**`lspconfig`**](https://github.com/neovim/nvim-lspconfig): provides a client for the different language servers using the Language Server Protocol (LSP).
 3. [**`cmp`**](https://github.com/hrsh7th/nvim-cmp): Auto-complete functionality. Recommended by the core Neovim team.
 4. [**`treesitter`**](https://github.com/nvim-treesitter/nvim-treesitter): Syntax highlighting and other functionality.
 5. [**`NvimTree`**](https://github.com/kyazdani42/nvim-tree.lua): File explorer written in Lua.
-6. [**`fugitive`**](https://github.com/tpope/vim-fugitive): The best plugin for git.
-7. [**`gitsigns`**](https://github.com/lewis6991/gitsigns.nvim): Git gutter highlighting and hunk management in buffer.
-8. [**`telescope`**](https://github.com/nvim-telescope/telescope.nvim): Fuzzy finder.
-9. [**`lualine`**](https://github.com/nvim-lualine/lualine.nvim): A status line written in Lua which is similar to `vim-airline`.
+6. [**`gitsigns`**](https://github.com/lewis6991/gitsigns.nvim): Git gutter highlighting and hunk management in buffer.
+7. [**`telescope`**](https://github.com/nvim-telescope/telescope.nvim): Fuzzy finder.
+8. [**`lualine`**](https://github.com/nvim-lualine/lualine.nvim): A status line written in Lua which is similar to `vim-airline`.
 
 There are some more packages that are dependencies of the ones mentioned above, and some for formatting and theming as well. Adding new plugins is simple using the `use` function:
 
@@ -330,6 +337,9 @@ To visualize fancy icons and separators, a patched font must be installed. [Nerd
 
 3. Change the font in the terminal emulator's settings to the patched font.
 
+Yaml issues:
+Please verify: https://github.com/nvim-treesitter/nvim-treesitter/issues/3587
+
 ### Nerd Fonts with Kitty
 
 If using `kitty` as default terminal, then the procedure above won't work. First, `kitty` does not support non-monospaced fonts due to how it renders text. Second, the fonts cannot be patched. In fact, kitty takes care of patching on it's own which is great. To install the fonts follow the instructions in this [blog](https://erwin.co/kitty-and-nerd-fonts/#symbols), which are straighforward.
@@ -340,62 +350,51 @@ TL;DR for `MacOS`:
 2. If the glyphs aren't displayed by default, then they can be specified manually by following the instructions.
 3. Refresh the fonts cache.
 
-
 ## 📗 Shortcuts:
 
-If you need more information you can find more shortcuts in `utils.lua` and `keymaps.lua`:
+If you need more information you can find more shortcuts in `options.lua` and `keymaps.lua`:
 
 ```
 |- lua
-|  |- lsp/
-|  |  | - utils.lua
-|  |- keymaps.lua
+|  |- core/
+|  |  | - options.lua
+|  |  | - keymaps.lua
 ```
+
 ### Some of the most used shortcuts:
 
 Vim is very complete and extensive in its utilities, here I put the ones that I use most commonly and have been customized in this configuration.
 
- Keys | Description 
-  --- | --- 
-[Leader] | Space 
-[Leader-e] | Open NvimTree (Toggle)
-[Leader-f-f] | Telescope find in files
-[Leader-f-b] | Telescope find in buffers
-[Leader-f-g] | Telescope find text (live grep)
-[Leader-g-i] | Lua go to implemetation (live grep)
-[Leader-g-r] | Telescope go to reference (live grep)
-[Leader-f] | Quick lsp format
-[TAB] | Select autocomplete element / Change Buffer (Right)
-[S-TAB] | Select autocomplete element / Change Buffer (Left)
-[C-n] | Highlighting word
-[C-k] | Show documentation / Close autocomplete
-[k-j] | Escape 
-[C-c] | Close Buffer 
-[C-s] | Save document
-[g-g] | Move cursor to document top
-[G-G] | Move cursor to document bottom 
-[A-h] | Jump to left (Buffer) 
-[A-j] | Jump to bottom (Buffer) 
-[A-k] | Jump to top (Buffer) 
-[A-l] | Jump to right (Buffer) 
-
+| Keys         | Description                                         |
+| ------------ | --------------------------------------------------- |
+| [Leader]     | Space                                               |
+| [Leader-e]   | Open NvimTree (Toggle)                              |
+| [Leader-f-f] | Telescope find in files                             |
+| [Leader-f-b] | Telescope find in buffers                           |
+| [Leader-f-g] | Telescope find text (live grep)                     |
+| [Leader-g-i] | Lua go to implemetation (live grep)                 |
+| [Leader-g-r] | Telescope go to reference (live grep)               |
+| [Leader-f]   | Quick lsp format                                    |
+| [TAB]        | Select autocomplete element / Change Buffer (Right) |
+| [S-TAB]      | Select autocomplete element / Change Buffer (Left)  |
+| [C-n]        | Highlighting word                                   |
+| [C-k]        | Show documentation / Close autocomplete             |
+| [k-j]        | Escape                                              |
+| [C-c]        | Close Buffer                                        |
+| [C-s]        | Save document                                       |
+| [g-g]        | Move cursor to document top                         |
+| [G-G]        | Move cursor to document bottom                      |
+| [A-h]        | Jump to left (Buffer)                               |
+| [A-j]        | Jump to bottom (Buffer)                             |
+| [A-k]        | Jump to top (Buffer)                                |
+| [A-l]        | Jump to right (Buffer)                              |
 
 ## Commands:
 
- Command | Description 
-  --- | --- 
-:vs | vertical split 
-:split | horizontal split 
-
-## TODO:
-
-Improvements:
-
-- Only open diagnostics if there are any to show.
-
-LSPs to add:
-
-- LaTex: can use [texlab](https://github.com/latex-lsp/texlab).
+| Command | Description      |
+| ------- | ---------------- |
+| :vs     | vertical split   |
+| :split  | horizontal split |
 
 Some pluggins to try:
 
