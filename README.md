@@ -1,4 +1,4 @@
-# 🚀 Neovim configuration with Lua for Typescript / Javascript / React / LSP / Prettier / Treesitter
+# 🚀 Neovim configuration with Lua for Typescript / Javascript / React / LSP / Prettier / Treesitter / Lazy
 
 This configuration is based on [miltonllera/config](https://github.com/miltonllera/neovim-config), [josean-dev](https://github.com/josean-dev/dev-environment-files) and [ThePrimeagen](https://github.com/ThePrimeagen/init.lua/tree/249f3b14cc517202c80c6babd0f9ec548351ec71/after/plugin) however some shortcuts have been changed and some plugins have been organized to work on projects with typescript, javascript and react.
 
@@ -343,13 +343,13 @@ TL;DR for `MacOS`:
 
 ## 📗 Shortcuts:
 
-If you need more information you can find more shortcuts in `utils.lua` and `keymaps.lua`:
+If you need more information you can find more shortcuts in `options.lua` and `keymaps.lua`:
 
 ```
 |- lua
-|  |- lsp/
-|  |  | - utils.lua
-|  |- keymaps.lua
+|  |- core/
+|  |  | - options.lua
+|  |  | - keymaps.lua
 ```
 
 ### Some of the most used shortcuts:
