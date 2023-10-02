@@ -53,16 +53,8 @@ Install [Node](https://nodejs.org/en)
 Global packages for npm
 
 ```bash
- npm install -g @fsouza/prettierd
- npm install -g bash-language-server
- npm install -g eslint_d
  npm install -g neovim
  npm install -g prettier
- npm install -g spell
- npm install -g typescript-language-server
- npm install -g typescript
- npm install -g vscode-langservers-extracted
- npm install -g cssmodules-language-server
 ```
 
 - Clone the repository inside off this folder or download the last [release](https://github.com/i-xarlos/neovim-config/releases/)
@@ -193,22 +185,22 @@ This structure is important since Lua will not load files that are not located i
 There are some more packages that are dependencies of the ones mentioned above, and some for formatting and theming as well. Adding new plugins is simple using the `use` function:
 
 ```lua
-use({
+return{
   '<author>/<plugin-repo>',
-  config = function() require('<plugin-name>').setup({}) end,
-})
+   config = function() require('<plugin-name>').setup({}) end,
+}
 ```
 
 This will load a plugin with it's standard configuration. For more complex configurations, we create the relevant file in `lua/plugins` (eg. `lua/plugins/foo.lua`) and load it using the require function along with any other option we wish to pass on to the `use` function:
 
 ```lua
-use({
+return {
   '<author>/<plugin-repo>',
   config = function() require('plugin/<plugin-name>') end,
   -- Optionally require other plugins.
   requires = '<author>/<required-plugin-repo>'
   -- Other functionality
-})
+}
 ```
 
 Notice that the file type is omitted from this call.
@@ -217,109 +209,12 @@ Install and update plugins using packer
 
 ```bash
 #nvim command
-:PackerSync
+:Lazy
 ```
 
 ## 📋 Auto-completion
 
 The auto-complete functionality is achieved by using `nvim-cmp` to attach the relevant language servers to the buffers containing code. Most servers only require that the on attach function is specified so that different motions are available. Currently, the common function to attach a server to a buffer is located in `lua/lsp/utils.lua` . It will enable common key mappings for all language servers to display code completion.
-
-The second part is installing the language servers themselves (described below) and enabling them. `:LspInstall` can be used if [`nvim-lsp-installer`](https://github.com/williamboman/nvim-lsp-installer/) is found. Others may require manual installation. There is an extra step which involves installing the binaries for these servers, which we describe below.
-
-### Installing the language servers
-
-Binaries for each language servers must be installed from their relevant repo. Most servers are installed using `npm install`, but others like `clangd` and `sumneko` for Lua require more involved procedures. Here is a list of servers and installation methods. These should work both on `bash` and `zsh`.
-
-- **Bash**: bashls
-
-  ```bash
-  npm i -g bash-language-server
-  ```
-
-- **C/C++**: clangd
-  May have to try several versions, but 13 is the latest one. I am using 12 and 9 or 8 should be available.
-
-  ```bash
-  sudo apt-get install clangd-13
-  ```
-
-  Then we must make it the default clangd (example with clangd-13):
-
-  ```bash
-  sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-13 100
-  ```
-
-  **NOTE**: On MacOS `clang` is installed through XCode, and you probably don't need to do anything else. You can check this by running `clang --version` from the terminal.
-
-- **Docker**: dockerls
-
-  ```bash
-  npm i -g dockerfile-language-server-nodejs
-  ```
-
-- **Julia**: julials
-
-  ```bash
-  julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
-  ```
-
-- **JSON**: jsonls
-
-  ```bash
-  npm i -g vscode-langservers-extracted
-  ```
-
-- **Lua**: sumneko_lua
-  This one is a tricky one as you have to manually clone the repo and then compile it. I did not have any issues, but I did have to install ninja for this, which can be done through `apt install ninja-build`.
-
-  1. First clone:
-
-  ```bash
-  git clone https://github.com/sumneko/lua-language-server
-  cd lua-language-server
-  git submodule update --init --recursive
-  ```
-
-  2. Next we manually build the server binaries:
-
-  ```bash
-  cd 3rd/luamake
-  ./compile/install.sh
-  cd ../..
-  ./3rd/luamake/luamake rebuild
-  ```
-
-  The configuration file in the `lsp` folder for this server should reference these binaries and the root folder of the code. I've set it to `~/.local/share/nvim/site/lsp\_servers/sumneko` there is `sumneko_lua` there which is the Lua module used to hook into this one, be careful no to overwrite.
-
-- **Python**: pyright:
-
-  ```bash
-  npm i -g pyright
-  ```
-
-- **YAML**: yamlls
-
-  This install requires `yarn` to work
-
-  ```bash
-  yarn global add yaml-language-server
-  ```
-
-  For MacOS use `brew`:
-
-  ```
-  brew install yaml-language-server
-  ```
-
-If a module complains about the verion of node being too old (pyright will do this), then run the following:
-
-```bash
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-```
-
-Make sure to use the `-g` on all `npm` installs, otherwise the server won't be found.
 
 ### Some further notes
 

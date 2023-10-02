@@ -18,12 +18,26 @@ keymap.set("n", "<A-j>", "<C-w>j")
 keymap.set("n", "<A-k>", "<C-w>k")
 keymap.set("n", "<A-l>", "<C-w>l")
 
+-- Switch buffers (needs nvim-bufferline)
+keymap.set("n", "<TAB>", ":BufferLineCycleNext<CR>")
+keymap.set("n", "<S-TAB>", ":BufferLineCyclePrev<CR>")
+
 -- delete single character without copying into register
 -- keymap.set("n", "x", '"_x')
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
+
+-- Populate substitution
+keymap.set("n", "<leader>s", ":s//g<Left><Left>")
+keymap.set("n", "<leader>S", ":%s//g<Left><Left>")
+keymap.set("n", "<leader><C-s>", ":%s//gc<Left><Left><Left>")
+
+-- Show line diagnostics
+keymap.set("n", "<leader>d", '<Cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
+-- Open local diagnostics in local list
+keymap.set("n", "<leader>D", "<Cmd>lua vim.diagnostic.setloclist()<CR>")
 
 -- window management
 keymap.set("n", "<leader>vs", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
