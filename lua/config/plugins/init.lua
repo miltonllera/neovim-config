@@ -5,5 +5,5 @@ return {
 
 	"inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
 
-	"scrooloose/nerdcommenter",
+	"scrooloose/nerdcommenter", -- ease comment code
 }
