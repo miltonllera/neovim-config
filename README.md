@@ -273,7 +273,7 @@ Vim is very complete and extensive in its utilities, here I put the ones that I 
 | [TAB]        | Select autocomplete element / Change Buffer (Right) |
 | [S-TAB]      | Select autocomplete element / Change Buffer (Left)  |
 | [C-n]        | Highlighting word                                   |
-| [C-k]        | Show documentation / Close autocomplete             |
+| [K]          | Show documentation / Close autocomplete             |
 | [k-j]        | Escape                                              |
 | [C-c]        | Close Buffer                                        |
 | [C-s]        | Save document                                       |
