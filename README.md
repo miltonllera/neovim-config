@@ -54,11 +54,12 @@ choco install git
 
 Install [Node](https://nodejs.org/en)
 
-Global packages for npm
+Global packages for npm (update your packages)
 
 ```bash
  npm install -g neovim
  npm install -g prettier
+ npm install -g typescript-language-server typescript
 ```
 
 - Clone the repository inside off this folder or download the last [release](https://github.com/i-xarlos/neovim-config/releases/)
@@ -274,6 +275,8 @@ Vim is very complete and extensive in its utilities, here I put the ones that I 
 | [Leader-g-i] | Lua go to implemetation (live grep)                 |
 | [Leader-g-r] | Telescope go to reference (live grep)               |
 | [Leader-f]   | Quick lsp format                                    |
+| [Leader-cc]  | Comment code block (visual selected text)           |
+| [Leader-cu]  | Uncomment code block (visual selected text)         |
 | [TAB]        | Select autocomplete element / Change Buffer (Right) |
 | [S-TAB]      | Select autocomplete element / Change Buffer (Left)  |
 | [C-n]        | Highlighting word                                   |
