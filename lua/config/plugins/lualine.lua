@@ -104,7 +104,8 @@ return {
 					{
 						"diagnostics",
 						sources = { "nvim_diagnostic" },
-						sections = { "error", "warn", "info" },
+						sections = { "error", "warn", "info", "hint" },
+						symbols = { error = "  ", warn = "  ", hint = "  ", info = "  " },
 					},
 				},
 				lualine_x = {
