@@ -54,7 +54,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "tokyonight",
+				--theme = "tokyonight",
 				-- Separators might look weird for certain fonts (eg Cascadia)
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
