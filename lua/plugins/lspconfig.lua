@@ -13,6 +13,7 @@ local servers = {
   "clangd",
   "dockerls",
   -- "jedi_langauge_server",
+  "hls",
   "jsonls",
   "lua_ls",
   "marksman",

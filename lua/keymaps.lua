@@ -103,10 +103,10 @@ nnoremap("<leader>gl", ":Gclog<CR>")
 nnoremap("<leader>i", '<Cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
 
 -- Open local diagnostics in local list
-nnoremap("<leader>I", "<Cmd>lua vim.diagnostic.setloclist()<CR>")
+nnoremap("<leader>I", "<cmd>TroubleToggle document_diagnostics<cr>")
 
 -- Open all project diagnostics in quickfix list
-nnoremap("<leader><A-I>", "<Cmd>lua vim.diagnostic.setqflist()<CR>")
+nnoremap("<leader><A-I>", "<cmd>TroubleToggle workspace_diagnostics<cr>")
 
 -- Telescope
 nnoremap("<leader>o", "<Cmd>Telescope find_files<CR>")
@@ -117,6 +117,9 @@ nnoremap("<leader>lg", "<Cmd>Telescope live_grep<CR>")
 -- File explorer
 nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
 -- nnoremap("<leader>e", "<Cmd>RnvimrToggle<CR>")
+
+-- Run Copilot
+nnoremap("<leader>C", "<Cmd>Copilot panel<CR>")
 
 -- EasyAlign
 -- xmap("ga", "<cmd>EasyAlign")

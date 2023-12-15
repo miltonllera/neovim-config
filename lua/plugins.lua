@@ -105,6 +105,8 @@ return require('packer').startup(function(use)
     end
   })
 
+  use 'folke/trouble.nvim'
+
   -- git commands
   use 'tpope/vim-fugitive'
 
@@ -122,9 +124,15 @@ return require('packer').startup(function(use)
   use 'tpope/vim-repeat'
   use 'junegunn/vim-easy-align'
 
+  -- Copilot
+  use "github/copilot.vim"
+
   -- Python formatting
   use "EgZvor/vim-black"
   use 'jeetsukumaran/vim-python-indent-black'
+
+  -- Python types
+  use "microsoft/python-type-stubs"
 
   -- Python
   -- use 'heavenshell/vim-pydocstring'   -- Overwrites a keymap, need to fix.
