@@ -1,47 +1,47 @@
--- Plugin definition and loading
--- local execute = vim.api.nvim_command
-local fn = vim.fn
-local cmd = vim.cmd
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
--- Boostrap Packer
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
-local packer_bootstrap
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone','https://github.com/wbthomason/packer.nvim', install_path})
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Load Packer
-cmd([[packadd packer.nvim]])
+local plugins = {
+  -- Themes
+  {
+    "folke/tokyonight.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
 
--- Rerun PackerCompile everytime pluggins.lua is updated
-cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+  { 'marko-cerovac/material.nvim' },
 
--- Initialize pluggins
-return require('packer').startup(function(use)
-  -- Let Packer manage itself
-  use({'wbthomason/packer.nvim', opt = true})
-
-  -- LSP management (must come first as per mason-lspconfig.nvim's instructions)
-  use {
+  {
     "williamboman/mason.nvim",
-    run = ":MasonUpdate",
-  }-- :MasonUpdate updates registry contents
+    build = ':MasonUpdate',
+  },
 
-  use "williamboman/mason-lspconfig.nvim"
-  use "neovim/nvim-lspconfig"
+  { "williamboman/mason-lspconfig.nvim" },
+  { "neovim/nvim-lspconfig" },
 
-  require("plugins.lspconfig")
+  -- require("plugins.lspconfig")
 
     -- Autocomplete
-  use({
+  {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     -- Sources for nvim-cmp
-    requires = {
+    dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -50,103 +50,103 @@ return require('packer').startup(function(use)
       "saadparwaiz1/cmp_luasnip",
     },
     config = function() require('plugins.cmp') end,
-  })
+  },
 
   -- Treesitter
-  use({
+  {
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     config = function() require('plugins.treesitter') end,
-    run = ':TSUpdate'
-  })
+    build = ':TSUpdate'
+  },
 
   -- Snippets
-  use {"L3MON4D3/LuaSnip", config = function() require('plugins.snippets') end}
-  use "rafamadriz/friendly-snippets"
+  {"L3MON4D3/LuaSnip", config = function() require('plugins.snippets') end},
+  {"rafamadriz/friendly-snippets"},
 
   -- Signature help
-  use "ray-x/lsp_signature.nvim"
+  {"ray-x/lsp_signature.nvim"},
 
   -- Telescope
-  use({
+  {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/plenary.nvim'}},
     config = function() require('plugins.telescope') end,
-  })
+  },
 
-  use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
+  {'nvim-telescope/telescope-fzf-native.nvim', build ='make'},
 
   -- bufferline
-  use({
+  {
     'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
+    dependencies = 'kyazdani42/nvim-web-devicons',
     config = function() require('plugins.bufferline') end,
     event = 'BufWinEnter',
-  })
+  },
 
   -- statusline
-  use({
+  {
     'hoob3rt/lualine.nvim',
     config = function() require('plugins.lualine') end,
-  })
+  },
 
   -- NvimTree
-  use({
+  {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
+    dependencies = 'kyazdani42/nvim-web-devicons',
     config = function() require('plugins.nvimtree') end,  -- Must add this manually
-  })
+  },
 
   -- Startify
-  use({
+  {
     'mhinz/vim-startify',
     config = function()
       local path = vim.fn.stdpath('config')..'/lua/plugins/startify.vim'
       vim.cmd('source '..path)
     end
-  })
+  },
 
-  use 'folke/trouble.nvim'
+  {'folke/trouble.nvim'},
 
   -- git commands
-  use 'tpope/vim-fugitive'
+  {'tpope/vim-fugitive'},
 
   -- Gitsigns
-  use ({
+  {
     'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
+    dependencies = {'nvim-lua/plenary.nvim'},
     config = function() require('plugins.gitsigns') end
-  })
+  },
 
   -- Formatting
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-unimpaired'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-repeat'
-  use 'junegunn/vim-easy-align'
+  { 'tpope/vim-commentary' },
+  { 'tpope/vim-unimpaired' },
+  { 'tpope/vim-surround' },
+  { 'tpope/vim-repeat' },
+  { 'junegunn/vim-easy-align' },
 
   -- Copilot
-  use "github/copilot.vim"
+  { "github/copilot.vim" },
 
   -- Python formatting
-  use "EgZvor/vim-black"
-  use 'jeetsukumaran/vim-python-indent-black'
+  { "EgZvor/vim-black" },
+  { 'jeetsukumaran/vim-python-indent-black' },
 
   -- Python types
-  use "microsoft/python-type-stubs"
+  { "microsoft/python-type-stubs" },
 
   -- Python
   -- use 'heavenshell/vim-pydocstring'   -- Overwrites a keymap, need to fix.
   -- use 'bfredl/nvim-ipy'
 
   -- Markdown
-  use 'godlygeek/tabular'
-  use 'ellisonleao/glow.nvim'
+  { 'godlygeek/tabular' },
+  { 'ellisonleao/glow.nvim' },
 
   -- LaTex
-  use 'lervag/vimtex'
+  { 'lervag/vimtex' },
 
   -- TOML Files
-  use 'cespare/vim-toml'
+  { 'cespare/vim-toml' },
 
   -- Poetry
   -- use({'petobens/poet-v',
@@ -157,18 +157,12 @@ return require('packer').startup(function(use)
   -- })
 
   -- kitty config syntax-highlight
-  use "fladson/vim-kitty"
+  { "fladson/vim-kitty" },
 
   -- note taking with zettelkasten
 
-  -- Themes
-  use 'folke/tokyonight.nvim'
-  use 'marko-cerovac/material.nvim'
-
   -- useless plugin
-  use 'eandrju/cellular-automaton.nvim'
+  { 'eandrju/cellular-automaton.nvim' }
+}
 
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+require('lazy').setup(plugins)
