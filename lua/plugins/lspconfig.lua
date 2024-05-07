@@ -1,6 +1,3 @@
-require("mason").setup()
-require "lsp_signature".setup()
-
 local mason_lspconfig = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 local common_on_attach = require("lsp.utils").common_on_attach

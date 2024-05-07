@@ -26,15 +26,14 @@ local plugins = {
 
   { 'marko-cerovac/material.nvim' },
 
-  {
-    "williamboman/mason.nvim",
-    build = ':MasonUpdate',
-  },
+  { "williamboman/mason.nvim", config = function() require("mason").setup() end },
+  { "williamboman/mason-lspconfig.nvim" , config = function() require("mason-lspconfig").setup() end },
 
-  { "williamboman/mason-lspconfig.nvim" },
-  { "neovim/nvim-lspconfig" },
+  -- Signature help
+  {"ray-x/lsp_signature.nvim", config = function() require("lsp_signature").setup() end },
 
-  -- require("plugins.lspconfig")
+
+  { "neovim/nvim-lspconfig", config = function() require('plugins.lspconfig') end },
 
     -- Autocomplete
   {
@@ -63,9 +62,6 @@ local plugins = {
   -- Snippets
   {"L3MON4D3/LuaSnip", config = function() require('plugins.snippets') end},
   {"rafamadriz/friendly-snippets"},
-
-  -- Signature help
-  {"ray-x/lsp_signature.nvim"},
 
   -- Telescope
   {
