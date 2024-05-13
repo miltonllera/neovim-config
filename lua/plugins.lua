@@ -121,7 +121,23 @@ local plugins = {
   { 'junegunn/vim-easy-align' },
 
   -- Copilot
-  { "github/copilot.vim" },
+  -- { "github/copilot.vim" },
+  -- Use zbirenbaum's version since it is written in lua and is much more efficient
+  {
+    "zbirenbaum/copilot.lua",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function() require('plugins.copilot') end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+  },
 
   -- Python formatting
   { "EgZvor/vim-black" },
