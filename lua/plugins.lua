@@ -29,11 +29,10 @@ local plugins = {
   { "williamboman/mason.nvim", config = function() require("mason").setup() end },
   { "williamboman/mason-lspconfig.nvim" , config = function() require("mason-lspconfig").setup() end },
 
+  { "neovim/nvim-lspconfig", config = function() require('plugins.lspconfig') end },
+
   -- Signature help
   {"ray-x/lsp_signature.nvim", config = function() require("lsp_signature").setup() end },
-
-
-  { "neovim/nvim-lspconfig", config = function() require('plugins.lspconfig') end },
 
     -- Autocomplete
   {
@@ -101,7 +100,7 @@ local plugins = {
     end
   },
 
-  {'folke/trouble.nvim'},
+  {'folke/trouble.nvim', opts={}, cmd='Trouble'},
 
   -- git commands
   {'tpope/vim-fugitive'},
@@ -152,7 +151,7 @@ local plugins = {
 
   -- Markdown
   { 'godlygeek/tabular' },
-  { 'ellisonleao/glow.nvim' },
+  { 'ellisonleao/glow.nvim', config = true, cmd = "Glow" },
 
   -- LaTex
   { 'lervag/vimtex' },

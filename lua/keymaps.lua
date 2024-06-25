@@ -103,10 +103,10 @@ nnoremap("<leader>gl", ":Gclog<CR>")
 nnoremap("<leader>i", '<Cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
 
 -- Open local diagnostics in local list
-nnoremap("<leader>I", "<cmd>TroubleToggle document_diagnostics<cr>")
+nnoremap("<leader>I", "<cmd>Trouble diagnostics toggle focus=false filter.buf=0<cr>")
 
 -- Open all project diagnostics in quickfix list
-nnoremap("<leader><A-I>", "<cmd>TroubleToggle workspace_diagnostics<cr>")
+nnoremap("<leader><A-I>", "<cmd>Toggle diagnostics toggle focus=false filter.severity=vim.diagnostic.severity.ERROR<cr>")
 
 -- Telescope
 nnoremap("<leader>o", "<Cmd>Telescope find_files<CR>")
