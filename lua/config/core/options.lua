@@ -92,3 +92,7 @@ else
 	-- Else default to the system current shell.
 	vim.opt.shell = os.getenv("SHELL")
 end
+
+--vim.cmd([[
+--let g:node_host_prog = 'C:\\ProgramData\\nvm\\v20.11.1\\node.exe'
+--]])
