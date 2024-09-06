@@ -39,6 +39,7 @@ return {
 				},
 				---- sources for autocompletion
 				sources = cmp.config.sources({
+					{ name = "copilot" },
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- snippets
 					{ name = "buffer" }, -- text within current buffer
@@ -175,7 +176,7 @@ return {
 			})
 
 			-- configure typescript server with plugin
-			lspconfig["tsserver"].setup({
+			lspconfig["ts_ls"].setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
