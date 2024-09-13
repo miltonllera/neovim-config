@@ -11,6 +11,7 @@ local servers = {
   "dockerls",
   -- "jedi_langauge_server",
   -- "hls",
+  -- "basedpyright",
   "julials",
   "jsonls",
   "lua_ls",

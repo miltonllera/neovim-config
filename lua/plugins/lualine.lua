@@ -4,7 +4,7 @@ local non_language_ft = {'fugitive', 'startify'}
 
 require('lualine').setup({
   options = {
-    theme = "tokyonight",
+    theme = "auto",
     -- Separators might look weird for certain fonts (eg Cascadia)
     component_separators = {left = '', right = ''},
     section_separators = {left = '', right = ''},
@@ -29,7 +29,7 @@ require('lualine').setup({
         function()
           local msg = 'No LSP'
           local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-          local clients = vim.lsp.get_active_clients()
+          local clients = vim.lsp.get_clients()
 
           if next(clients) == nil  then
             return msg
