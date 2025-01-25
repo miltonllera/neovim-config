@@ -65,7 +65,7 @@ This will create a folder with the configuration with the following structure is
 
 This structure is important since Lua will not load files that are not located inside `lua`. The file `init.lua` loads all the modules located inside this folder to set the configuration. Most of the names are self explanatory. The most important file here is `plugins.lua`, which is the module that loads the relevant plugins. Some of the most important plugins are:
 
-1. [**`packer`**](https://github.com/wbthomason/packer.nvim): Manage the plugins.
+1. [**`lazy`**](https://github.com/folke/lazy.nvim): Manage the plugins.
 2. [**`lspconfig`**](https://github.com/neovim/nvim-lspconfig): provides a client for the different language servers using the Language Server Protocol (LSP).
 3. [**`cmp`**](https://github.com/hrsh7th/nvim-cmp): Auto-complete functionality. Recommended by the core Neovim team.
 4. [**`treesitter`**](https://github.com/nvim-treesitter/nvim-treesitter): Syntax highlighting and other functionality.
@@ -75,34 +75,31 @@ This structure is important since Lua will not load files that are not located i
 8. [**`telescope`**](https://github.com/nvim-telescope/telescope.nvim): Fuzzy finder.
 9. [**`lualine`**](https://github.com/nvim-lualine/lualine.nvim): A status line written in Lua which is similar to `vim-airline`.
 
-There are some more packages that are dependencies of the ones mentioned above, and some for formatting and theming as well. Adding new plugins is simple using the `use` function:
+There are some more packages that are dependencies of the ones mentioned above, and some for formatting and theming as well. Adding new plugins by adding them inside the `plugins` table:
 
 ```lua
-use({
-  '<author>/<plugin-repo>',
-  config = function() require('<plugin-name>').setup({}) end,
-})
+{
+  '<author>/<plugin-repo>', config = function() require('<plugin-name>').setup() end,
+}
 ```
 
-This will load a plugin with it's standard configuration. For more complex configurations, we create the relevant file in `lua/plugins` (eg. `lua/plugins/foo.lua`) and load it using the require function along with any other option we wish to pass on to the `use` function:
+This will load a plugin with it's standard configuration. Custom configs for several plugins are in
+the `plugin` folder and can be accessed as:
 
 ```lua
-use({
-  '<author>/<plugin-repo>',
-  config = function() require('plugin/<plugin-name>') end,
-  -- Optionally require other plugins.
-  requires = '<author>/<required-plugin-repo>'
-  -- Other functionality
-})
+{
+  '<author>/<plugin-repo>', config = function() require('plugin/<plugin-name>') end,
+}
 ```
 
-Notice that the file type is omitted from this call.
+Notice that the file type is omitted from this call. See the lazy repo for more options such as forcing plugin loading at startup (i.e. `layz= false` or setting dependencies).
+
 
 ## Auto-completion
 
 The auto-complete functionality is achieved by using `nvim-cmp` to attach the relevant language servers to the buffers containing code. Most servers only require that the on attach function is specified so that different motions are available. Currently, the common function to attach a server to a buffer is located in `lua/lsp/utils.lua` . It will enable common key mappings for all language servers to display code completion.
 
-The second part is installing the language servers themselves (described below) and enabling them. `:LspInstall` can be used if [`nvim-lsp-installer`](https://github.com/williamboman/nvim-lsp-installer/) is found. Others may require manual installation. There is an extra step which involves installing the binaries for these servers, which we describe below.
+The second part is installing the language servers themselves (described below) and enabling them. This is achieved using `mason.nvim`, `nvim-lspconfig` and `mason-lspconfig.nvim`.
 
 ### Installing the language servers
 
@@ -201,13 +198,6 @@ TL;DR for `MacOS`:
 1. Download and install the fonts and put the file `Symbols-2048-em Nerd Font Complete.tff` (or whatever subset you decide to use) in the `Library/Fonts/` folder for system wide use, or the local variant.
 2. If the glyphs aren't displayed by default, then they can be specified manually by following the instructions.
 3. Refresh the fonts cache.
-
-## TODO:
-
-Some pluggins to try:
-- Using GBrowse with fugitive: [rhubarb.vim](https://github.com/tpope/rhubarb.vim).
-- Jupyter on Neovim: [jupytext.vim](https://github.com/mwouts/jupytext), [iron.nvim](https://github.com/hkupty/iron.nvim), [vim-textobj-hydrogen](https://github.com/GCBallesteros/vim-textobj-hydrogen). Check this [blog](https://www.maxwellrules.com/misc/nvim_jupyter.html) for more info.
-
 
 ## Attributions
 
