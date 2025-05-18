@@ -32,7 +32,7 @@ This readme exist so I don't have to remember how to do all these things when se
 
 ### Windows
 
-![nvim Home](./img/home.png)
+![nvim Home](./img/home1.png)
 
 Install [Chocolatey](https://chocolatey.org/install)
 
@@ -59,7 +59,6 @@ Global packages for npm (update your packages)
 ```bash
  npm install -g neovim
  npm install -g prettier
- npm install -g typescript-language-server typescript
 ```
 
 - Clone the repository inside off this folder or download the last [release](https://github.com/i-xarlos/neovim-config/releases/)
