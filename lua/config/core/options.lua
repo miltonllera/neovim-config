@@ -6,6 +6,8 @@ vim.o.showmode = false
 vim.o.showtabline = 2 -- Always show tab line
 vim.o.title = true
 vim.o.termguicolors = true -- Use true colors, required for some plugins
+vim.o.lazyredraw = true
+vim.o.encoding = "utf-8"
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.signcolumn = "yes"
@@ -37,6 +39,8 @@ vim.o.fileencoding = "utf-8"
 vim.o.spell = true
 vim.o.spelllang = "en_us"
 vim.opt.spelloptions = "camel"
+vim.opt.timeoutlen = 1000
+vim.opt.ttimeoutlen = 0
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.wildmode = "longest,full" -- Display auto-complete in Command Mode
 vim.o.undofile = true -- Save undo history
@@ -96,3 +100,9 @@ end
 --vim.cmd([[
 --let g:node_host_prog = 'C:\\ProgramData\\nvm\\v20.11.1\\node.exe'
 --]])
+--
+vim.g.node_host_prog = "C:\\ProgramData\\nvm\\v20.17.0\\node.exe"
+
+--Shell usage
+vim.opt.shell = "pwsh"
+vim.opt.shellcmdflag = "-NoLogo -NoProfile -Command"

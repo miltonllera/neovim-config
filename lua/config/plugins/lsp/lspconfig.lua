@@ -118,8 +118,13 @@ return {
 
 			local keymap = vim.keymap -- for conciseness
 			local opts = { noremap = true, silent = true }
-			local on_attach = function(_, bufnr)
+			local on_attach = function(client, bufnr)
 				opts.buffer = bufnr
+				local max_line_count = 5000
+				local line_count = vim.api.nvim_buf_line_count(bufnr)
+				if line_count > max_line_count then
+					client.stop()
+				end
 
 				-- set keybinds
 				opts.desc = "Show LSP references"
@@ -179,6 +184,18 @@ return {
 			lspconfig["ts_ls"].setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
+				--		root_dir = require("lspconfig.util").root_pattern(".git"),
+				root_dir = function(fname)
+					return require("lspconfig.util").root_pattern("tsconfig.json", "package.json")(fname)
+				end,
+				settings = {
+					ts_ls = {
+						exclude = { "node_modules", "dist", "build", ".git" },
+					},
+				},
+				flags = {
+					debounce_text_changes = 150,
+				},
 			})
 
 			-- configure css server

@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -11,37 +12,58 @@ return {
 
 		telescope.setup({
 			defaults = {
-				path_display = { "truncate " },
+				vimgrep_arguments = {
+					"rg",
+					"--color=never",
+					"--no-heading",
+					"--with-filename",
+					"--line-number",
+					"--column",
+					"--smart-case",
+					"--glob", "!.git/",
+					"--glob", "!node_modules/",
+					"--glob", "!dist/",
+					"--glob", "!build/",
+					"--glob", "!yarn.lock",
+					"--glob", "!*.zip",
+					"--glob", "!*.tar.gz",
+					"--glob", "!*.tar.bz2",
+					"--glob", "!*.rar",
+				},
+				path_display = { "truncate" },
+				dynamic_preview_title = true,
 				mappings = {
 					i = {
-						["<C-k>"] = actions.move_selection_previous, -- move to prev result
-						["<C-j>"] = actions.move_selection_next, -- move to next result
+						["<C-k>"] = actions.move_selection_previous,
+						["<C-j>"] = actions.move_selection_next,
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					},
 				},
 			},
-			-- fix delay issues
 			pickers = {
 				find_files = {
-					path_display = { "smart" },
+					find_command = { "fd", "--type", "f", "--hidden", "--exclude", ".git", "--exclude", "node_modules" },
+					max_results = 200,
+					previewer = false,
+				},
+				live_grep = {
+					max_results = 200,
 				},
 			},
 			extensions = {
-				--fzf = {
-					--fuzzy = true, -- false will only do exact matching
-					--override_generic_sorter = true, -- override the generic sorter
-					--override_file_sorter = true, -- override the file sorter
-					--case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-					-- the default case_mode is "smart_case"
-				--},
+				fzf = {
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "smart_case",
+				},
 			},
 		})
 
-		--telescope.load_extension("fzf")
-		local builtin = require("telescope.builtin")
+		pcall(telescope.load_extension, "fzf")
 
-		-- set keymaps
-		local keymap = vim.keymap -- for conciseness
+		local builtin = require("telescope.builtin")
+		local keymap = vim.keymap
 
 		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
@@ -53,3 +75,4 @@ return {
 		keymap.set("n", "<leader>vh", builtin.help_tags, {})
 	end,
 }
+
