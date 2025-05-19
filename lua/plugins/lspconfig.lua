@@ -22,10 +22,7 @@ local servers = {
 
 mason_lspconfig.setup({
   ensure_installed = servers,
-})
-
-mason_lspconfig.setup_handlers({
-  function (server_name)
+  handlers=function (server_name)
     lspconfig[server_name].setup {
       on_attach = common_on_attach,
       capabilities = capabilities,
