@@ -103,16 +103,21 @@ return {
 			lsp.preset("recommended")
 
 			lsp.on_attach(function()
-				-- Change the Diagnostic symbols in the sign column (gutter)
-				-- (not in youtube nvim video)
-				local signs = { Error = " ", Warn = " ", Hint = "", Info = " " }
+				-- Configuración moderna para los íconos de diagnóstico
+				local signs = { Error = " ", Warn = " ", Hint = "", Info = " " }
 				for type, icon in pairs(signs) do
 					local hl = "DiagnosticSign" .. type
+					-- Configuración de resaltado usando la API moderna
+					vim.api.nvim_set_hl(0, hl, { default = true })
+					-- Define la señal (sigue siendo necesario)
 					vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 				end
-				-- enable diagnostic
+				-- Configuración de diagnósticos
 				vim.diagnostic.config({
 					virtual_text = true,
+					signs = true,
+					underline = true,
+					severity_sort = true,
 				})
 			end)
 

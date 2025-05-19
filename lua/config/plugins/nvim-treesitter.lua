@@ -22,34 +22,26 @@ return {
 					enable = true,
 				},
 				-- ensure these language parsers are installed
-				ensure_installed = {
-					"json",
-					"javascript",
-					"typescript",
-					"tsx",
-					"yaml",
-					"html",
-					"css",
-					"prisma",
-					"markdown",
-					"markdown_inline",
-					"svelte",
-					"graphql",
-					"bash",
-					"lua",
-					"vim",
-					"dockerfile",
-					"gitignore",
-					"c_sharp",
-				},
-				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-				context_commentstring = {
+				ensure_installed = {},
+				sync_install = false, -- No instalar parsers en cada arranque
+				auto_install = false, -- Desactivar instalación automática para controlar mejor
+				incremental_selection = {
 					enable = true,
-					enable_autocmd = false,
+					keymaps = {
+						init_selection = "<C-space>",
+						node_incremental = "<C-space>",
+						scope_incremental = false,
+						node_decremental = "<bs>",
+					},
 				},
-				-- auto install above language parsers
-				auto_install = true,
+				parser_install_dir = vim.fn.stdpath("data") .. "/treesitter_cache",
 			})
+
+			-- Configuración recomendada para ts_context_commentstring (fuera de nvim-treesitter)
+			pcall(function()
+				require('ts_context_commentstring').setup {}
+			end)
+			vim.g.skip_ts_context_commentstring_module = true
 		end,
 	},
 }
