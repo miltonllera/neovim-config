@@ -1,17 +1,17 @@
--- Keymap functions
+-- local vim = require("vim")
 
 local M = {}
 
 function M.map(mode, lhs, rhs)
-        vim.api.nvim_set_keymap(mode, lhs, rhs, {silent =  true})
+        vim.keymap.set(mode, lhs, rhs, {silent =  true})
 end
 
 function M.noremap(mode, lhs, rhs)
-        vim.api.nvim_set_keymap(mode, lhs, rhs, {noremap = true, silent = true})
+        vim.keymap.set(mode, lhs, rhs, {noremap = true, silent = true})
 end
 
 function M.exprnoremap(mode, lhs, rhs)
-        vim.api.nvim_set_keymap(mode, lhs, rhs, {noremap = true, silent = true, expr = true})
+        vim.keymap.set(mode, lhs, rhs, {noremap = true, silent = true, expr = true})
 end
 
 -- Useful mode-specific shortcuts
@@ -39,3 +39,4 @@ function M.exprnnoremap(lhs, rhs) M.exprnoremap('n', lhs, rhs) end
 function M.exprinoremap(lhs, rhs) M.exprnoremap('i', lhs, rhs) end
 
 return M
+

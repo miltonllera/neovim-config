@@ -39,6 +39,13 @@ vim.o.wildmode           = "longest,full"               -- Display auto-complete
 vim.o.updatetime         = 300                          -- Delay until write to Swap and HoldCommand event
 vim.g.do_file_type_lua   = 1
 
+-- Netrw
+vim.g.netrw_banner = 0             -- Hide banner
+vim.g.netrw_liststyle = 3            -- Tree-style listing
+vim.g.netrw_browse_split = 4    -- Open file in vertical split
+vim.g.netrw_altv = 1                  -- Split to the right
+vim.g.netrw_winsize = 16
+
 -- Disable default plugins
 -- vim.g.loaded_netrwPlugin = false                     -- I can't remember what the issue was with this option
 

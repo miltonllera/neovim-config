@@ -1,13 +1,14 @@
 -- General keymaps that are not pluggin dependant
 -- the file "lua/lsp/utils.lua" contains lsp-specific commands.
 
-local Utils = require('utils')
+-- local vim = require("vim")
+local keymaps = require('utils')
 
 -- local exprnnoremap = Utils.exprnnoremap
-local nnoremap = Utils.nnoremap
-local vnoremap = Utils.vnoremap
-local xnoremap = Utils.xnoremap
-local inoremap = Utils.inoremap
+local nnoremap = keymaps.nnoremap
+local vnoremap = keymaps.vnoremap
+local xnoremap = keymaps.xnoremap
+local inoremap = keymaps.inoremap
 -- local tnoremap = Utils.tnoremap
 -- local nmap = Utils.nmap
 -- local xmap = Utils.xmap
@@ -96,10 +97,6 @@ nnoremap("<C-P>", ":cprev<CR>")
 -- Open file in default application
 nnoremap("<leader>xo", "<Cmd> !xdg-open %<CR><CR>")
 
--- Fugitive
-nnoremap("<leader>G", ":G<CR>")
-nnoremap("<leader>gl", ":Gclog<CR>")
-
 -- Show line diagnostics
 nnoremap("<leader>i", '<Cmd>lua vim.diagnostic.open_float(0, {scope = "line"})<CR>')
 
@@ -109,22 +106,5 @@ nnoremap("<leader>I", "<cmd>Trouble diagnostics toggle focus=false filter.buf=0<
 -- Open all project diagnostics in quickfix list
 nnoremap("<leader><A-I>", "<cmd>Toggle diagnostics toggle focus=false filter.severity=vim.diagnostic.severity.ERROR<cr>")
 
--- Telescope
-nnoremap("<leader>o", "<Cmd>Telescope find_files<CR>")
-nnoremap("<leader>H", "<Cmd>Telescope find_files hidden=true<CR>")
-nnoremap("<leader>b", "<Cmd>Telescope buffers<CR>")
-nnoremap("<leader>lg", "<Cmd>Telescope live_grep<CR>")
-
 -- File explorer
-nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
--- nnoremap("<leader>e", "<Cmd>RnvimrToggle<CR>")
-
--- Run Copilot
-nnoremap("<leader>C", "<Cmd>Copilot panel<CR>")
-
--- EasyAlign
--- xmap("ga", "<cmd>EasyAlign")
--- nmap("ga", "<cmd>EasyAlign")
-
--- For when everything else fails
-nnoremap("<leader>fml", '<Cmd>CellularAutomaton make_it_rain<CR>')
+-- nnoremap('<leader>e', '<Cmd>25Lexplore<CR>', { desc = 'Toggle Left-side netrw file explorer with 25 col width' })
