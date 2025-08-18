@@ -24,6 +24,7 @@ return {
       local cmp = require("cmp")
       local has_luasnip, luasnip = pcall(require, 'luasnip')
 
+      local unpack = table.unpack or unpack  -- Neovim don't seem to use Lua 5.4
       local function has_words_before()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and vim.api.nvim_buf_get_lines(
@@ -61,7 +62,7 @@ return {
               ['<Tab>'] = function(fallback)
                 if cmp.visible() then
                   cmp.select_next_item()
-                elseif luasnip.expand_or_jumpable() then
+                elseif has_luasnip and luasnip.expand_or_jumpable() then
                   luasnip.expand_or_jump()
                 elseif has_words_before() then
                   cmp.complete()

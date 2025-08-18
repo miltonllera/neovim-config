@@ -16,7 +16,7 @@ return {
   { 'ellisonleao/glow.nvim', config = true, cmd = "Glow" },
 
   -- LaTex
-  { 'lervag/vimtex' },
+  { 'lervag/vimtex', lazy = false, init =  function () vim.g.vimtex_view_method="zathura" end },
 
   -- TOML Files
   { 'cespare/vim-toml' },

@@ -12,19 +12,25 @@ return {
       update_cwd = true,
 
       actions = {
-          open_file = {
-              window_picker = {
-                  enable = false,
-              },
+        open_file = {
+          window_picker = {
+            enable = false,
           },
+        },
       },
 
       filters = {
-          custom = { ".DS_Store" },
-      },
-
-      git = {
-          ignore = false,
+        git_ignored = false,
+        custom = {
+          ".git",
+          ".venv",
+          ".ipynb_checkpoints",
+          "__pycache__",
+          ".DS_Store",
+        },
+        exclude = {
+          ".gitignore",
+        }
       },
     })
 

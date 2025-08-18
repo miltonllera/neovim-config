@@ -12,7 +12,7 @@ return {
       let g:startify_bookmarks = [
                 \ {'c': '~/.config/zsh/.zshrc'},
                 \ {'a': '~/.config/zsh/.zsh_aliases'},
-                \ {'d': '~/.config/dotfiles/README.md'},
+                \ {'d': '~/Repos/configs/dotfiles/README.md'},
                 \ {'n': '~/.config/nvim/init.lua'}
                 \ ]
 
