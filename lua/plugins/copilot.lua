@@ -22,6 +22,19 @@ require("copilot").setup({
     },
   })
 
+  vim.g.copilot_filetypes = {
+      ["*"] = false,
+      ["javascript"] = true,
+      ["typescript"] = true,
+      ["lua"] = false,
+      ["rust"] = true,
+      ["c"] = true,
+      ["c#"] = true,
+      ["c++"] = true,
+      ["go"] = true,
+      ["python"] = true,
+    }
+
   local suggestion = require("copilot.suggestion")
 
   vim.keymap.set("i", "<M-SPACE>", function()

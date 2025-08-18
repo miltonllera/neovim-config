@@ -26,7 +26,7 @@ local plugins = {
   { "williamboman/mason.nvim", config = function() require("mason").setup() end },
   { "williamboman/mason-lspconfig.nvim" , config = function() require("mason-lspconfig").setup() end },
 
-  { "neovim/nvim-lspconfig", config = function() require('plugins.lspconfig') end },
+  { "neovim/nvim-lspconfig", config = function() require('plugins.lsp') end },
 
   -- Signature help
   {"ray-x/lsp_signature.nvim", config = function() require("lsp_signature").setup() end },
@@ -54,6 +54,16 @@ local plugins = {
     config = function() require('plugins.treesitter') end,
     build = ':TSUpdate'
   },
+
+  -- {
+  --   "stevearc/dressing.nvim"
+  -- },
+
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-textobjects",
+  --   after = "nvim-treesitter",
+  --   requires = "nvim-treesitter/nvim-treesitter",
+  -- },
 
   -- Snippets
   {"L3MON4D3/LuaSnip", config = function() require('plugins.snippets') end},
@@ -133,6 +143,16 @@ local plugins = {
     config = function ()
       require("copilot_cmp").setup()
     end
+  },
+
+  -- Codecompanion (AI interface)
+  {
+    "olimorris/codecompanion.nvim",
+    config = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
 
   -- Python formatting
