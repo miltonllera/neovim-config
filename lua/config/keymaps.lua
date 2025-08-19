@@ -68,7 +68,7 @@ xnoremap("<leader>p", '\"_dP')
 -- Delete without overwriting register
 nnoremap("<leader>d", '\"_d')
 vnoremap("<leader>d", '\"_d')
-nnoremap("x", '\"_x')  -- never save deleted character to clippboard
+-- nnoremap("x", '\"_x')  -- never save deleted character to clippboard
 
 -- Copy to system clippboard
 nnoremap("<leader>y", '"+y')
