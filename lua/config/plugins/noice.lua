@@ -30,6 +30,26 @@ return {
           inc_rename = false, -- enables an input dialog for inc-rename.nvim
           lsp_doc_border = false, -- add a border to hover docs and signature help
         },
+        messages = {
+          view = 'mini',
+          view_search = 'mini',
+        },
+        views = {
+          mini = {
+            position = { col = -1, row = -1 },
+            align = "left",
+            size = {
+							width = "auto",
+							height = "auto",
+						}
+          },
+        },
+        routes = {
+          {
+            view = "notify",
+            filter = { event = "msg_showmode" },
+          },
+        },
       })
     end,
   },
@@ -37,6 +57,6 @@ return {
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
-    config = { top_down = true, render= "simple", stages="static" },
+    opts = { top_down = true, render= "compact", stages="static" },
   },
 }

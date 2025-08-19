@@ -51,7 +51,7 @@ vim.g.netrw_winsize = 16
 
 -- Python providers
 local pynvim_env        = os.getenv("HOME").."/.local/bin/pyenv/versions/pynvim/"
-vim.g.python3_host_prog = pynvim_env.."/bin/python"
+vim.g.python3_host_prog = pynvim_env.."bin/python"
 vim.g.black_virtualenv  = pynvim_env
 
 -- Disable unused providers

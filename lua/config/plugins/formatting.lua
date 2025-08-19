@@ -1,9 +1,10 @@
 return {
   -- General
-  { 'tpope/vim-commentary' },
+  { 'michaeljsmith/vim-indent-object' },
   { 'tpope/vim-unimpaired' },
   { 'tpope/vim-surround' },
   { 'tpope/vim-repeat' },
+  { 'tpope/vim-commentary' },
   { 'junegunn/vim-easy-align' },
 
   -- Python
