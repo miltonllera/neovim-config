@@ -21,9 +21,9 @@ return {
           separator_style = 'thin',
           -- Don't show bufferline over vertical, unmodifiable buffers
           offsets = {{
-              filetype = 'NvimTree',
-              text = 'File Explorer',
-              highlight = 'Directory'
+            filetype = 'NvimTree',
+            text = 'File Explorer',
+            highlight = 'Directory'
           }},
         },
         -- Don't use italic on current buffer

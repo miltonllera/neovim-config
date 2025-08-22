@@ -35,6 +35,8 @@ return {
         "julials",
         "texlab",
         "marksman",
+        "ts_ls",
+        -- "html_ls",
       },
 
     })
