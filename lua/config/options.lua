@@ -6,6 +6,7 @@ vim.o.showmode           = false
 vim.o.showtabline        = 2                            -- Always show tabline
 vim.o.title              = true
 vim.o.termguicolors      = true                         -- Use true colors, required for some plugins
+vim.o.colorcolumn        = "99"
 -- vim.o.ls                 = 0                         -- Doesn't seem to work
 -- vim.o.ch                 = 0                         -- Creates a bug with output messages not appearing correctly
 vim.wo.number            = true
